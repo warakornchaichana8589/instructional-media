@@ -24,7 +24,7 @@
             
             
            
-            ลงทะเบียน
+            {{ inputStore.inputNameValue === '' ? 'ลงทะเบียน' : 'เริ่ม' }}
           </button>
           </RouterLink>
         </div>

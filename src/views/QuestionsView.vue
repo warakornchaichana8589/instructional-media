@@ -56,6 +56,16 @@ const router = useRouter();
 
 const { isPlaying, play, pause } = useAudioStore();
 const isPlayingIcon = ref(isPlaying);
+
+// Sound
+import audioSrcInput from "../assets/sound/page-flip-47177.mp3";
+const audio = ref(null);
+audio.value = new Audio(audioSrcInput);
+ 
+
+
+
+
 onMounted(() => {
   watchEffect(() => {
     console.log("isPlaying:", isPlaying);
@@ -65,6 +75,7 @@ onMounted(() => {
 const onSlideChange = () => {
     slideBiginnig.value = swiperInstance.value.isBeginning;
     slideEnd.value = swiperInstance.value.isEnd;
+    audio.value.play();
 }
 const buttonText = computed(() => {
       return slideBiginnig.value ? 'กลับหน้าลงทะเบียน' : 'ก่อนหน้า';
