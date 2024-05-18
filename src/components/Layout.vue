@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, onMounted } from 'vue';
+import { defineProps, ref, onMounted, computed  } from 'vue';
 import IconVolume from '@/components/icons/IconVolume.vue';
 import ButtonFullScreen from '@/components/ButtonFullScreen.vue';
 
@@ -28,7 +28,7 @@ const props = defineProps({
 const display = ref(null);
 
 const bgImagePath = computed(() => {
-      return props.bgImage ? new URL(`../assets/${props.bgImage}`, import.meta.url).href : '';
+      return props.bgImage ? new URL(`../assets/images/${props.bgImage}`, import.meta.url).href : '';
     });
 
 
