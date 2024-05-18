@@ -25,13 +25,11 @@ const props = defineProps({
   bgImage: { type: String, default: 'BG.png'}
 });
 
-const bgImagePath = ref('');
 const display = ref(null);
-onMounted(() => {
-  import(`../assets/images/${props.bgImage}`).then(module => {
-    bgImagePath.value = module.default;
-  });
-});
+
+const bgImagePath = computed(() => {
+      return props.bgImage ? new URL(`../assets/${props.bgImage}`, import.meta.url).href : '';
+    });
 
 
 </script>
