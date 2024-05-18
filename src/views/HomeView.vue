@@ -15,20 +15,16 @@
             <InputSound />
           </div>
           <RouterLink to="/questions" class=" relative z-10">
-            
+  
             <button type="button"
-            class="cursor-pointer w-auto px-5 py-2 lg:px-8 lg:py-5 bg-[#F7BB66] custom-radius font-bold text-center text-[14px] md:text-[32px] shadow-lg hover:shadow-xl disabled:shadow-none"
+            class="cursor-pointer flex justify-center items-center w-auto px-5 py-2 lg:px-8 lg:py-5 bg-[#F7BB66] custom-radius font-semibold text-center text-[20px] lg:text-[32px] shadow-lg hover:shadow-xl disabled:shadow-none"
+            :class="inputStore.inputNameValue === '' ? 'px-5 py-2 lg:px-8 lg:py-5' : 'px-8 py-0 lg:px-7 lg:py-1'"
             :disabled="inputStore.inputNameValue === ''"
             >
-
-            
-            
-           
-            {{ inputStore.inputNameValue === '' ? 'ลงทะเบียน' : 'เริ่ม' }}
+            {{ inputStore.inputNameValue === '' ? 'ลงทะเบียน' : 'เข้าสู่ระบบ' }}
           </button>
           </RouterLink>
         </div>
-
         <div class="box-btn mt-auto mb-2 md:mb-10">
           <ButtonGo
             text="ย้อนกลับ"

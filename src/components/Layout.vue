@@ -6,6 +6,8 @@
 
           <div class="absolute top-5 right-5">
             <div class="flex gap-2 lg:gap-4 justify-center">
+              <IconHome />
+              
               <IconVolume />
               <ButtonFullScreen />
             </div>
@@ -18,6 +20,7 @@
 
 <script setup>
 import { defineProps, ref, onMounted, computed  } from 'vue';
+import IconHome from '@/components/icons/IconHome.vue';
 import IconVolume from '@/components/icons/IconVolume.vue';
 import ButtonFullScreen from '@/components/ButtonFullScreen.vue';
 

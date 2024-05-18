@@ -15,8 +15,7 @@
 
 <script setup>
 import Layout from '@/components/Layout.vue';
-import IconVolume from '@/components/icons/IconVolume.vue';
-import IconVolumeMute from '@/components/icons/IconVolumeMute.vue';
+
 import { useAudioStore } from '@/stores/useAudio';
 import { ref, watchEffect, onMounted } from 'vue';
 const { isPlaying , play, pause } = useAudioStore();
