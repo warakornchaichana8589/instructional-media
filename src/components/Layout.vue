@@ -1,8 +1,15 @@
 <template>
-    <div class="box-main shadow-2xl">
-        <div class="display cursor-grabbing relative" :style="{ backgroundImage: `url(${bgImagePath})` }">
+    <div class="box-main shadow-2xl relative flex justify-center items-center cursor-auto">
+        <div class="display relative max-h-screen mx-auto " 
+        ref="display"  
+        :style="{ backgroundImage: `url(${bgImagePath})` }">
+
           <div class="absolute top-5 right-5">
-            <IconVolume />
+            <div class="flex gap-2 lg:gap-4 justify-center">
+              <IconVolume />
+              <ButtonFullScreen />
+            </div>
+          
           </div>
             <slot />
         </div>
@@ -12,12 +19,14 @@
 <script setup>
 import { defineProps, ref, onMounted } from 'vue';
 import IconVolume from '@/components/icons/IconVolume.vue';
+import ButtonFullScreen from '@/components/ButtonFullScreen.vue';
+
 const props = defineProps({
   bgImage: { type: String, default: 'BG.png'}
 });
 
 const bgImagePath = ref('');
-
+const display = ref(null);
 onMounted(() => {
   import(`../assets/images/${props.bgImage}`).then(module => {
     bgImagePath.value = module.default;
@@ -34,12 +43,14 @@ onMounted(() => {
     display: flex;
 }
 .display{
-    width: 100%;
+    width: calc(100vh * (16 / 9));
     max-width: 1440px;
     aspect-ratio: 16/9;
     margin: auto;
     border-radius: 10px;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position-x: center;
+   
 }
 </style>

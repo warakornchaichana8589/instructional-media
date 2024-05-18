@@ -1,10 +1,10 @@
 <template>
   <div
-    class="shadow-md rounded-full sm:w-[60px] sm:h-[60px] w-[45px] h-[45px] flex justify-center items-center"
+    class="shadow-md rounded-full lg:w-[60px] lg:h-[60px] w-[35px] h-[35px] flex justify-center items-center "
   >
     <div
       @click="toggleAudio"
-      class="sm:w-[50px] sm:h-[50px] w-[40px] h-[40px] button"
+      class="lg:w-[50px] lg:h-[50px] w-[30px] h-[30px] button relative z-10 cursor-pointer"
     >
       <div v-show="toggleSound" class="m-auto">
         <svg
@@ -34,7 +34,6 @@
       </div>
     </div>
   </div>
-  <audio :src="audioPlay" ref="audioElement"></audio>
 </template>
 
 <script setup>
@@ -42,31 +41,24 @@ import { ref, onMounted, defineProps } from "vue";
 import { useAudioStore } from "@/stores/useAudio";
 import audioSrcPath from "../../assets/sound/funny-111785.mp3";
 
-const { play, isPlaying, pause, audio } = useAudioStore();
-const audioPlay = ref(audioSrcPath);
-const audioElement = ref(null);
+
+const { play, isPlaying, pause, enableLoop } = useAudioStore();
 const props = defineProps({
   fill: { type: String, default: "#79A5F2" },
   fillMute: { type: String, default: "#FF7C7C" },
 });
-onMounted(()=>{
-    audioElement.value.addEventListener('ended', () => {
-        play(audioPlay.value);
-    });
-})
 
-const toggleSound = ref(
-  isPlaying !== undefined ? isPlaying : false
-);
+const toggleSound = ref(isPlaying !== undefined ? isPlaying : false);
 
 const toggleAudio = () => {
   if (toggleSound.value) {
     pause();
   } else {
-    play(audioPlay.value);
+    play(audioSrcPath);
   }
   toggleSound.value = !toggleSound.value;
 };
+enableLoop()
 </script>
 
 <style scoped>

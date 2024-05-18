@@ -6,14 +6,32 @@
   font-family: 'Arabica italic'; /* ชื่อฟ้อนต์ */
   src: url('./font/Arabica-italic.otf'); /* ที่อยู่ของไฟล์แบบอักษร */
 }
-
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --main-bg-btn: #FCD24F;
+  --main-bg-btn-hover: #EA8439;
+  --main-text-head:#4261A6;
+  --main-text-secondary:#FFA218;
+  --cursor-url: url('./images/cursor.png');
+  --cursor-url-pointer: url('./images/pointer.svg');
+  --cursor-url-text: url('./images/cursor-text.svg');
+}
 body {
   font-family: 'Arabica', sans-serif; /* ใช้ฟ้อนต์ในทั่วไปหากฟ้อนต์ที่ระบุไม่สามารถใช้งานได้ */
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
-
+.cursor-auto{
+  cursor: var(--cursor-url), auto !important;
+}
+.cursor-pointer{
+  cursor: var(--cursor-url-pointer), pointer !important;
+}
+.cursor-text{
+  cursor: var(--cursor-url-text), text !important;
+}
 .zoomIn {
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
