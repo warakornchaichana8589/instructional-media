@@ -5,7 +5,7 @@
        
 
        
-        <RouterLink  to="/home" class="btn loader__balls__group mb-0 md:mb-5 mt-auto text-white flex justify-center items-center bg-red-500 h-auto mx-auto px-2 py-1 md:px-9 md:py-4 rounded-full font-medium sm:text-xl text-sm">เริ่มเลย</RouterLink>
+        <RouterLink  to="/home" class="btn loader__balls__group mb-0 lg:mb-5 mt-auto text-white flex justify-center items-center bg-red-500 h-auto mx-auto px-2 py-1 lg:px-9 lg:py-4 rounded-full font-medium sm:text-lg lg:text-xl text-sm">เริ่มเลย</RouterLink>
         
       </div>
       
