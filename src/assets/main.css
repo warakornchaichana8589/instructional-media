@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Arabica'; /* ชื่อฟ้อนต์ */
+  src: url('./font/Arabica.otf'); /* ที่อยู่ของไฟล์แบบอักษร */
+}
+@font-face {
+  font-family: 'Arabica italic'; /* ชื่อฟ้อนต์ */
+  src: url('./font/Arabica-italic.otf'); /* ที่อยู่ของไฟล์แบบอักษร */
+}
+
+body {
+  font-family: 'Arabica', sans-serif; /* ใช้ฟ้อนต์ในทั่วไปหากฟ้อนต์ที่ระบุไม่สามารถใช้งานได้ */
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  } 
+
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+    @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    } 

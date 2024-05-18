@@ -1,0 +1,29 @@
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/sound": "^2.0.1",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "vue-sound": "^0.1.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.8"
+  },
+  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
+}
