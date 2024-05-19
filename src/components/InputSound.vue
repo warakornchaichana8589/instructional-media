@@ -17,13 +17,13 @@
   
   <script setup>
 import { ref, onMounted } from "vue";
-import audioSrcInput from "../assets/sound/bloop-1-184019.mp3";
+
 import { useDataStore } from "@/stores/dataStore";
 const inputStore = useDataStore();
 const inputValue = ref(null);
 const audioElement = ref(null);
 const audio = ref(null);
-
+import audioSrcInput from "../assets/sound/bloop-1-184019.mp3";
 const toggleAudio = ()=>{
   audio.value = new Audio(audioSrcInput);
   audio.value.play();

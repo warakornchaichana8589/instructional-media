@@ -43,6 +43,7 @@
                   :class="{
                     'selected-choice': answers[questionIndex] === index,
                   }"
+                  @click="toggleAudioQ"
                 >
                   {{ choice }}
                   <input
@@ -176,6 +177,20 @@ const swiperPrevSlide = () => {
     swiperInstance.value.slidePrev();
   }
 };
+
+
+import audioQuestion from "../assets/sound/menu-button-89141.mp3";
+const  audioQ = ref(null)
+const toggleAudioQ = ()=>{
+  if (audioQ.value && !audioQ.value.paused) {
+    // หยุดและเคลียร์เสียงที่กำลังเล่น
+    audioQ.value.pause();
+    audioQ.value = null;
+  }
+  // เริ่มเล่นเสียงใหม่
+  audioQ.value = new Audio(audioQuestion);
+  audioQ.value.play();
+}
 
 const modules = [Navigation];
 </script>
