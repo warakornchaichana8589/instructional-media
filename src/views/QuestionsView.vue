@@ -193,7 +193,7 @@ const swiperPrevSlide = () => {
 };
 
 
-import audioQuestion from "../assets/sound/minimal-pop-click-ui-7-198307.mp3";
+import audioQuestion from "../assets/sound/clickselect3-107712.mp3";
 const  audioQ = ref(null)
 const toggleAudioQ = ()=>{
   if (audioQ.value && !audioQ.value.paused) {
@@ -203,6 +203,7 @@ const toggleAudioQ = ()=>{
   }
   // เริ่มเล่นเสียงใหม่
   audioQ.value = new Audio(audioQuestion);
+  audioQ.value.volume = 0.5;
   audioQ.value.play();
 }
 
