@@ -25,10 +25,10 @@
           </button>
           </RouterLink>
         </div>
-        <div class="box-btn mt-auto mb-2 md:mb-10">
+        <div class="box-btn mt-auto mb-2 md:mb-5">
           <ButtonGo
             text="ย้อนกลับ"
-            classCustomFont="text-[14px] lg:text-[40px]"
+            classCustomFont="text-[14px] lg:text-[40px] leading-none"
             @click="goBack"
           />
         </div>

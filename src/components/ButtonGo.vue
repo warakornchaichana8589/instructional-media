@@ -1,5 +1,5 @@
 <template>
-  <button @click="fun" class="cursor-pointer">
+  <button @click="fun" class="cursor-pointer" :disabled="disableToggle">
     <span class="shadow"></span>
     <span class="edge"></span>
     <span class="front text" :class="classCustomFont">{{ text }}</span>
@@ -13,11 +13,20 @@ const props = defineProps({
     text:String,
     fun: Function,
     classCustomFont:String,
+    disableToggle:Boolean,
 })
 </script>
 
 <style scoped>
+button:disabled{
+  background : none !important;
+  cursor: no-drop !important;
+}
 
+button:disabled .shadow,button:disabled .edge ,button:disabled .front{
+  background: hsla(0, 0%, 39%, 0.863);
+  color: beige;
+}
 button {
   position: relative;
   border: none;

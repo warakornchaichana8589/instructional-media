@@ -2,7 +2,7 @@
  <div>
     <Layout bgImage="home.png" class="fadeIn">
       <div class="flex h-full sm:p-[20px] p-1 relative flex-col">
-        testsetsetsetsetsetset
+ 
       </div>
       
     </Layout>

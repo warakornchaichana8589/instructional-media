@@ -71,6 +71,7 @@
             :text="buttonTextEnd"
             classCustomFont="text-[14px] lg:text-[30px]"
             @click="swiperNextSlide"
+            :disableToggle="buttonDisabled"
           />
         </div>
       </div>
@@ -127,6 +128,12 @@ const answerStore = useAnswerStore();
 const updateAnswer = (questionIndex, index, id) => {
   answers.value[questionIndex] = index;
   selectAnswer(id, index + 1);
+  if(answers.value.length < 10 && slideEnd.value){
+    buttonDisabled.value = true;
+  }else{
+    buttonDisabled.value = false;
+  }
+ 
 };
 
 const answers = ref([]);
@@ -146,17 +153,24 @@ const selectAnswer = (questionId, answer) => {
   answerStore.addOrUpdateAnswer(questionId, answer);
 };
 
+const buttonDisabled = ref(false);
+
 const onSlideChange = () => {
   slideBiginnig.value = swiperInstance.value.isBeginning;
   slideEnd.value = swiperInstance.value.isEnd;
   slideEnd.value = swiperInstance.value.isEnd;
   audio.value.play();
+  if(answers.value.length < 10 && slideEnd.value){
+    buttonDisabled.value = true;
+  }else{
+    buttonDisabled.value = false;
+  }
 };
 const buttonText = computed(() => {
   return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ก่อนหน้า";
 });
 const buttonTextEnd = computed(() => {
-  return slideEnd.value ? "เริ่มบทเรี่ยน" : "ถัดไป";
+  return slideEnd.value ? "ดูคะแนน" : "ถัดไป";
 });
 function onSwiper(swiper) {
   swiperInstance.value = swiper;
@@ -164,7 +178,7 @@ function onSwiper(swiper) {
 
 const swiperNextSlide = () => {
   if (slideEnd.value) {
-    router.push("./learnings");
+    router.push("./show-score");
   } else {
     swiperInstance.value.slideNext();
   }
@@ -179,7 +193,7 @@ const swiperPrevSlide = () => {
 };
 
 
-import audioQuestion from "../assets/sound/menu-button-89141.mp3";
+import audioQuestion from "../assets/sound/minimal-pop-click-ui-7-198307.mp3";
 const  audioQ = ref(null)
 const toggleAudioQ = ()=>{
   if (audioQ.value && !audioQ.value.paused) {
