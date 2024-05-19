@@ -5,6 +5,7 @@ import QuestionsView from '../views/QuestionsView.vue'
 import LearningView from '../views/LearningView.vue'
 import ShowScoreView from '../views/ShowScoreView.vue'
 import AdviceView from '../views/AdviceView.vue'
+import ShowStepView from '../views/ShowStepView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -38,6 +39,11 @@ const router = createRouter({
       path:'/show-score',
       name:'ShowScore',
       component:ShowScoreView
+    },
+    {
+      path:'/step-view',
+      name:'ShowStepView',
+      component:ShowStepView
     }
   ]
 })

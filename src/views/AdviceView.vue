@@ -4,7 +4,7 @@
       <div class="flex h-full sm:p-[20px] p-1 relative flex-col"></div>
       <div class="absolute bottom-2 lg:bottom-5 right-2 lg:right-5 z-10">
           <ButtonGo
-            text="ลงทะเบียน"
+            text="ถัดไป"
             classCustomFont="text-[14px] lg:text-[30px]"
             @click="NextSlide"
            
@@ -34,7 +34,7 @@ onMounted(() => {
 });
 
 const NextSlide = () => {
-  router.push("/home");
+  router.push("/step-view");
 };
 
 
