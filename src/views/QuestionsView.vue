@@ -83,6 +83,7 @@ import { useAudioStore } from "@/stores/useAudio";
 import { ref, watchEffect, onMounted, computed } from "vue";
 import { useQuestionStroe } from "@/stores/questionStroe";
 import { useAnswerStore } from "@/stores/answerStore";
+import { useCounterStore } from "@/stores/counter";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -172,9 +173,10 @@ const buttonTextEnd = computed(() => {
 function onSwiper(swiper) {
   swiperInstance.value = swiper;
 }
-
+const useCounter = useCounterStore()
 const swiperNextSlide = () => {
   if (slideEnd.value) {
+    useCounter.setState();
     router.push("./show-score");
   } else {
     swiperInstance.value.slideNext();

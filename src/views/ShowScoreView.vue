@@ -46,6 +46,7 @@
 import Layout from "@/components/Layout.vue";
 import { useDataStore } from "../stores/dataStore";
 import { useAnswerStore } from "@/stores/answerStore";
+import { useCounterStore } from "@/stores/counter"
 import ButtonGo from "@/components/ButtonGo.vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
@@ -54,7 +55,15 @@ import { onMounted, ref } from "vue";
 const { inputNameValue } = useDataStore();
 const answerStore = useAnswerStore();
 const win = ref(null);
+
+const useCounter = useCounterStore()
 onMounted(() => {
+  const QuizBefore = useCounter.statePage
+  if (QuizBefore === 'ok') {
+   console.log('ok')
+  }else{
+    router.push('/questions');
+  }
   answerStore.checkAnswer();
   if (answerStore.score >= 8) {
     win.value = new Audio(winSound);

@@ -20,10 +20,11 @@
   import { useAudioStore } from "@/stores/useAudio";
   import { ref, watchEffect, onMounted } from "vue";
   import ButtonGo from "@/components/ButtonGo.vue";
+
   import { useRouter } from "vue-router";
   const router = useRouter();
   
-  
+
   
   const { isPlaying, play, pause } = useAudioStore();
   const isPlayingIcon = ref(isPlaying);
