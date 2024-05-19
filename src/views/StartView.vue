@@ -5,7 +5,7 @@
        
 
        
-        <RouterLink  to="/home" class="btn loader__balls__group cursor-pointer mb-0 mt-auto text-white flex justify-center items-center bg-red-500 h-auto mx-auto px-2 py-1 lg:px-9 lg:py-3 rounded-full font-medium sm:text-lg lg:text-2xl text-sm leading-none">เริ่มเลย</RouterLink>
+        <RouterLink  to="/home" @click="start" class="btn loader__balls__group cursor-pointer mb-0 mt-auto text-white flex justify-center items-center bg-red-500 h-auto mx-auto px-2 py-1 lg:px-9 lg:py-3 rounded-full font-medium sm:text-lg lg:text-2xl text-sm leading-none">เริ่มเลย</RouterLink>
         
       </div>
       
@@ -18,9 +18,14 @@ import Layout from '@/components/Layout.vue';
 
 import { useAudioStore } from '@/stores/useAudio';
 import { ref, watchEffect, onMounted } from 'vue';
+import audioSrcPath from "../assets/sound/funny-111785.mp3";
 const { isPlaying , play, pause } = useAudioStore();
 
 const isPlayingIcon = ref(isPlaying);
+const start = () =>{
+  play(audioSrcPath)
+}
+
 onMounted(() => {
 watchEffect(() => {
   console.log('isPlaying:', isPlaying);
