@@ -1,35 +1,59 @@
 <template>
   <div>
-    <Layout bgImage="BG.png" class="fadeIn">
+    <Layout bgImage="bg-answer.png" class="fadeIn">
       <div class="flex relative h-full w-full justify-center items-center">
         <swiper
           :modules="modules"
-          class="mySwiper"
+          class="mySwiper h-full"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
         >
-          <swiper-slide v-for="question in newQuestions" :key="question.id">
+          <swiper-slide
+            v-for="(question, questionIndex) in newQuestions"
+            :key="question.id"
+            class="flex justify-center items-center"
+          >
             <div
-              class="flex flex-col justify-center items-center m-auto gap-2 lg:gap-3"
+              class="flex flex-col justify-center items-center m-auto gap-2 lg:gap-3 aspect-video max-w-[40%] h-full"
             >
-              <h3 class="text-[18px] lg:text-[32px]">
+              <h3
+                v-if="!question.imageUrl"
+                class="text-[18px] lg:text-[32px] mt-5"
+              >
                 ข้อ {{ question.id }} {{ question.question }}
               </h3>
-              <div v-if="question.imageUrl">
+              <div v-if="question.imageUrl" class="flex gap-2 mt-10 justify-between items-center w-full">
+                <h3 class="text-[18px] lg:text-[32px]">
+                  ข้อ {{ question.id }} {{ question.question }}
+                </h3>
                 <img
                   :src="question.imageUrl"
                   alt="Question Image"
-                  class="max-w-[180px] rounded-2xl shadow-md"
+                  class="max-w-[70px] lg:max-w-[180px]  rounded-2xl shadow-md"
                 />
+              
+
+               
               </div>
               <ul class="flex flex-col gap-2 lg:gap-3">
-                <li
+                <label
                   v-for="(choice, index) in question.choices"
                   :key="index"
                   class="cursor-pointer px-4 py-1 lg:px-6 lg:py-2 bg-[#FCD24F] rounded-3xl text-[16px] lg:text-[24px]"
+                  :class="{
+                    'selected-choice': answers[questionIndex] === index,
+                  }"
                 >
                   {{ choice }}
-                </li>
+                  <input
+                    hidden
+                    type="radio"
+                    :name="question.id"
+                    :value="index"
+                    @change="updateAnswer(questionIndex, index, question.id)"
+                    :checked="answers[questionIndex] === index"
+                  />
+                </label>
               </ul>
             </div>
           </swiper-slide>
@@ -59,6 +83,8 @@ import ButtonGo from "@/components/ButtonGo.vue";
 import { useAudioStore } from "@/stores/useAudio";
 import { ref, watchEffect, onMounted, computed } from "vue";
 import { useQuestionStroe } from "@/stores/questionStroe";
+import { useAnswerStore } from "@/stores/answerStore";
+
 // swiper
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -96,13 +122,29 @@ const newQuestions = computed(() => {
     return question;
   });
 });
+const answerStore = useAnswerStore();
+const updateAnswer = (questionIndex, index, id) => {
+  answers.value[questionIndex] = index;
+  selectAnswer(id, index + 1);
+};
 
+const answers = ref([]);
+watchEffect(() => {
+  if (Array.isArray(questions.value) && questions.value.length > 0) {
+    answers.value = Array(questions.value.length).fill(null);
+  }
+});
 onMounted(() => {
   watchEffect(() => {
     console.log("isPlaying:", isPlaying);
     isPlayingIcon.value = isPlaying;
   });
 });
+
+const selectAnswer = (questionId, answer) => {
+  answerStore.addOrUpdateAnswer(questionId, answer);
+};
+
 const onSlideChange = () => {
   slideBiginnig.value = swiperInstance.value.isBeginning;
   slideEnd.value = swiperInstance.value.isEnd;
@@ -121,7 +163,7 @@ function onSwiper(swiper) {
 
 const swiperNextSlide = () => {
   if (slideEnd.value) {
-    router.push('./learnings');
+    router.push("./learnings");
   } else {
     swiperInstance.value.slideNext();
   }
@@ -138,5 +180,9 @@ const swiperPrevSlide = () => {
 const modules = [Navigation];
 </script>
   
-  <style scoped>
+<style scoped>
+.selected-choice {
+  border: 3px solid #ff913f !important; /* เปลี่ยนเป็นสีที่คุณต้องการ */
+  box-shadow: 3px 3px 5px #ff923fcb;
+}
 </style>

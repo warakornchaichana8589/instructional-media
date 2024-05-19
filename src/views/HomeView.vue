@@ -17,8 +17,8 @@
           <RouterLink to="/questions" class=" relative z-10">
   
             <button type="button"
-            class="cursor-pointer flex justify-center items-center w-auto px-5 py-2 lg:px-8 lg:py-5 bg-[#F7BB66] custom-radius font-semibold text-center text-[20px] lg:text-[32px] shadow-lg hover:shadow-xl disabled:shadow-none"
-            :class="inputStore.inputNameValue === '' ? 'px-5 py-2 lg:px-8 lg:py-5' : 'px-8 py-0 lg:px-7 lg:py-1'"
+            class="cursor-pointer flex justify-center items-center w-auto bg-[#F7BB66] custom-radius font-semibold text-center text-[20px] lg:text-[32px] shadow-lg hover:shadow-xl disabled:shadow-none"
+            :class="inputStore.inputNameValue === '' ? 'px-5 py-2 lg:px-8 lg:py-2' : 'px-8 py-0 lg:px-7 lg:py-2'"
             :disabled="inputStore.inputNameValue === ''"
             >
             {{ inputStore.inputNameValue === '' ? 'ลงทะเบียน' : 'เข้าสู่ระบบ' }}
