@@ -89,7 +89,7 @@ const buttonText = computed(() => {
   return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ก่อนหน้า";
 });
 const buttonTextEnd = computed(() => {
-  return slideEnd.value ? "ดูคะแนน" : "ถัดไป";
+  return slideEnd.value ? "แบบฝึกหัด" : "ถัดไป";
 });
 function onSwiper(swiper) {
   swiperInstance.value = swiper;
@@ -97,7 +97,7 @@ function onSwiper(swiper) {
 
 const swiperNextSlide = () => {
   if (slideEnd.value) {
-    router.push("./show-score");
+    router.push("./quiz-view");
   } else {
     swiperInstance.value.slideNext();
   }

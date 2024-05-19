@@ -7,14 +7,26 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
-
+import { defineProps, ref } from 'vue';
+import Sound from '../assets/sound/bloop-1-184019.mp3'
 const props = defineProps({
     text:String,
     fun: Function,
     classCustomFont:String,
     disableToggle:Boolean,
 })
+const  audioQ = ref(null)
+const fun =()=>{
+  if (audioQ.value && !audioQ.value.paused) {
+    // หยุดและเคลียร์เสียงที่กำลังเล่น
+    audioQ.value.pause();
+    audioQ.value = null;
+  }
+  // เริ่มเล่นเสียงใหม่
+  audioQ.value = new Audio(Sound);
+  audioQ.value.volume = 0.5;
+  audioQ.value.play();
+}
 </script>
 
 <style scoped>

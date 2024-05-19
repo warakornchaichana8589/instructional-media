@@ -20,11 +20,11 @@
                 v-if="!question.imageUrl"
                 class="text-[18px] lg:text-[32px] mt-5"
               >
-                ข้อ {{ question.id }} {{ question.question }}
+                ข้อ {{ question.id }} <span v-html="question.question"></span> 
               </h3>
               <div v-if="question.imageUrl" class="flex gap-2 mt-10 justify-between items-center w-full">
                 <h3 class="text-[18px] lg:text-[32px]">
-                  ข้อ {{ question.id }} {{ question.question }}
+                  ข้อ {{ question.id }} <span v-html="question.question"></span> 
                 </h3>
                 <img
                   :src="question.imageUrl"
@@ -183,7 +183,7 @@ const swiperNextSlide = () => {
 
 const swiperPrevSlide = () => {
   if (slideBiginnig.value) {
-    router.back();
+    router.push('/home');
   } else {
     swiperInstance.value.slidePrev();
   }

@@ -81,7 +81,7 @@ export const useQuestionStroe = defineStore("useQuestion", () => {
     },
     {
       id: 8,
-      question: "คำต่อไปนี้เรียงเป็นประโยคได้ว่าอย่างไร หยิบ/พี่/บน/ปากกา/โต๊ะ",
+      question: "คำต่อไปนี้เรียงเป็นประโยคได้ว่าอย่างไร <br/> <span class='text-[#FC9C0D]'>หยิบ/พี่/บน/ปากกา/โต๊ะ</span>",
       choices: [
         "ก. ปากกาหยิบพี่บนโต๊ะ",
         "ข. พี่หยิบปากกาบนโต๊ะ",

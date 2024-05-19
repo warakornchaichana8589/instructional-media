@@ -1,10 +1,10 @@
 <template>
     <div>
-      <Layout bgImage="3.png" class="fadeIn">
+      <Layout bgImage="explanation.png" class="fadeIn">
         <div class="flex h-full sm:p-[20px] p-1 relative flex-col"></div>
         <div class="absolute bottom-2 lg:bottom-5 right-2 lg:right-5 z-10">
             <ButtonGo
-              text="ถัดไป"
+              text="เริ่มทดสอบ"
               classCustomFont="text-[14px] lg:text-[30px]"
               @click="NextSlide"
              
@@ -34,7 +34,7 @@
   });
   
   const NextSlide = () => {
-    router.push("/explanation");
+    router.push("/questions");
   };
   
   

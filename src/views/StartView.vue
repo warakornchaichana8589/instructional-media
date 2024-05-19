@@ -5,7 +5,7 @@
        
 
        
-        <RouterLink  to="/advice" class="btn loader__balls__group cursor-pointer mb-0 mt-auto text-white flex justify-center items-center bg-red-500 h-auto mx-auto px-2 py-1 lg:px-9 lg:py-3 rounded-full font-medium sm:text-lg lg:text-2xl text-sm leading-none">เริ่มเลย</RouterLink>
+        <RouterLink  to="/home" class="btn loader__balls__group cursor-pointer mb-0 mt-auto text-white flex justify-center items-center bg-red-500 h-auto mx-auto px-2 py-1 lg:px-9 lg:py-3 rounded-full font-medium sm:text-lg lg:text-2xl text-sm leading-none">เริ่มเลย</RouterLink>
         
       </div>
       
