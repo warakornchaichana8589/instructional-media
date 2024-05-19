@@ -21,7 +21,7 @@
             :class="inputStore.inputNameValue === '' ? 'px-5 py-2 lg:px-8 lg:py-2' : 'px-8 py-2 lg:px-7 lg:py-2'"
             :disabled="inputStore.inputNameValue === ''"
             >
-            {{ inputStore.inputNameValue === '' ? 'ลงทะเบียน' : 'เข้าสู่ระบบ' }}
+            {{ inputStore.inputNameValue === '' ? 'ลงทะเบียน' : 'เริ่มสอบ' }}
           </button>
           </RouterLink>
         </div>

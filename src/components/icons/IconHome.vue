@@ -1,6 +1,6 @@
 <template>
   <div
-    class="shadow-md hover:shadow-2xl rounded-full lg:w-[60px] lg:h-[60px] w-[35px] h-[35px] flex justify-center items-center bg-[#FF5D18]"
+    class="relative z-10 shadow-md hover:shadow-2xl rounded-full lg:w-[60px] lg:h-[60px] w-[35px] h-[35px] flex justify-center items-center bg-[#FF5D18]"
   >
     <div
       @click="goHome"

@@ -31,15 +31,12 @@
                   alt="Question Image"
                   class="max-w-[70px] lg:max-w-[180px]  rounded-2xl shadow-md"
                 />
-              
-
-               
               </div>
-              <ul class="flex flex-col gap-2 lg:gap-3">
+              <ul class="flex flex-col gap-2 lg:gap-3 justify-start">
                 <label
                   v-for="(choice, index) in question.choices"
                   :key="index"
-                  class="cursor-pointer px-4 py-1 lg:px-6 lg:py-2 bg-[#FCD24F] rounded-3xl text-[16px] lg:text-[24px]"
+                  class="cursor-pointer px-4 py-1 lg:px-6 lg:py-2 bg-[#FCD24F] rounded-3xl text-[16px] lg:text-[24px] min-w-[200px] lg:min-w-[300px]"
                   :class="{
                     'selected-choice': answers[questionIndex] === index,
                   }"
