@@ -12,8 +12,8 @@
             <swiper-slide>
               <Quiz01/>
             </swiper-slide>
-            <swiper-slide>2
-             
+            <swiper-slide>
+              <Quiz02/>
             </swiper-slide>
             <swiper-slide>
              3
@@ -46,7 +46,7 @@
   import { useAudioStore } from "@/stores/useAudio";
   import { ref, watchEffect, onMounted, computed } from "vue";
   import Quiz01 from "@/components/Quiz01.vue";
-  
+  import Quiz02 from "@/components/Quiz02.vue";
   
   
   // swiper

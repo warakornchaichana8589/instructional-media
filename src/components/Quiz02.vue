@@ -10,40 +10,38 @@
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
           <div class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black">
-            1
+            5
           </div>
-          <img :src="image01" alt="" class="max-w-[50px] lg:max-w-[100px] " />
+          <img :src="image05" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-       
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz01" />
+        <InputSound placeholder="แต่งประโยค" idQuiz="quiz05" />
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
           <div class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black">
-            2
+            6
           </div>
-          <img :src="image02" alt="" class="max-w-[50px] lg:max-w-[100px] " />
+          <img :src="image06" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-        
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz02" />
+        <InputSound placeholder="แต่งประโยค" idQuiz="quiz06"/>
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
           <div class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black">
-            3
+            7
           </div>
-          <img :src="image03" alt="" class="max-w-[50px] lg:max-w-[100px] " />
+          <img :src="image07" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz03" />
+        <InputSound placeholder="แต่งประโยค" idQuiz="quiz07"/>
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
           <div class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black">
-            4
+            8
           </div>
-          <img :src="image04" alt="" class="max-w-[50px] lg:max-w-[100px] " />
+          <img :src="image08" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz04" />
+        <InputSound placeholder="แต่งประโยค" idQuiz="quiz08"/>
       </div>
     </div>
     </div>
