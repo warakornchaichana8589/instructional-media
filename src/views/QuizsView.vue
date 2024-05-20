@@ -1,6 +1,6 @@
 <template>
     <div>
-      <Layout bgImage="BG.png" class="fadeIn">
+      <Layout bgImage="bg-l.png" class="fadeIn">
         
         <div class="flex relative h-full w-full justify-center items-center">
           <swiper
@@ -10,13 +10,13 @@
             @slideChange="onSlideChange"
           >
             <swiper-slide>
-              <img :src="image17" alt="">
+              <Quiz01/>
+            </swiper-slide>
+            <swiper-slide>2
+             
             </swiper-slide>
             <swiper-slide>
-              <img :src="image18" alt="">
-            </swiper-slide>
-            <swiper-slide>
-              <img :src="image19" alt="">
+             3
             </swiper-slide>
              
           </swiper>
@@ -45,10 +45,8 @@
   import ButtonGo from "@/components/ButtonGo.vue";
   import { useAudioStore } from "@/stores/useAudio";
   import { ref, watchEffect, onMounted, computed } from "vue";
+  import Quiz01 from "@/components/Quiz01.vue";
   
-  import image17 from '@/assets/images/17.png'
-  import image18 from '@/assets/images/18.png'
-  import image19 from '@/assets/images/19.png'
   
   
   // swiper
