@@ -1,41 +1,7 @@
 <template>
     <div>
       <Layout bgImage="bg-l.png" class="fadeIn">
-        
-        <div class="flex relative h-full w-full justify-center items-center">
-          <swiper
-            :modules="modules"
-            class="mySwiper h-full"
-            @swiper="onSwiper"
-            @slideChange="onSlideChange"
-          >
-            <swiper-slide>
-              <Quiz01/>
-            </swiper-slide>
-            <swiper-slide>
-              <Quiz02/>
-            </swiper-slide>
-            <swiper-slide>
-              <QuizDrag01 />
-            </swiper-slide>
-             
-          </swiper>
-          <div class="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 z-10">
-            <ButtonGo
-              :text="buttonText"
-              classCustomFont="text-[14px] lg:text-[30px]"
-              @click="swiperPrevSlide"
-            />
-          </div>
-          <div class="absolute bottom-2 lg:bottom-5 right-2 lg:right-5 z-10">
-            <ButtonGo
-              :text="buttonTextEnd"
-              classCustomFont="text-[14px] lg:text-[30px]"
-              @click="swiperNextSlide"
-              :disableToggle="buttonDisabled"
-            />
-          </div>
-        </div>
+        <QuizDrag01 />
       </Layout>
     </div>
   </template>
@@ -45,8 +11,6 @@
   import ButtonGo from "@/components/ButtonGo.vue";
   import { useAudioStore } from "@/stores/useAudio";
   import { ref, watchEffect, onMounted, computed } from "vue";
-  import Quiz01 from "@/components/Quiz01.vue";
-  import Quiz02 from "@/components/Quiz02.vue";
   import QuizDrag01 from "@/components/QuizDrag01.vue";
   
   // swiper

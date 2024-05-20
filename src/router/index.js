@@ -8,7 +8,7 @@ import AdviceView from '../views/AdviceView.vue'
 import ShowStepView from '../views/ShowStepView.vue'
 import QuizsView from '../views/QuizsView.vue'
 import ExplanationView from '../views/ExplanationView.vue'
-
+import QuizDragView from '../views/QuizDragView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -57,6 +57,11 @@ const router = createRouter({
       path:'/explanation',
       name:'Explanation',
       component:ExplanationView
+    },
+    {
+      path:'/quiz-drag',
+      name:'QuizDragView',
+      component: QuizDragView
     }
   ]
 })
