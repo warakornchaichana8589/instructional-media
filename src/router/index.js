@@ -9,6 +9,8 @@ import ShowStepView from '../views/ShowStepView.vue'
 import QuizsView from '../views/QuizsView.vue'
 import ExplanationView from '../views/ExplanationView.vue'
 import QuizDragView from '../views/QuizDragView.vue'
+import QuizDragView02 from '../views/QuizDragView02.vue'
+import QuizDragView03 from '../views/QuizDragView03.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -62,6 +64,16 @@ const router = createRouter({
       path:'/quiz-drag',
       name:'QuizDragView',
       component: QuizDragView
+    },
+    {
+      path:'/quiz-drag02',
+      name:'QuizDragView02',
+      component: QuizDragView02
+    },
+    {
+      path:'/quiz-drag03',
+      name:'QuizDragView03',
+      component: QuizDragView03
     }
   ]
 })

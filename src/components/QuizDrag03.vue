@@ -10,8 +10,8 @@
       <!-- ข้อ1 -->
       <div class="flex flex-col">
         <div class="flex">
-          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 1 : </h3>
-          <span v-for="(item, index) in answerList1" :key="index" class="text-[18px] lg:text-[30px]">
+          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 7 : </h3>
+          <span v-for="(item, index) in answerList7" :key="index" class="text-[18px] lg:text-[30px]">
             {{ item.name }}
           </span>
         </div>
@@ -20,8 +20,8 @@
            
             <draggable
               class="list-group flex gap-2 border-2 border-dashed h-full w-full min-h-full  max-w-full p-1"
-              :list="answerList1"
-              group="people"
+              :list="answerList7"
+              group="people7"
               @change="log"
               itemKey="name"
             >
@@ -36,8 +36,8 @@
           <div class="flex justify-center items-center gap-2 h-full w-full">
             <draggable
               class="list-group flex gap-2 border-2 border-dashed w-full h-full min-h-full max-w-full p-1"
-              :list="list1"
-              group="people"
+              :list="list7"
+              group="people7"
               @change="log"
               itemKey="name"
             >
@@ -52,16 +52,16 @@
          
         </div>
 
-        <rawDisplayer class="" :value="list1" title="List 1" />
-        <rawDisplayer class="" :value="answerList1" title="answerList1" />
+        <rawDisplayer class="" :value="list7" title="List 7" />
+        <rawDisplayer class="" :value="answerList7" title="answerList7" />
       </div>
       <!-- ข้อ1 -->
 
       <!-- ข้อ2 -->
       <div class="flex flex-col">
         <div class="flex">
-          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 2 : </h3>
-          <span v-for="(item, index) in answerList2" :key="index" class="text-[18px] lg:text-[30px]">
+          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 8 : </h3>
+          <span v-for="(item, index) in answerList8" :key="index" class="text-[18px] lg:text-[30px]">
             {{ item.name }}
           </span>
         </div>
@@ -70,8 +70,8 @@
            
             <draggable
               class="list-group flex gap-2 border-2 border-dashed h-full w-full min-h-full  max-w-full p-1"
-              :list="answerList2"
-              group="people2"
+              :list="answerList8"
+              group="people8"
               @change="log"
               itemKey="name"
             >
@@ -86,8 +86,8 @@
           <div class="flex justify-center items-center gap-2 h-full w-full">
             <draggable
               class="list-group flex gap-2 border-2 border-dashed w-full h-full min-h-full max-w-full p-1"
-              :list="list2"
-              group="people2"
+              :list="list8"
+              group="people8"
               @change="log"
               itemKey="name"
             >
@@ -102,16 +102,16 @@
          
         </div>
 
-        <rawDisplayer class="" :value="list2" title="List 3" />
-        <rawDisplayer class="" :value="answerList2" title="List 4" />
+        <rawDisplayer class="" :value="list8" title="List 8" />
+        <rawDisplayer class="" :value="answerList8" title="answerList8" />
       </div>
       <!-- ข้อ2 -->
 
       <!-- ข้อ3 -->
       <div class="flex flex-col">
         <div class="flex">
-          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 3 : </h3>
-          <span v-for="(item, index) in answerList3" :key="index" class="text-[18px] lg:text-[30px]">
+          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 9 : </h3>
+          <span v-for="(item, index) in answerList9" :key="index" class="text-[18px] lg:text-[30px]">
             {{ item.name }}
           </span>
         </div>
@@ -120,8 +120,8 @@
            
             <draggable
               class="list-group flex gap-2 border-2 border-dashed h-full w-full min-h-full  max-w-full p-1"
-              :list="answerList3"
-              group="people3"
+              :list="answerList9"
+              group="people9"
               @change="log"
               itemKey="name"
             >
@@ -136,8 +136,8 @@
           <div class="flex justify-center items-center gap-2 h-full w-full">
             <draggable
               class="list-group flex gap-2 border-2 border-dashed w-full h-full min-h-full max-w-full p-1"
-              :list="list3"
-              group="people3"
+              :list="list9"
+              group="people9"
               @change="log"
               itemKey="name"
             >
@@ -152,8 +152,8 @@
          
         </div>
 
-        <rawDisplayer class="" :value="list3" title="List 3" />
-        <rawDisplayer class="" :value="answerList3" title="answerList3" />
+        <rawDisplayer class="" :value="list9" title="List 9" />
+        <rawDisplayer class="" :value="answerList9" title="answerList9" />
       </div>
       <!-- ข้อ3 -->
 
@@ -161,7 +161,7 @@
       <!-- ข้อ4 -->
     </div>
 
-
+    
   </div>
 </template>
   
@@ -169,33 +169,33 @@
 import { ref } from "vue";
 import draggable from "vuedraggable";
 
-const list1 = ref([
-  { name: "สุดา", id: 1 },
-  { name: "เนย", id: 3 },
+const list7 = ref([
+  { name: "ไฟ", id: 3 },
+  { name: "ก่อ", id: 2 },
+  { name: "พ่อ", id: 1 },
+]);
+const answerList7 = ref([]);
+
+const list8 = ref([
   { name: "มี", id: 2 },
+  { name: "มะละกอ", id: 3 },
+  { name: "อา", id: 1 },
 ]);
-const answerList1 = ref([]);
+const answerList8 = ref([]);
 
-const list2 = ref([
-  { name: "เกย", id: 2 },
-  { name: "เรือ", id: 1 },
-  { name: "หาด", id: 3 },
+const list9 = ref([
+  { name: "ท่อน้ำ", id: 3 },
+  { name: "ทำ", id: 2 },
+  { name: "น้า", id: 1 },
 ]);
-const answerList2 = ref([]);
-
-const list3 = ref([
-  { name: "ตัด", id: 2 },
-  { name: "ใบเตย", id: 3 },
-  { name: "สีดา", id: 1 },
-]);
-const answerList3 = ref([]);
+const answerList9 = ref([]);
 
 const log = (evt) => {
   window.console.log(evt);
 };
 </script>
   
-  <style scoped>
+<style scoped>
 
 /* inspired form gumroad website */
 .button {

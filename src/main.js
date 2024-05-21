@@ -12,3 +12,4 @@ app.use(createPinia())
 app.use(router)
 app.use(VueSound)
 app.mount('#app')
+

@@ -37,11 +37,14 @@
         <InputSound placeholder="แต่งประโยค" idQuiz="quiz03" />
       </div>
       <div class="flex flex-col justify-center items-center">
-        <div class="flex justify-center lg:justify-start items-center w-full">
+        <div class="flex justify-center lg:justify-start items-center w-full" >
           <div class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black">
             4
           </div>
-          <img :src="image04" alt="" class="max-w-[50px] lg:max-w-[100px] " />
+         
+            <img :src="image04" alt="" class="max-w-[50px] lg:max-w-[100px] " />
+ 
+         
         </div>
         <InputSound placeholder="แต่งประโยค" idQuiz="quiz04" />
       </div>
@@ -61,6 +64,10 @@ import image06 from "../assets/images/q06.png";
 import image07 from "../assets/images/q07.png";
 import image08 from "../assets/images/q08.png";
 import InputSound from "./InputSound.vue";
+import { ref } from 'vue';
+
+
+
 </script>
 
 <style lang="scss" scoped>

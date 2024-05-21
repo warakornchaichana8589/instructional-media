@@ -15,9 +15,7 @@
             <swiper-slide>
               <Quiz02/>
             </swiper-slide>
-            <swiper-slide>
-              <QuizDrag01 />
-            </swiper-slide>
+           
              
           </swiper>
           <div class="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 z-10">
@@ -89,7 +87,7 @@
 
   };
   const buttonText = computed(() => {
-    return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ก่อนหน้า";
+    return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ย้อยกลับ";
   });
   const buttonTextEnd = computed(() => {
     return slideEnd.value ? "แบบฝึกหัด" : "ถัดไป";
@@ -100,7 +98,7 @@
   
   const swiperNextSlide = () => {
     if (slideEnd.value) {
-      router.push("./quiz-view");
+      router.push("./quiz-drag");
     } else {
       swiperInstance.value.slideNext();
     }

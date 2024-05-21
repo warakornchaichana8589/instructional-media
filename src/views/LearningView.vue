@@ -86,7 +86,7 @@ const onSlideChange = () => {
   audio.value.play();
 };
 const buttonText = computed(() => {
-  return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ก่อนหน้า";
+  return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ย้อยกลับ";
 });
 const buttonTextEnd = computed(() => {
   return slideEnd.value ? "แบบฝึกหัด" : "ถัดไป";
