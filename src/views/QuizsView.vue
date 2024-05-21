@@ -69,6 +69,7 @@
   const audio = ref(null);
   audio.value = new Audio(audioSrcInput);
   
+  import { useAnswerStore } from "@/stores/answerStore";
   
   onMounted(() => {
     watchEffect(() => {
@@ -77,12 +78,15 @@
   });
   
   const buttonDisabled = ref(false);
-  
+  const answerStore = useAnswerStore();
   const onSlideChange = () => {
     slideBiginnig.value = swiperInstance.value.isBeginning;
     slideEnd.value = swiperInstance.value.isEnd;
-    slideEnd.value = swiperInstance.value.isEnd;
+    
+    
     audio.value.play();
+
+
   };
   const buttonText = computed(() => {
     return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ก่อนหน้า";

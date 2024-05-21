@@ -1,41 +1,58 @@
 <template>
-    <div id="app">
-      <h2>จัดเรียงคำให้ถูกต้อง:</h2>
-      <draggable v-model="words" @end="checkOrder" class="flex gap-1">
-        <template #item="{ element }" >
-          <div class="bg-[#fdc998f3] hover:bg-[#fdc99886] w-[50px] h-[50px] p-2 rounded-full flex justify-center items-center">
-            {{ element }}
-          </div>
-        </template>
-      </draggable>
-      <p v-if="isCorrect">ถูกต้อง!</p>
-      <p v-else>ลองอีกครั้ง</p>
+    <div class="row">
+      <div class="flex">
+        <h3>Draggable 1</h3>
+        <draggable
+          class="list-group flex gap-2 border-2 w-auto min-w-[40px] min-h-[40px]"
+          :list="list1"
+          group="people"
+          @change="log"
+          itemKey="name"
+        >
+          <template #item="{ element, index }">
+            <div class="list-group-item rounded-full p-3 bg-[#FEC66E] hover:bg-[#bd9350]">{{ element.name }} {{ index }}</div>
+          </template>
+        </draggable>
+      </div>
+  
+      <div class="flex">
+        <h3>Draggable 2</h3>
+        <draggable
+          class="list-group flex gap-2 border-2 w-auto min-w-[40px] min-h-[40px]"
+          :list="list2"
+          group="people"
+          @change="log"
+          itemKey="name"
+        >
+          <template #item="{ element, index }">
+            <div class="list-group-item rounded-full p-3 bg-[#FEC66E] hover:bg-[#bd9350]">{{ element.name }} {{ index }}</div>
+          </template>
+        </draggable>
+      </div>
+      <rawDisplayer class="" :value="list1" title="List 1" />
+      <rawDisplayer class="" :value="list2" title="List 2" />
     </div>
   </template>
   
-  <script>
+  <script setup>
   import { ref } from 'vue';
   import draggable from 'vuedraggable';
   
-  export default {
-    components: {
-      draggable
-    },
-    setup() {
-      const words = ref(["ปลา", "แมว", "กิน"]);
-      const correctOrder = ["แมว", "กิน", "ปลา"];
-      const isCorrect = ref(false);
+  const list1 = ref([
+    { name: "John", id: 1 },
+    { name: "Joao", id: 2 },
+    { name: "Jean", id: 3 },
+    { name: "Gerard", id: 4 },
+  ]);
   
-      const checkOrder = () => {
-        isCorrect.value = JSON.stringify(words.value) === JSON.stringify(correctOrder);
-      };
+  const list2 = ref([
+    { name: "Juan", id: 5 },
+    { name: "Edgard", id: 6 },
+    { name: "Johnson", id: 7 },
+  ]);
   
-      return {
-        words,
-        isCorrect,
-        checkOrder
-      };
-    }
+  const log = (evt) => {
+    window.console.log(evt);
   };
   </script>
   

@@ -20,16 +20,19 @@
                 v-if="!question.imageUrl"
                 class="text-[18px] lg:text-[32px] mt-5"
               >
-                ข้อ {{ question.id }} <span v-html="question.question"></span> 
+                ข้อ {{ question.id }} <span v-html="question.question"></span>
               </h3>
-              <div v-if="question.imageUrl" class="flex gap-2 mt-10 justify-between items-center w-full">
+              <div
+                v-if="question.imageUrl"
+                class="flex gap-2 mt-10 justify-between items-center w-full"
+              >
                 <h3 class="text-[18px] lg:text-[32px]">
-                  ข้อ {{ question.id }} <span v-html="question.question"></span> 
+                  ข้อ {{ question.id }} <span v-html="question.question"></span>
                 </h3>
                 <img
                   :src="question.imageUrl"
                   alt="Question Image"
-                  class="max-w-[70px] lg:max-w-[180px]  rounded-2xl shadow-md"
+                  class="max-w-[70px] lg:max-w-[180px] rounded-2xl shadow-md"
                 />
               </div>
               <ul class="flex flex-col gap-2 lg:gap-3 justify-start">
@@ -80,7 +83,7 @@
 import Layout from "@/components/Layout.vue";
 import ButtonGo from "@/components/ButtonGo.vue";
 import { useAudioStore } from "@/stores/useAudio";
-import { ref, watchEffect, onMounted, computed } from "vue";
+import { ref, watchEffect, onMounted, computed, watch } from "vue";
 import { useQuestionStroe } from "@/stores/questionStroe";
 import { useAnswerStore } from "@/stores/answerStore";
 import { useCounterStore } from "@/stores/counter";
@@ -99,14 +102,14 @@ const router = useRouter();
 
 const { isPlaying, play, pause } = useAudioStore();
 const isPlayingIcon = ref(isPlaying);
-
+const { questions } = useQuestionStroe();
 // Sound
 import audioSrcInput from "../assets/sound/page-flip-47177.mp3";
 const audio = ref(null);
 audio.value = new Audio(audioSrcInput);
+const answers = ref([]);
 
-const { questions } = useQuestionStroe();
-
+const buttonDisabled = ref(false);
 const getImageUrl = (imageName) => {
   return new URL(`../assets/images/${imageName}`, import.meta.url).href;
 };
@@ -124,17 +127,13 @@ const newQuestions = computed(() => {
 });
 const answerStore = useAnswerStore();
 const updateAnswer = (questionIndex, index, id) => {
-  answers.value[questionIndex] = index;
-  selectAnswer(id, index + 1);
-  if(answers.value.length < 10 && slideEnd.value){
-    buttonDisabled.value = true;
-  }else{
+  if (!swiperInstance.value.isEnd) {
     buttonDisabled.value = false;
   }
- 
+  answers.value[questionIndex] = index;
+  selectAnswer(id, index + 1);
 };
 
-const answers = ref([]);
 watchEffect(() => {
   if (Array.isArray(questions.value) && questions.value.length > 0) {
     answers.value = Array(questions.value.length).fill(null);
@@ -151,18 +150,10 @@ const selectAnswer = (questionId, answer) => {
   answerStore.addOrUpdateAnswer(questionId, answer);
 };
 
-const buttonDisabled = ref(false);
-
 const onSlideChange = () => {
   slideBiginnig.value = swiperInstance.value.isBeginning;
   slideEnd.value = swiperInstance.value.isEnd;
-  slideEnd.value = swiperInstance.value.isEnd;
   audio.value.play();
-  if(answers.value.length < 10 && slideEnd.value){
-    buttonDisabled.value = true;
-  }else{
-    buttonDisabled.value = false;
-  }
 };
 const buttonText = computed(() => {
   return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ก่อนหน้า";
@@ -173,7 +164,7 @@ const buttonTextEnd = computed(() => {
 function onSwiper(swiper) {
   swiperInstance.value = swiper;
 }
-const useCounter = useCounterStore()
+const useCounter = useCounterStore();
 const swiperNextSlide = () => {
   if (slideEnd.value) {
     useCounter.setState();
@@ -185,16 +176,15 @@ const swiperNextSlide = () => {
 
 const swiperPrevSlide = () => {
   if (slideBiginnig.value) {
-    router.push('/home');
+    router.push("/home");
   } else {
     swiperInstance.value.slidePrev();
   }
 };
 
-
 import audioQuestion from "../assets/sound/clickselect3-107712.mp3";
-const  audioQ = ref(null)
-const toggleAudioQ = ()=>{
+const audioQ = ref(null);
+const toggleAudioQ = () => {
   if (audioQ.value && !audioQ.value.paused) {
     // หยุดและเคลียร์เสียงที่กำลังเล่น
     audioQ.value.pause();
@@ -204,7 +194,19 @@ const toggleAudioQ = ()=>{
   audioQ.value = new Audio(audioQuestion);
   audioQ.value.volume = 0.5;
   audioQ.value.play();
-}
+};
+
+watch(
+  [() => answerStore.answers, () => swiperInstance.value && swiperInstance.value.isEnd],
+  ([newAnswers, isEnd]) => {
+    if ((Object.keys(newAnswers).length === 10 && isEnd) || !isEnd) {
+      buttonDisabled.value = false;
+    } else {
+      buttonDisabled.value = true;
+    }
+  },
+  { immediate: true } // เพิ่มออปชัน immediate เพื่อเรียก watcher ทันทีที่คอมโพเนนต์ถูกสร้าง
+);
 
 const modules = [Navigation];
 </script>
