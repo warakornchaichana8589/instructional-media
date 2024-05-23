@@ -15,7 +15,7 @@
           <img :src="image01" alt="" class="max-w-[50px] lg:max-w-[100px] " />
         </div>
        
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz01" />
+        <InputTextSound @updateName="handleInputChange1" typeInput="text" />
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
@@ -25,7 +25,7 @@
           <img :src="image02" alt="" class="max-w-[50px] lg:max-w-[100px] " />
         </div>
         
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz02" />
+        <InputTextSound @updateName="handleInputChange2" typeInput="text" />
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
@@ -34,7 +34,8 @@
           </div>
           <img :src="image03" alt="" class="max-w-[50px] lg:max-w-[100px] " />
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz03" />
+        {{ valueString }}
+        <InputTextSound @updateName="handleInputChange3" typeInput="text" />
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full" >
@@ -46,7 +47,7 @@
  
          
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz04" />
+        <InputTextSound @updateName="handleInputChange4" typeInput="text" />
       </div>
     </div>
     </div>
@@ -63,9 +64,33 @@ import image05 from "../assets/images/q05.png";
 import image06 from "../assets/images/q06.png";
 import image07 from "../assets/images/q07.png";
 import image08 from "../assets/images/q08.png";
-import InputSound from "./InputSound.vue";
-import { ref } from 'vue';
+import InputTextSound from "./InputTextSound.vue";
 
+import { ref } from 'vue';
+const valueString = ref([]);
+
+
+const handleInputChange1 = (value) =>{
+  const newValue = {
+    id: 1,
+    value:value
+  }
+  valueString.value.push(newValue)
+}
+const handleInputChange2 = (value) =>{
+  const newValue = {
+    id: 2,
+    value:value
+  }
+  valueString.value.push(newValue)
+}
+
+const handleInputChange3 = (value) =>{
+  valueString.value = value
+}
+const handleInputChange4 = (value) =>{
+  valueString.value = value
+}
 
 
 </script>
