@@ -20,7 +20,6 @@ import { defineProps } from "vue";
 import { useDataStore } from "@/stores/dataStore";
 const inputStore = useDataStore();
 const inputValue = ref(null);
-const audioElement = ref(null);
 const audio = ref(null);
 import audioSrcInput from "../assets/sound/bloop-1-184019.mp3";
 const toggleAudio = ()=>{
@@ -33,9 +32,6 @@ const props = defineProps({
   idQuiz:String
 });
 
-const addValueQuiz = ()=>{
-    
-}
 // onMounted(() => {
 //   audioElement.value.addEventListener("ended", () => {});
 // });
