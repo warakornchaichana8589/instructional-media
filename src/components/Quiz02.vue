@@ -14,7 +14,7 @@
           </div>
           <img :src="image05" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz05" />
+        <InputTextSound @updateName="handleInputChange5" typeInput="text" />
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
@@ -23,7 +23,7 @@
           </div>
           <img :src="image06" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz06"/>
+        <InputTextSound @updateName="handleInputChange6" typeInput="text" />
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
@@ -32,7 +32,7 @@
           </div>
           <img :src="image07" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz07"/>
+        <InputTextSound @updateName="handleInputChange7" typeInput="text" />
       </div>
       <div class="flex flex-col justify-center items-center">
         <div class="flex justify-center lg:justify-start items-center w-full">
@@ -41,7 +41,7 @@
           </div>
           <img :src="image08" alt="" class="max-w-[50px] lg:max-w-[100px]" />
         </div>
-        <InputSound placeholder="แต่งประโยค" idQuiz="quiz08"/>
+        <InputTextSound @updateName="handleInputChange8" typeInput="text" />
       </div>
     </div>
     </div>
@@ -58,7 +58,47 @@ import image05 from "../assets/images/q05.png";
 import image06 from "../assets/images/q06.png";
 import image07 from "../assets/images/q07.png";
 import image08 from "../assets/images/q08.png";
-import InputSound from "./InputSound.vue";
+import InputTextSound from "./InputTextSound.vue";
+
+
+import { useQuizValueStore } from '@/stores/quizValueStroe'
+const useQuizValue = useQuizValueStore();
+import { ref } from 'vue';
+
+const handleInputChange5 = (value) =>{
+  let newValue = {
+    id: 5,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+const handleInputChange6 = (value) =>{
+  let newValue = {
+    id: 6,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+
+const handleInputChange7 = (value) =>{
+  let newValue = {
+    id: 7,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+const handleInputChange8 = (value) =>{
+  let newValue = {
+    id: 8,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+
+
+
+
+
 </script>
 
 <style lang="scss" scoped>

@@ -87,7 +87,7 @@
 
   };
   const buttonText = computed(() => {
-    return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ย้อยกลับ";
+    return slideBiginnig.value ? "หน้าบทเรียน" : "ย้อยกลับ";
   });
   const buttonTextEnd = computed(() => {
     return slideEnd.value ? "แบบฝึกหัด" : "ถัดไป";
@@ -98,7 +98,7 @@
   
   const swiperNextSlide = () => {
     if (slideEnd.value) {
-      router.push("./quiz-drag");
+      router.push("./qustion-image01");
     } else {
       swiperInstance.value.slideNext();
     }
@@ -106,7 +106,7 @@
   
   const swiperPrevSlide = () => {
     if (slideBiginnig.value) {
-      router.push("./home");
+      router.push("./learnings");
     } else {
       swiperInstance.value.slidePrev();
     }

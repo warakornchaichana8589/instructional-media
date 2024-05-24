@@ -34,7 +34,6 @@
           </div>
           <img :src="image03" alt="" class="max-w-[50px] lg:max-w-[100px] " />
         </div>
-        {{ valueString }}
         <InputTextSound @updateName="handleInputChange3" typeInput="text" />
       </div>
       <div class="flex flex-col justify-center items-center">
@@ -66,30 +65,38 @@ import image07 from "../assets/images/q07.png";
 import image08 from "../assets/images/q08.png";
 import InputTextSound from "./InputTextSound.vue";
 
+import { useQuizValueStore } from '@/stores/quizValueStroe'
+const useQuizValue = useQuizValueStore();
 import { ref } from 'vue';
-const valueString = ref([]);
-
-
+// valueString
 const handleInputChange1 = (value) =>{
-  const newValue = {
+  let newValue = {
     id: 1,
     value:value
   }
-  valueString.value.push(newValue)
+  useQuizValue.setQuizValue(newValue)
 }
 const handleInputChange2 = (value) =>{
-  const newValue = {
+  let newValue = {
     id: 2,
     value:value
   }
-  valueString.value.push(newValue)
+  useQuizValue.setQuizValue(newValue)
 }
 
 const handleInputChange3 = (value) =>{
-  valueString.value = value
+  let newValue = {
+    id: 3,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
 }
 const handleInputChange4 = (value) =>{
-  valueString.value = value
+  let newValue = {
+    id: 4,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
 }
 
 

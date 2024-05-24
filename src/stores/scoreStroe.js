@@ -19,6 +19,7 @@ export const useScoreStore = defineStore("useScore", () => {
     function getTotalExerciseScores (){
         totalExerciseScores.value = exerciseScores.value.reduce((a, b) => a + b, 0)
     }
+    
 
 
 

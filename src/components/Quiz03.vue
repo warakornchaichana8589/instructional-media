@@ -22,6 +22,44 @@ import image64 from "../assets/images/64.png";
 import image65 from "../assets/images/65.png";
 import image66 from "../assets/images/66.png";
 import image67 from "../assets/images/67.png";
+import InputTextSound from "./InputTextSound.vue";
+
+
+import { useQuizValueStore } from '@/stores/quizValueStroe'
+const useQuizValue = useQuizValueStore();
+import { ref } from 'vue';
+
+const handleInputChange5 = (value) =>{
+  let newValue = {
+    id: 5,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+const handleInputChange6 = (value) =>{
+  let newValue = {
+    id: 6,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+
+const handleInputChange7 = (value) =>{
+  let newValue = {
+    id: 7,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+const handleInputChange8 = (value) =>{
+  let newValue = {
+    id: 8,
+    value:value
+  }
+  useQuizValue.setQuizValue(newValue)
+}
+
+
 </script>
 
 <style  scoped>
