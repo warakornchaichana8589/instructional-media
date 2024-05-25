@@ -97,7 +97,7 @@
   
   const swiperNextSlide = () => {
     if (slideEnd.value) {
-      router.push("./qustion-image01");
+      router.push("./quiz-drag");
     } else {
       swiperInstance.value.slideNext();
     }
@@ -105,7 +105,7 @@
   
   const swiperPrevSlide = () => {
     if (slideBiginnig.value) {
-      router.push("./home");
+      router.back();
     } else {
       swiperInstance.value.slidePrev();
     }

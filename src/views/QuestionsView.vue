@@ -53,6 +53,7 @@
                     :value="index"
                     @change="updateAnswer(questionIndex, index, question.id)"
                     :checked="answers[questionIndex] === index"
+                    @click="checkBtnGo"
                   />
                 </label>
               </ul>
@@ -127,13 +128,18 @@ const newQuestions = computed(() => {
 });
 const answerStore = useAnswerStore();
 const updateAnswer = (questionIndex, index, id) => {
-  if (!swiperInstance.value.isEnd) {
+  if (Object.keys(answerStore.answers).length === 10 && swiperInstance.value.isEnd) {
     buttonDisabled.value = false;
   }
+
   answers.value[questionIndex] = index;
   selectAnswer(id, index + 1);
 };
-
+const checkBtnGo = () =>{
+  if (Object.keys(answerStore.answers).length === 9 && swiperInstance.value.isEnd) {
+    buttonDisabled.value = false;
+  }
+}
 watchEffect(() => {
   if (Array.isArray(questions.value) && questions.value.length > 0) {
     answers.value = Array(questions.value.length).fill(null);

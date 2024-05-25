@@ -12,6 +12,9 @@ import QuizDragView from '../views/QuizDragView.vue'
 import QuizDragView02 from '../views/QuizDragView02.vue'
 import QuizDragView03 from '../views/QuizDragView03.vue'
 import QuestionFromImage01 from '../views/QuestionFromImage01.vue'
+import SentencesFromPictures01 from '../views/SentencesFromPictures01.vue'
+import SentencesFromPictures02 from '../views/SentencesFromPictures02.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -80,6 +83,18 @@ const router = createRouter({
       path:'/qustion-image01',
       name: 'QuestionImage01',
       component: QuestionFromImage01
+    }
+    ,
+    {
+      path:'/SentencesFromPictures01',
+      name: 'SentencesFromPictures01',
+      component: SentencesFromPictures01
+    }
+    ,
+    {
+      path:'/SentencesFromPictures02',
+      name: 'SentencesFromPictures02',
+      component: SentencesFromPictures02
     }
   ]
 })

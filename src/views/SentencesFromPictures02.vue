@@ -1,7 +1,10 @@
 <template>
     <div>
       <Layout bgImage="bg-l.png" class="fadeIn">
-        <QuizDrag03 />
+       <!-- //here -->
+        
+       <SentencesImg02 />
+
         <div class="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 z-10">
         <ButtonGo
           text="ย้อยกลับ"
@@ -27,7 +30,7 @@
     import ButtonGo from "@/components/ButtonGo.vue";
     import { useAudioStore } from "@/stores/useAudio";
     import { ref, watchEffect, onMounted, computed } from "vue";
-    import QuizDrag03 from "@/components/QuizDrag03.vue";
+    import SentencesImg02 from "@/components/SentencesImg02.vue";
     
     import { useRouter } from "vue-router";
     const router = useRouter();
@@ -40,7 +43,7 @@
     const buttonDisabled = ref(false);
     
     const swiperNextSlide = () => {
-      router.push("./SentencesFromPictures01");
+      router.push("./quiz-drag01");
       audio.value.play();
     };
     
