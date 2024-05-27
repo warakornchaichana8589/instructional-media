@@ -43,7 +43,7 @@
     const buttonDisabled = ref(false);
     
     const swiperNextSlide = () => {
-      router.push("./quiz-drag01");
+      router.push("./FillInTheBlanksView01");
       audio.value.play();
     };
     

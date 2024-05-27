@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="rounded-xl px-2 pt-3 hover:bg-[rgba(206,215,232,0.5)]">
     <input
       :type="props.typeInput"
       v-model="inputValue"
       @input="handleEnter"
-      class="bg-transparent border-b-2 border-dotted outline-none hover:bg-[rgba(206,215,232,0.5)] focus:bg-[rgba(206,215,232,0.5)] rounded-xl px-2 pt-3"
+      class="bg-transparent border-b-4 rounded-sm px-2 border-dotted outline-none "
     />
   </div>
 </template>

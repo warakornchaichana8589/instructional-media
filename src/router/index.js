@@ -14,6 +14,7 @@ import QuizDragView03 from '../views/QuizDragView03.vue'
 import QuestionFromImage01 from '../views/QuestionFromImage01.vue'
 import SentencesFromPictures01 from '../views/SentencesFromPictures01.vue'
 import SentencesFromPictures02 from '../views/SentencesFromPictures02.vue'
+import FillInTheBlanksView01 from '../views/FillInTheBlanksView01.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -95,6 +96,12 @@ const router = createRouter({
       path:'/SentencesFromPictures02',
       name: 'SentencesFromPictures02',
       component: SentencesFromPictures02
+    }
+    ,
+    {
+      path:'/FillInTheBlanksView01',
+      name: 'FillInTheBlanksView01',
+      component: FillInTheBlanksView01
     }
   ]
 })

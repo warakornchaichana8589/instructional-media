@@ -45,8 +45,7 @@
   import { ref, watchEffect, onMounted, computed } from "vue";
   import Quiz01 from "@/components/Quiz01.vue";
   import Quiz02 from "@/components/Quiz02.vue";
-  import QuizDrag01 from "@/components/QuizDrag01.vue";
-  
+
   // swiper
   import { Swiper, SwiperSlide } from "swiper/vue";
   import "swiper/css";

@@ -14,7 +14,7 @@
         <div class="flex">
           <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 7 :</h3>
           <span
-            v-for="(item, index) in answerList7"
+            v-for="(item, index) in listStore.answerList7"
             :key="index"
             class="text-[18px] lg:text-[30px]"
           >
@@ -58,9 +58,6 @@
             </draggable>
           </div>
         </div>
-
-        <rawDisplayer class="" :value="listStore.list7" title="List 7" />
-        <rawDisplayer class="" :value="listStore.answerList7" title="answerList7" />
       </div>
       <!-- ข้อ1 -->
 
@@ -69,7 +66,7 @@
         <div class="flex">
           <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 8 :</h3>
           <span
-            v-for="(item, index) in answerList8"
+            v-for="(item, index) in listStore.answerList8"
             :key="index"
             class="text-[18px] lg:text-[30px]"
           >
@@ -114,8 +111,7 @@
           </div>
         </div>
 
-        <rawDisplayer class="" :value="listStore.list8" title="List 8" />
-        <rawDisplayer class="" :value="listStore.answerList8" title="answerList 8" />
+      
       </div>
       <!-- ข้อ2 -->
       <!-- ข้อ3 -->
@@ -123,7 +119,7 @@
         <div class="flex">
           <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 9 :</h3>
           <span
-            v-for="(item, index) in answerList9"
+            v-for="(item, index) in listStore.answerList9"
             :key="index"
             class="text-[18px] lg:text-[30px]"
           >
@@ -167,9 +163,6 @@
             </draggable>
           </div>
         </div>
-
-        <rawDisplayer class="" :value="listStore.list9" title="List 9" />
-        <rawDisplayer class="" :value="listStore.answerList9" title="answerList9" />
       </div>
       <!-- ข้อ3 -->
     </div>
@@ -182,32 +175,57 @@ import draggable from "vuedraggable";
 import { useListStore } from "@/stores/listStore";
 const listStore = useListStore();
 
+
 const updateList7 = (event) => {
-  listStore.updateList7(event.to);
+  const { to, from, newIndex, oldIndex } = event;
+  if (from === to) {
+        listStore.updateList7([...listStore.list7]);
+      } else {
+        listStore.updateList7([...to]);
+      }
 };
 
 const updateAnswerList7 = (event) => {
-  listStore.updateAnswerList7(event.to);
+  const { to, from, newIndex, oldIndex } = event;
+  if (from === to) {
+        listStore.updateAnswerList7([...listStore.answerList7]);
+      } else {
+        listStore.updateAnswerList7([...to]);
+      }
 };
-
 const updateList8 = (event) => {
-  listStore.updateList8(event.to);
+  const { to, from, newIndex, oldIndex } = event;
+  if (from === to) {
+        listStore.updateList8([...listStore.list8]);
+      } else {
+        listStore.updateList8([...to]);
+      }
 };
 
 const updateAnswerList8 = (event) => {
-  listStore.updateAnswerList8(event.to);
+  const { to, from, newIndex, oldIndex } = event;
+  if (from === to) {
+        listStore.updateAnswerList8([...listStore.answerList8]);
+      } else {
+        listStore.updateAnswerList8([...to]);
+      }
 };
-
 const updateList9 = (event) => {
-  listStore.updateList9(event.to);
+  const { to, from, newIndex, oldIndex } = event;
+  if (from === to) {
+        listStore.updateList9([...listStore.list9]);
+      } else {
+        listStore.updateList9([...to]);
+      }
 };
 
 const updateAnswerList9 = (event) => {
-  listStore.updateAnswerList9(event.to);
-};
-
-const log = (evt) => {
-  window.console.log(evt);
+  const { to, from, newIndex, oldIndex } = event;
+  if (from === to) {
+        listStore.updateAnswerList9([...listStore.answerList9]);
+      } else {
+        listStore.updateAnswerList9([...to]);
+      }
 };
 </script>
   

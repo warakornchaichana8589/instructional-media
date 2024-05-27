@@ -25,8 +25,8 @@
     <script setup>
     import Layout from "@/components/Layout.vue";
     import ButtonGo from "@/components/ButtonGo.vue";
-    import { useAudioStore } from "@/stores/useAudio";
-    import { ref, watchEffect, onMounted, computed } from "vue";
+    import { ref } from "vue";
+
     import QuizDrag02 from "@/components/QuizDrag02.vue";
     
     import { useRouter } from "vue-router";

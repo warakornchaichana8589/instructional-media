@@ -1,7 +1,6 @@
-// stores/listStore.js
 import { defineStore } from "pinia";
 
-export const useListStore = defineStore("listStore", {
+export const useListStore = defineStore("useList", {
   state: () => ({
     list1: [
       { name: "สุดา", id: 1 },
@@ -27,14 +26,12 @@ export const useListStore = defineStore("listStore", {
       { name: "อา", id: 1 },
     ],
     answerList4: [],
-
     list5: [
       { name: "ทุ่งนา", id: 3 },
       { name: "เดินไป", id: 2 },
       { name: "เดชา", id: 1 },
     ],
     answerList5: [],
-
     list6: [
       { name: "งอ", id: 2 },
       { name: "ขา", id: 3 },
@@ -47,14 +44,12 @@ export const useListStore = defineStore("listStore", {
       { name: "พ่อ", id: 1 },
     ],
     answerList7: [],
-
     list8: [
       { name: "มี", id: 2 },
       { name: "มะละกอ", id: 3 },
       { name: "อา", id: 1 },
     ],
     answerList8: [],
-
     list9: [
       { name: "ท่อน้ำ", id: 3 },
       { name: "ทำ", id: 2 },
