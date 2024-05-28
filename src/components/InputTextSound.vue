@@ -4,7 +4,9 @@
       :type="props.typeInput"
       v-model="inputValue"
       @input="handleEnter"
-      class="bg-transparent border-b-4 rounded-sm px-2 border-dotted outline-none "
+      class="bg-transparent border-b-4 rounded-sm px-2 border-dotted outline-none w-full"
+      :placeholder="props.textPlaceholder"
+      :class="customClass"
     />
   </div>
 </template>
@@ -15,6 +17,8 @@ const audio = ref(null);
 const inputValue = ref("");
 const props = defineProps({
   typeInput: { type: String, default: "text" },
+  textPlaceholder: { type: String, default: "" },
+  customClass: { type: String, default: "" },
 });
 
 import audioSrcInput from "../assets/sound/punchy-taps-ui-12-183907.mp3";

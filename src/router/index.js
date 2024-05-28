@@ -15,7 +15,8 @@ import QuestionFromImage01 from '../views/QuestionFromImage01.vue'
 import SentencesFromPictures01 from '../views/SentencesFromPictures01.vue'
 import SentencesFromPictures02 from '../views/SentencesFromPictures02.vue'
 import FillInTheBlanksView01 from '../views/FillInTheBlanksView01.vue'
-
+import FillInTheBlanksView02 from '../views/FillInTheBlanksView02.vue'
+import QuestionFromImage02 from '../views/QuestionFromImage02.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -103,6 +104,19 @@ const router = createRouter({
       name: 'FillInTheBlanksView01',
       component: FillInTheBlanksView01
     }
+    ,
+    {
+      path:'/FillInTheBlanksView02',
+      name: 'FillInTheBlanksView02',
+      component: FillInTheBlanksView02
+    }
+    ,
+    {
+      path:'/QuestionFromImage02',
+      name: 'QuestionFromImage02',
+      component: QuestionFromImage02
+    }
+    
   ]
 })
 

@@ -2,7 +2,7 @@
     <div>
       <Layout bgImage="bg-l.png" class="fadeIn">
         <!-- //here -->
-        <FillInTheBlanks01 />
+        <FillInTheBlanks02 />
   
         <div class="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 z-10">
           <ButtonGo
@@ -28,7 +28,7 @@
   import ButtonGo from "@/components/ButtonGo.vue";
   import { useAudioStore } from "@/stores/useAudio";
   import { ref, watchEffect, onMounted, computed } from "vue";
-  import FillInTheBlanks01 from "@/components/FillInTheBlanks01.vue";
+  import FillInTheBlanks02 from "@/components/FillInTheBlanks02.vue";
   
   import { useRouter } from "vue-router";
   const router = useRouter();
@@ -41,7 +41,7 @@
   const buttonDisabled = ref(false);
   
   const swiperNextSlide = () => {
-    router.push("./SentencesFromPictures02");
+    router.push("./QuestionFromImage02");
     audio.value.play();
   };
   
