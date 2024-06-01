@@ -11,12 +11,16 @@ import ExplanationView from '../views/ExplanationView.vue'
 import QuizDragView from '../views/QuizDragView.vue'
 import QuizDragView02 from '../views/QuizDragView02.vue'
 import QuizDragView03 from '../views/QuizDragView03.vue'
+import QuizDragView04 from '../views/QuizDragView04.vue'
 import QuestionFromImage01 from '../views/QuestionFromImage01.vue'
 import SentencesFromPictures01 from '../views/SentencesFromPictures01.vue'
 import SentencesFromPictures02 from '../views/SentencesFromPictures02.vue'
 import FillInTheBlanksView01 from '../views/FillInTheBlanksView01.vue'
 import FillInTheBlanksView02 from '../views/FillInTheBlanksView02.vue'
 import QuestionFromImage02 from '../views/QuestionFromImage02.vue'
+import QuizDragSlider from '../views/QuizDragSlider.vue'
+import QuizDragSlider02 from '../views/QuizDragSlider02.vue'
+import QuizDragSlider03 from '../views/QuizDragSlider03.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -81,6 +85,12 @@ const router = createRouter({
       name:'QuizDragView03',
       component: QuizDragView03
     },
+    ,
+    {
+      path:'/quiz-drag04',
+      name:'QuizDragView04',
+      component: QuizDragView04
+    },
     {
       path:'/qustion-image01',
       name: 'QuestionImage01',
@@ -115,6 +125,24 @@ const router = createRouter({
       path:'/QuestionFromImage02',
       name: 'QuestionFromImage02',
       component: QuestionFromImage02
+    }
+    ,
+    {
+      path:'/QuizDragSlider',
+      name: 'QuizDragSlider',
+      component: QuizDragSlider
+    }
+    ,
+    {
+      path:'/QuizDragSlider02',
+      name: 'QuizDragSlider02',
+      component: QuizDragSlider02
+    }
+    ,
+    {
+      path:'/QuizDragSlider03',
+      name: 'QuizDragSlider03',
+      component: QuizDragSlider03
     }
     
   ]

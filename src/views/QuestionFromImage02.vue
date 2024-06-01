@@ -102,7 +102,7 @@
   
   const swiperNextSlide = () => {
     if (slideEnd.value) {
-      router.push("./quiz-drag");
+      router.push("./quiz-drag04");
     } else {
       swiperInstance.value.slideNext();
     }
