@@ -21,6 +21,9 @@ import QuestionFromImage02 from '../views/QuestionFromImage02.vue'
 import QuizDragSlider from '../views/QuizDragSlider.vue'
 import QuizDragSlider02 from '../views/QuizDragSlider02.vue'
 import QuizDragSlider03 from '../views/QuizDragSlider03.vue'
+import QuizDragSlider04 from '../views/QuizDragSlider04.vue'
+import QuizDragSlider05 from '../views/QuizDragSlider05.vue'
+import QuizDragSlider06 from '../views/QuizDragSlider06.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -95,54 +98,61 @@ const router = createRouter({
       path:'/qustion-image01',
       name: 'QuestionImage01',
       component: QuestionFromImage01
-    }
-    ,
+    },
     {
       path:'/SentencesFromPictures01',
       name: 'SentencesFromPictures01',
       component: SentencesFromPictures01
-    }
-    ,
+    },
     {
       path:'/SentencesFromPictures02',
       name: 'SentencesFromPictures02',
       component: SentencesFromPictures02
-    }
-    ,
+    },
     {
       path:'/FillInTheBlanksView01',
       name: 'FillInTheBlanksView01',
       component: FillInTheBlanksView01
-    }
-    ,
+    },
     {
       path:'/FillInTheBlanksView02',
       name: 'FillInTheBlanksView02',
       component: FillInTheBlanksView02
-    }
-    ,
+    },
     {
       path:'/QuestionFromImage02',
       name: 'QuestionFromImage02',
       component: QuestionFromImage02
-    }
-    ,
+    },
     {
       path:'/QuizDragSlider',
       name: 'QuizDragSlider',
       component: QuizDragSlider
-    }
-    ,
+    },
     {
       path:'/QuizDragSlider02',
       name: 'QuizDragSlider02',
       component: QuizDragSlider02
-    }
-    ,
+    },
     {
       path:'/QuizDragSlider03',
       name: 'QuizDragSlider03',
       component: QuizDragSlider03
+    },
+    {
+      path:'/QuizDragSlider04',
+      name: 'QuizDragSlider04',
+      component: QuizDragSlider04
+    },
+    {
+      path:'/QuizDragSlider05',
+      name: 'QuizDragSlider05',
+      component: QuizDragSlider05
+    },
+    {
+      path:'/QuizDragSlider06',
+      name: 'QuizDragSlider06',
+      component: QuizDragSlider06
     }
     
   ]

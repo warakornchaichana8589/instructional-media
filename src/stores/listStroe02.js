@@ -113,6 +113,44 @@ export const useListStore02 = defineStore("useList02", {
         { name: "ฉัน", id: 1 }
       ],
       answerList15: [],
+      list16: [
+        { name: "พ่อ", id: 3 },
+        { name: "ของฉัน", id: 4 },
+        { name: "ดื่ม", id: 2 },
+        { name: "กาแฟดำ", id: 1 },
+        { name: "ดำ", id: 1 },
+        { name: "ทุกวัน", id: 1 },
+      ],
+      answerList16: [],
+      list17: [
+        { name: "แม่", id: 3 },
+        { name: "ทำ", id: 4 },
+        { name: "ขนมหม้อแกง", id: 2 },
+        { name: "อร่อย", id: 1 },
+        { name: "มาก", id: 1 }
+      ],
+      answerList17: [],
+      list18: [
+        { name: "อารี", id: 3 },
+        { name: "ซื้อ", id: 4 },
+        { name: "กระโปรง", id: 2 },
+        { name: "ตัวใหม่", id: 1 }
+      ],
+      answerList18: [],
+      list19: [
+        { name: "น้อง", id: 3 },
+        { name: "ร้องให้", id: 4 },
+        { name: "เสียงดัง", id: 2 },
+      ],
+      answerList19: [],
+      list20: [
+        { name: "มานี", id: 3 },
+        { name: "กินก๋วยเตี๋ยวไก่", id: 4 },
+        { name: "อย่าง", id: 2 },
+        { name: "เอร็ดอร่อย", id: 1 }
+      ],
+      answerList20: [],
+      
   }),
   actions: {
     updateList1(newList) {
@@ -204,6 +242,36 @@ export const useListStore02 = defineStore("useList02", {
     },
     updateAnswerList15(newList) {
     this.answerList15 = newList;
+    },
+    updateList16(newList) {
+    this.list16 = newList;
+    },
+    updateAnswerList16(newList) {
+    this.answerList16 = newList;
+    },
+    updateList17(newList) {
+    this.list17 = newList;
+    },
+    updateAnswerList17(newList) {
+    this.answerList17 = newList;
+    },
+    updateList18(newList) {
+    this.list18 = newList;
+    },
+    updateAnswerList18(newList) {
+    this.answerList18 = newList;
+    },
+    updateList19(newList) {
+    this.list19 = newList;
+    },
+    updateAnswerList19(newList) {
+    this.answerList19 = newList;
+    },
+    updateList20(newList) {
+    this.list20 = newList;
+    },
+    updateAnswerList20(newList) {
+    this.answerList20 = newList;
     },
   },
 });

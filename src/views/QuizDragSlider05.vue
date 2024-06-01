@@ -1,7 +1,7 @@
 <template>
   <div>
     <Layout bgImage="bg-l.png" class="fadeIn">
-      <QuizDragSlider03 />
+      <QuizDragSlider05 />
 
       <div class="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 z-10">
         <ButtonGo
@@ -9,7 +9,7 @@
           classCustomFont="text-[14px] lg:text-[30px]"
           @click="swiperPrevSlide"
         />
-
+        
       </div>
       <div class="absolute bottom-2 lg:bottom-5 right-2 lg:right-5 z-10">
         <ButtonGo
@@ -28,7 +28,7 @@ import Layout from "@/components/Layout.vue";
 import ButtonGo from "@/components/ButtonGo.vue";
 import { useAudioStore } from "@/stores/useAudio";
 import { ref, watchEffect, onMounted, computed } from "vue";
-import QuizDragSlider03 from "@/components/QuizDragSlider03.vue";
+import QuizDragSlider05 from "@/components/QuizDragSlider05.vue";
 
 import { useRouter } from "vue-router";
 const router = useRouter();
@@ -41,12 +41,12 @@ audio.value = new Audio(audioSrcInput);
 const buttonDisabled = ref(false);
 
 const swiperNextSlide = () => {
-  router.push("./QuizDragSlider04");
+  router.push("./QuizDragSlider06");
   audio.value.play();
 };
 
 const swiperPrevSlide = () => {
-  router.push("./QuizDragSlider02");
+  router.push("./QuizDragSlider04");
   audio.value.play();
 };
 </script>
