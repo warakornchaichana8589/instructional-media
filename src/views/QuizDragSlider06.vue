@@ -46,7 +46,7 @@ const swiperNextSlide = () => {
 };
 
 const swiperPrevSlide = () => {
-  router.push("./QuizDragSlider06");
+  router.push("./QuizDragSlider05");
   audio.value.play();
 };
 </script>

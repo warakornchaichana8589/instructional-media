@@ -89,7 +89,7 @@
     return slideBiginnig.value ? "หน้าบทเรียน" : "ย้อยกลับ";
   });
   const buttonTextEnd = computed(() => {
-    return slideEnd.value ? "แบบฝึกหัด" : "ถัดไป";
+    return slideEnd.value ? "แบบฝึกหัดถัดไป" : "ถัดไป";
   });
   function onSwiper(swiper) {
     swiperInstance.value = swiper;
@@ -97,7 +97,7 @@
   
   const swiperNextSlide = () => {
     if (slideEnd.value) {
-      router.push("./qustion-image01");
+      router.push("./QuestionFromImage01");
     } else {
       swiperInstance.value.slideNext();
     }

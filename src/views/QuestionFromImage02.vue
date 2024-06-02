@@ -94,7 +94,7 @@
     return slideBiginnig.value ? "ก่อนหน้า" : "ก่อนหน้า";
   });
   const buttonTextEnd = computed(() => {
-    return slideEnd.value ? "แบบฝึกหัด" : "ถัดไป";
+    return slideEnd.value ? "ถัดไป" : "ถัดไป";
   });
   function onSwiper(swiper) {
     swiperInstance.value = swiper;
@@ -102,7 +102,7 @@
   
   const swiperNextSlide = () => {
     if (slideEnd.value) {
-      router.push("./quiz-drag04");
+      router.push("./QuizDragSlider");
     } else {
       swiperInstance.value.slideNext();
     }
@@ -110,7 +110,7 @@
   
   const swiperPrevSlide = () => {
     if (slideBiginnig.value) {
-      router.back();
+      router.push("./FillInTheBlanksView02");
     } else {
       swiperInstance.value.slidePrev();
     }

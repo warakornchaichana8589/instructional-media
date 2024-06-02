@@ -89,7 +89,7 @@
     return slideBiginnig.value ? "ก่อนหน้า" : "ก่อนหน้า";
   });
   const buttonTextEnd = computed(() => {
-    return slideEnd.value ? "แบบฝึกหัด" : "ถัดไป";
+    return slideEnd.value ? "แบบฝึกหัดถัดไป" : "ถัดไป";
   });
   function onSwiper(swiper) {
     swiperInstance.value = swiper;
@@ -105,7 +105,8 @@
   
   const swiperPrevSlide = () => {
     if (slideBiginnig.value) {
-      router.back();
+      router.push("./quiz-view");
+      
     } else {
       swiperInstance.value.slidePrev();
     }

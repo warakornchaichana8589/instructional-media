@@ -40,12 +40,12 @@
   const buttonDisabled = ref(false);
   
   const swiperNextSlide = () => {
-    router.push("./QuizDragSlider02");
+    router.push("./PutWordsIntoSentences");
     audio.value.play();
   };
   
   const swiperPrevSlide = () => {
-    router.push("./quiz-drag02");
+    router.push("./QuizDragSlider06");
     audio.value.play();
   };
   </script>

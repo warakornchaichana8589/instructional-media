@@ -46,7 +46,7 @@
   };
   
   const swiperPrevSlide = () => {
-    router.back();
+    router.push("./SentencesFromPictures02");
     audio.value.play();
   };
   </script>

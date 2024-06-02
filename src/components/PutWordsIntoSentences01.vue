@@ -6,11 +6,11 @@
       ให้นักเรียนนำคำมาเขียนให้เป็นประโยคสมบูรณ์
     </h1>
     <div
-      class="p-20 pt-10 lg:p-10 flex flex-wrap justify-between items-center w-full max-w-[900px] my-auto"
+      class="p-10 pt-2 lg:pt-10 lg:p-10 flex flex-wrap justify-between items-center w-full max-w-[900px] my-auto"
     >
       <!-- ข้อ1 -->
       <div
-        class="flex mt-1 gap-0 lg:gap-4 w-full justify-center items-center mx-auto"
+        class="flex mt-2 lg:mt-1 gap-2 lg:gap-4 w-full justify-center items-center mx-auto"
       >
         <div class="subjectVerbObjectSentence w-full border border-slate-400 py-5 px-3 rounded-2xl">
           <div class="flex items-center">
@@ -130,7 +130,7 @@
         </div>
 
         <div class="word w-full flex flex-col gap-2">
-          <div class="border border-slate-400 flex justify-start w-full p-2 rounded-2xl">
+          <div class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl">
             <div class="relative flex flex-col justify-center items-center">
               <img :src="imageSubject" alt="" class="w-[80px] lg:w-[100px]" />
               <div
@@ -158,7 +158,7 @@
               </draggable>
             </div>
           </div>
-          <div class="border border-slate-400 flex justify-start w-full p-2 rounded-2xl">
+          <div class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl">
             <div class="relative flex flex-col justify-center items-center">
               <img :src="imageVerb" alt="" class="w-[80px] lg:w-[100px]" />
               <div
@@ -186,11 +186,11 @@
               </draggable>
             </div>
           </div>
-          <div class="border border-slate-400 flex justify-start w-full p-2 rounded-2xl">
+          <div class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl">
             <div class="relative flex flex-col justify-center items-center">
               <img :src="imageObject" alt="" class="w-[80px] lg:w-[100px]" />
               <div
-                class="text-[14px] lg:text-[18px] leading-3 text-center flex justify-center items-center bg-[#FFD833] px-3 py-2 rounded-3xl -mt-[25px]"
+                class="text-[14px] lg:text-[18px] leading-3 text-center flex justify-center items-center bg-[#FFD833] px-3 py-2 rounded-3xl -mt-[20px] lg:-mt-[25px]"
               >
                 กรรม
               </div>

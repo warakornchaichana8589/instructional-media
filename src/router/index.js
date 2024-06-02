@@ -96,8 +96,8 @@ const router = createRouter({
       component: QuizDragView04
     },
     {
-      path:'/qustion-image01',
-      name: 'QuestionImage01',
+      path:'/QuestionFromImage01',
+      name: 'QuestionFromImage01',
       component: QuestionFromImage01
     },
     {
