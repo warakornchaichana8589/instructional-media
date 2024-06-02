@@ -41,12 +41,12 @@ audio.value = new Audio(audioSrcInput);
 const buttonDisabled = ref(false);
 
 const swiperNextSlide = () => {
-  router.push("./QuizDragSlider06");
+  router.push("./PutWordsIntoSentences");
   audio.value.play();
 };
 
 const swiperPrevSlide = () => {
-  router.push("./QuizDragSlider05");
+  router.push("./QuizDragSlider06");
   audio.value.play();
 };
 </script>

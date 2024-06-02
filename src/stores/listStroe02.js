@@ -150,6 +150,96 @@ export const useListStore02 = defineStore("useList02", {
         { name: "เอร็ดอร่อย", id: 1 }
       ],
       answerList20: [],
+      subjectList:[
+        {
+          name: "คุณครู",
+          id: 1
+        },
+        {
+          name: "แมว",
+          id: 2
+        },
+        {
+          name: "ลิง",
+          id: 3
+        },
+        {
+          name: "ป้าสา",
+          id: 5
+        }
+        ,
+        {
+          name: "ตาสี",
+          id: 4
+        }
+        ,
+        {
+          name: "มาลี",
+          id: 6
+        }
+      ],
+      verbList:[
+        {
+          name: "ตี",
+          id: 5
+        },
+        {
+          name: "มี",
+          id: 4
+        },
+        {
+          name: "ใส่",
+          id: 6
+        },
+        {
+          name: "กิน",
+          id: 2
+        }
+        ,
+        {
+          name: "ปีน",
+          id: 3
+        }
+        ,
+        {
+          name: "สอน",
+          id: 1
+        }
+      ],
+      objectList:[
+        {
+          name: "นักเรียน",
+          id: 1
+        },
+        {
+          name: "กระโปรง",
+          id: 6
+        },
+        {
+          name: "ปลาทู",
+          id: 2
+        },
+        {
+          name: "มะละกอ",
+          id: 4
+        }
+        ,
+        {
+          name: "ต้นมะพร้าว",
+          id: 3
+        }
+        ,
+        {
+          name: "งู",
+          id: 5
+        }
+      ],
+      subjectVerbObjectSentenceNum01:[],
+      subjectVerbObjectSentenceNum02:[],
+      subjectVerbObjectSentenceNum03:[],
+      subjectVerbObjectSentenceNum04:[],
+      subjectVerbObjectSentenceNum05:[],
+      subjectVerbObjectSentenceNum06:[],
       
   }),
   actions: {

@@ -24,6 +24,7 @@ import QuizDragSlider03 from '../views/QuizDragSlider03.vue'
 import QuizDragSlider04 from '../views/QuizDragSlider04.vue'
 import QuizDragSlider05 from '../views/QuizDragSlider05.vue'
 import QuizDragSlider06 from '../views/QuizDragSlider06.vue'
+import PutWordsIntoSentences from '../views/PutWordsIntoSentences.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -153,6 +154,12 @@ const router = createRouter({
       path:'/QuizDragSlider06',
       name: 'QuizDragSlider06',
       component: QuizDragSlider06
+    }
+    ,
+    {
+      path:'/PutWordsIntoSentences',
+      name: 'PutWordsIntoSentences',
+      component: PutWordsIntoSentences
     }
     
   ]
