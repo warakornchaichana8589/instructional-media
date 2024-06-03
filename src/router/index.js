@@ -25,6 +25,12 @@ import QuizDragSlider04 from '../views/QuizDragSlider04.vue'
 import QuizDragSlider05 from '../views/QuizDragSlider05.vue'
 import QuizDragSlider06 from '../views/QuizDragSlider06.vue'
 import PutWordsIntoSentences from '../views/PutWordsIntoSentences.vue'
+import ExplanationEndView from '../views/ExplanationEndView.vue'
+import QuestionsEndView from '../views/QuestionsEndView.vue'
+import ShowScoreEndView from '../views/ShowScoreEndView.vue'
+import ShowAllScore from '../views/ShowAllScore.vue'
+import Endding from '../views/Endding.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -161,6 +167,35 @@ const router = createRouter({
       name: 'PutWordsIntoSentences',
       component: PutWordsIntoSentences
     }
+    ,
+    {
+      path:'/ExplanationEndView',
+      name: 'ExplanationEndView',
+      component: ExplanationEndView
+    }
+    ,
+    {
+      path:'/QuestionsEndView',
+      name: 'QuestionsEndView',
+      component: QuestionsEndView
+    }
+    ,
+    {
+      path:'/ShowScoreEndView',
+      name: 'ShowScoreEndView',
+      component: ShowScoreEndView
+    },
+    {
+      path:'/ShowAllScore',
+      name: 'ShowAllScore',
+      component: ShowAllScore
+    },
+    {
+      path:'/Endding',
+      name: 'Endding',
+      component: Endding
+    }
+    
     
   ]
 })
