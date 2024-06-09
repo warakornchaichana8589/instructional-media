@@ -37,11 +37,30 @@
           <div
             class="grid grid-cols-7 gap-2 w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1"
           >
+          <div>
             <div
               class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
             >
               ประธาน
             </div>
+            <draggable
+            class="list-group grid grid-cols-7 bg-[#fff4e354] mt-2 pb-1 gap-2 w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
+            :list="listStore2.answerList16"
+            group="people16"
+            @change="log"
+            itemKey="name"
+            @update="updateAnswerList16"
+          >
+            <template #item="{ element }">
+              <div
+                class="bg-[#FFF4E3] h-full text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
+              >
+                {{ element.name }}
+              </div>
+            </template>
+          </draggable>
+          </div>
+           
             <div
               class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
             >
@@ -73,22 +92,7 @@
               ชนิดของประโยค
             </div>
           </div>
-          <draggable
-            class="list-group grid grid-cols-7 bg-[#fff4e354] mt-2 pb-1 gap-2 w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
-            :list="listStore2.answerList16"
-            group="people16"
-            @change="log"
-            itemKey="name"
-            @update="updateAnswerList16"
-          >
-            <template #item="{ element }">
-              <div
-                class="bg-[#FFF4E3] h-full text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
-              >
-                {{ element.name }}
-              </div>
-            </template>
-          </draggable>
+         
         </div>
       </div>
       <!-- ข้อ1 -->

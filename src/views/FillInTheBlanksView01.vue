@@ -1,5 +1,6 @@
 <template>
     <div>
+      <!-- ------------ลบไปแล้ววไม่ได้ใช้แล้วว FillInTheBlanksView01----------- -->
       <Layout bgImage="bg-l.png" class="fadeIn">
         <!-- //here -->
         <FillInTheBlanks01 />

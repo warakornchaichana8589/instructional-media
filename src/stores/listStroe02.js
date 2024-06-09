@@ -25,7 +25,7 @@ export const useListStore02 = defineStore("useList02", {
     answerList3: [],
     list4: [
       { name: "พ่อ", id: 1 },
-      { name: "ข้าวต้น", id: 3 },
+      { name: "ข้าวต้ม", id: 3 },
       { name: "ตอนเช้า", id: 4 },
       { name: "กิน", id: 2 },
     ],
@@ -71,9 +71,10 @@ export const useListStore02 = defineStore("useList02", {
     list10: [
         { name: "เท", id: 3 },
         { name: "เขา", id: 1 },
-        { name: "น้ำส้ม", id: 2 },
-        { name: "กำลัง", id: 6 },
-        { name: "ขวด", id: 4 },
+        { name: "น้ำส้ม", id: 4 },
+        { name: "กำลัง", id: 2 },
+        { name: "ขวด", id: 6 },
+        { name: "ใส่", id: 5 },
       ],
       answerList10: [],
       list11: [
@@ -117,7 +118,7 @@ export const useListStore02 = defineStore("useList02", {
         { name: "พ่อ", id: 3 },
         { name: "ของฉัน", id: 4 },
         { name: "ดื่ม", id: 2 },
-        { name: "กาแฟดำ", id: 1 },
+        { name: "กาแฟ", id: 1 },
         { name: "ดำ", id: 1 },
         { name: "ทุกวัน", id: 1 },
       ],

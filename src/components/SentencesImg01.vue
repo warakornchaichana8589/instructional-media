@@ -47,8 +47,8 @@ import image78 from "@/assets/images/78.png";
 import image79 from "@/assets/images/79.png";
 import image80 from "@/assets/images/80.png";
 import image81 from "@/assets/images/81.png";
-import image82 from "@/assets/images/82.png";
-import image83 from "@/assets/images/83.png";
+import image82 from "@/assets/images/83.png";
+import image83 from "@/assets/images/82.png";
 import { ref, reactive } from "vue";
 const sententValues = ref({
   sententValue01: "",

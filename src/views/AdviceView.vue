@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Layout bgImage="advice.png" class="fadeIn">
+    <Layout bgImage="text-pretest.jpg" class="fadeIn">
       <div class="flex h-full sm:p-[20px] p-1 relative flex-col"></div>
       <div class="absolute bottom-2 lg:bottom-5 right-2 lg:right-5 z-10">
           <ButtonGo

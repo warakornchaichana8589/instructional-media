@@ -3,7 +3,7 @@
     <h1
       class="px-4 py-2 lg:px10 lg:py-3 bg-[#FFF5DC] rounded-full mt-4 lg:mt-10 text-[14px] md:text-[18px] lg:text-[30px]"
     >
-      คำชี้แจง : ฝึกแต่ประโดยต่อไปนี้ให้ได้ใจความที่สมบรูรณ์
+      คำชี้แจง : ฝึกแต่งประโยคต่อไปนี้ให้ได้ใจความที่สมบรูรณ์
     </h1>
     <div class="w-full h-full flex justify-center items-center">
       <div class="w-full h-auto grid grid-cols-2 gap-0 lg:gap-10 max-w-[600px] ">

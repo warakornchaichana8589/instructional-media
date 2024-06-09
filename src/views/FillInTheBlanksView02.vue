@@ -46,7 +46,7 @@
   };
   
   const swiperPrevSlide = () => {
-    router.push("./FillInTheBlanksView01");
+    router.push("./SentencesFromPictures02");
     audio.value.play();
   };
   </script>

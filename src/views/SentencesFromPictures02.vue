@@ -43,7 +43,7 @@
     const buttonDisabled = ref(false);
     
     const swiperNextSlide = () => {
-      router.push("./FillInTheBlanksView01");
+      router.push("./FillInTheBlanksView02");
       audio.value.play();
     };
     

@@ -3,7 +3,7 @@
     <h1
       class="px-4 py-2 lg:px10 lg:py-3 bg-[#FFF5DC] rounded-full mt-4 lg:mt-10 text-[14px] md:text-[18px] lg:text-[30px]"
     >
-      ให้นักเรียนนำคำมาเขียนให้เป็นประโยคสมบูรณ์
+      ให้นักเรียนเลือกคำ ประธาน กริยา กรรม ที่กำหนดให้มาเขียนแต่งประโยคสมบูรณ์
     </h1>
     <div
       class="p-10 pt-2 lg:pt-10 lg:p-10 flex flex-wrap justify-between items-center w-full max-w-[900px] my-auto"
