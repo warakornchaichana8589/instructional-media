@@ -1,231 +1,222 @@
 <template>
-  <div class="w-full h-full flex flex-col justify-start items-center">
+  <div class="flex justify-start items-center flex-col h-full">
     <h1
       class="px-4 py-2 lg:px10 lg:py-3 bg-[#FFF5DC] rounded-full mt-4 lg:mt-10 text-[14px] md:text-[18px] lg:text-[30px]"
     >
       ประโยคและส่วนประกอบของประโยค
     </h1>
-    <div
-      class="p-20 pt-10 lg:p-10 flex flex-wrap justify-between items-center w-full max-w-[900px] my-auto"
+   
+    <form
+      @input="checkAnswers"
+      class="max-w-[767px] h-full flex flex-col items-center justify-center"
     >
-      <!-- ข้อ1 -->
       <div
-        class="flex mt-1 gap-0 lg:gap-2 w-full flex-col justify-center items-center mx-auto"
+        v-for="(item, index) in exercises"
+        :key="index"
+        class="exercise-item mt-[20px]"
       >
-        <div class="flex justify-center items-center gap-2 w-full">
-          <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-            ข้อที่ 1 :
-          </h3>
-          <draggable
-            class="flex min-w-[100px] h-full max-w-full p-1 items-center"
-            :list="listStore2.list16"
-            group="people16"
-            @change="log"
-            itemKey="name"
-            @update="updateList16"
-          >
-            <template #item="{ element }">
-              <div
-                class="rounded-full cursor-pointer hello text-[16px] lg:text-[24px]"
-              >
-                {{ element.name }}
-              </div>
-            </template>
-          </draggable>
-        </div>
-        <div class="overflow-hidden w-full">
-          <div
-            class="grid grid-cols-7 gap-2 w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1"
-          >
-          <div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
-            >
-              ประธาน
-            </div>
+        <div class="flex gap-2 items-center">
+          <p class="text-[22px]">ข้อที่ {{ index + 1 }}.</p>
+          <div class="source-words">
+            <label></label>
             <draggable
-            class="list-group grid grid-cols-7 bg-[#fff4e354] mt-2 pb-1 gap-2 w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
-            :list="listStore2.answerList16"
-            group="people16"
-            @change="log"
-            itemKey="name"
-            @update="updateAnswerList16"
-          >
-            <template #item="{ element }">
-              <div
-                class="bg-[#FFF4E3] h-full text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
-              >
-                {{ element.name }}
-              </div>
-            </template>
-          </draggable>
+              v-model="item.words"
+              :group="'shared'+index"
+              class="draggable-list flex gap-2 h-[40px] mb-[10px] rounded-lg min-w-[300px] px-3 bg-[#fff4e3b6]"
+              itemKey="text"
+            >
+              <template #item="{ element }">
+                <div
+                  class="draggable-item h-full w-auto pt-1 text-[18px] lg:text-[20px] flex justify-center items-center cursor-pointer hello leading-3"
+                >
+                  {{ element.text }}
+                </div>
+              </template>
+            </draggable>
           </div>
-           
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
+        </div>
+
+        <div class="dropzones flex gap-2">
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ประธาน:</label
             >
-              ขยายประธาน
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
+            <draggable
+              v-model="item.subjects"
+              :group="'shared'+index"
+              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              itemKey="text"
+              @update="updateSubjects(index)"
             >
-              กริยา
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
-            >
-            ขยายกริยา
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
-            >
-              กรรม
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
-            >
-            ขยายกรรม
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center py-2 text-center"
-            >
-              ชนิดของประโยค
-            </div>
+              <template #item="{ element }">
+                <div
+                  class="draggable-item bg-[#FFF4E3] w-full h-full p-2 px-3 text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
+                >
+                  {{ element.text }}
+                </div>
+              </template>
+            </draggable>
           </div>
-         
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายประธาน:</label
+            >
+            <draggable
+              v-model="item.subjectModifiers"
+              :group="'shared'+index"
+              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              itemKey="text"
+              @update="updateSubjectModifiers(index)"
+            >
+              <template #item="{ element }">
+                <div
+                  class="draggable-item bg-[#FFF4E3] w-full h-full p-2 px-3 text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
+                >
+                  {{ element.text }}
+                </div>
+              </template>
+            </draggable>
+          </div>
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >กริยา:</label
+            >
+            <draggable
+              v-model="item.verbs"
+              :group="'shared'+index"
+              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              itemKey="text"
+              @update="updateVerbs(index)"
+            >
+              <template #item="{ element }">
+                <div
+                  class="draggable-item bg-[#FFF4E3] w-full h-full p-2 px-3 text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
+                >
+                  {{ element.text }}
+                </div>
+              </template>
+            </draggable>
+          </div>
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายกริยา:</label
+            >
+            <draggable
+              v-model="item.verbModifiers"
+              :group="'shared'+index"
+              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              itemKey="text"
+              @update="updateVerbModifiers(index)"
+            >
+              <template #item="{ element }">
+                <div
+                  class="draggable-item bg-[#FFF4E3] w-full h-full p-2 px-3 text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
+                >
+                  {{ element.text }}
+                </div>
+              </template>
+            </draggable>
+          </div>
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >กรรม:</label
+            >
+            <draggable
+              v-model="item.objects"
+              :group="'shared'+index"
+              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              itemKey="text"
+              @update="updateObjects(index)"
+            >
+              <template #item="{ element }">
+                <div
+                  class="draggable-item bg-[#FFF4E3] w-full h-full p-2 px-3 text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
+                >
+                  {{ element.text }}
+                </div>
+              </template>
+            </draggable>
+          </div>
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายกรรม:</label
+            >
+            <draggable
+              v-model="item.objectModifiers"
+              :group="'shared'+index"
+              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              itemKey="text"
+              @update="updateObjectModifiers(index)"
+            >
+              <template #item="{ element }">
+                <div
+                  class="draggable-item bg-[#FFF4E3] w-full h-full p-2 px-3 text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
+                >
+                  {{ element.text }}
+                </div>
+              </template>
+            </draggable>
+          </div>
         </div>
       </div>
-      <!-- ข้อ1 -->
-       <!-- ข้อ2 -->
-      <div
-        class="flex mt-5 lg:mt-10 gap-0 lg:gap-2 w-full flex-col justify-center items-center mx-auto"
-      >
-        <div class="flex justify-center items-center gap-2 w-full">
-          <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-            ข้อที่ 2 :
-          </h3>
-          <draggable
-            class="flex min-w-[100px] h-full max-w-full p-1 items-center"
-            :list="listStore2.list17"
-            group="people17"
-            @change="log"
-            itemKey="name"
-            @update="updateList17"
-          >
-            <template #item="{ element }">
-              <div
-                class="rounded-full cursor-pointer hello text-[16px] lg:text-[24px] text"
-              >
-                {{ element.name }}
-              </div>
-            </template>
-          </draggable>
-        </div>
-        <div class="overflow-hidden w-full">
-          <div
-            class="grid grid-cols-7 gap-2 w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1"
-          >
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center text-center py-2"
-            >
-              ประธาน
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center text-center py-2"
-            >
-              ขยายประธาน
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center text-center py-2"
-            >
-              กริยา
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center text-center py-2"
-            >
-            ขยายกริยา
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center text-center py-2"
-            >
-              กรรม
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center text-center py-2"
-            >
-            ขยายกรรม
-            </div>
-            <div
-              class="w-full bg-[#FFD699] h-full leading-3 flex justify-center items-center text-center py-2"
-            >
-              ชนิดของประโยค
-            </div>
-          </div>
-          <draggable
-            class="list-group grid grid-cols-7 bg-[#fff4e354] mt-2 pb-1 gap-2 w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
-            :list="listStore2.answerList17"
-            group="people17"
-            @change="log"
-            itemKey="name"
-            @update="updateAnswerList17"
-          >
-            <template #item="{ element }">
-              <div
-                class="bg-[#FFF4E3] h-full w-full  text-[16px] lg:text-[18px] flex justify-center items-center cursor-pointer hello leading-3"
-              >
-                {{ element.name }}
-              </div>
-            </template>
-          </draggable>
-        </div>
-      </div>
-      <!-- ข้อ1 -->
-    </div>
+    </form>
   </div>
 </template>
     
     <script setup>
 import { ref } from "vue";
 import draggable from "vuedraggable";
-import { useListStore02 } from "@/stores/listStroe02";
-const listStore2 = useListStore02();
+import { useExerciseStore } from "@/stores/quiz99Store";
+const exerciseStore = useExerciseStore();
+const { exercises, results, checkAnswers } = exerciseStore;
 
-const updateList16 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateList16([...listStore2.list16]);
-  } else {
-    listStore2.updateList16([...to]);
-  }
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const showResulst = ref([]);
+const handleCheckAnswers = () => {
+  checkAnswers();
+  console.log(results); // Log the results to check if they are updating
+};
+const updateSubjects = (index) => {
+    exerciseStore.exercises[index].subjects = [
+    ...exerciseStore.exercises[index].subjects,
+  ];
 };
 
-const updateAnswerList16 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateAnswerList16([...listStore2.answerList16]);
-  } else {
-    listStore2.updateAnswerList16([...to]);
-  }
+const updateSubjectModifiers = (index) => {
+  exerciseStore.exercises[index].subjectModifiers = [
+    ...exerciseStore.exercises[index].subjectModifiers,
+  ];
 };
-
-const updateList17 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateList17([...listStore2.list17]);
-  } else {
-    listStore2.updateList17([...to]);
-  }
+const updateVerbs = (index) => {
+  exerciseStore.exercises[index].verbs = [
+    ...exerciseStore.exercises[index].verbs,
+  ];
 };
-
-const updateAnswerList17 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateAnswerList17([...listStore2.answerList17]);
-  } else {
-    listStore2.updateAnswerList17([...to]);
-  }
+const updateVerbModifiers = (index) => {
+  exerciseStore.exercises[index].verbModifiers = [
+    ...exerciseStore.exercises[index].verbModifiers,
+  ];
+};
+const updateObjects = (index) => {
+  exerciseStore.exercises[index].objects = [
+    ...exerciseStore.exercises[index].objects,
+  ];
+};
+const updateObjectModifiers = (index) => {
+  exerciseStore.exercises[index].objectModifiers = [
+    ...exerciseStore.exercises[index].objectModifiers,
+  ];
 };
 </script>
+
     
     <style lang="scss"  scoped>
 .shadow-custom {

@@ -30,6 +30,7 @@ import QuestionsEndView from '../views/QuestionsEndView.vue'
 import ShowScoreEndView from '../views/ShowScoreEndView.vue'
 import ShowAllScore from '../views/ShowAllScore.vue'
 import Endding from '../views/Endding.vue'
+import ExerciseFormView from '../views/ExerciseFormView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -194,6 +195,12 @@ const router = createRouter({
       path:'/Endding',
       name: 'Endding',
       component: Endding
+    }
+    ,
+    {
+      path:'/ExerciseFormView',
+      name: 'ExerciseFormView',
+      component: ExerciseFormView
     }
     
     

@@ -1,6 +1,6 @@
 <template>
     <div class="box-main shadow-2xl relative flex justify-center items-center cursor-auto">
-        <div class="display relative max-h-screen mx-auto " 
+        <div class="display relative max-h-screen mx-auto shaw-dow-custom" 
         ref="display"  
         :style="{ backgroundImage: `url(${bgImagePath})` }">
 
@@ -53,5 +53,10 @@ const bgImagePath = computed(() => {
     background-size: contain;
     background-position-x: center;
    
+}
+.shaw-dow-custom{
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px #676767eb;
 }
 </style>
