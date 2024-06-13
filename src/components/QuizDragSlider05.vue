@@ -5,12 +5,13 @@
     >
       ประโยคและส่วนประกอบของประโยค
     </h1>
+
     <form
       @input="checkAnswers"
       class="max-w-[767px] h-full flex flex-col items-center justify-center"
     >
       <div
-        v-for="(item, index) in exercises"
+        v-for="(item, index) in exercises.slice(2, 4)"
         :key="index"
         class="exercise-item mt-[20px]"
       >
@@ -20,13 +21,13 @@
             <label></label>
             <draggable
               v-model="item.words"
-              group="shared"
+              :group="'shared' + index"
               class="draggable-list flex gap-2 h-[40px] mb-[10px] rounded-lg min-w-[300px] px-3 bg-[#fff4e3b6]"
               itemKey="text"
             >
               <template #item="{ element }">
                 <div
-                  class="draggable-item h-full w-auto  pt-1 text-[18px] lg:text-[20px] flex justify-center items-center cursor-pointer hello leading-3"
+                  class="draggable-item h-full w-auto pt-1 text-[18px] lg:text-[20px] flex justify-center items-center cursor-pointer hello leading-3"
                 >
                   {{ element.text }}
                 </div>
@@ -38,14 +39,15 @@
         <div class="dropzones flex gap-2">
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ประธาน:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ประธาน</label
             >
             <draggable
               v-model="item.subjects"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
+              @update="updateSubjects(index)"
             >
               <template #item="{ element }">
                 <div
@@ -58,14 +60,15 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ขยายประธาน:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายประธาน</label
             >
             <draggable
               v-model="item.subjectModifiers"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
+              @update="updateSubjectModifiers(index)"
             >
               <template #item="{ element }">
                 <div
@@ -78,14 +81,15 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >กริยา:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >กริยา</label
             >
             <draggable
               v-model="item.verbs"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
+              @update="updateVerbs(index)"
             >
               <template #item="{ element }">
                 <div
@@ -98,14 +102,15 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ขยายกริยา:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายกริยา</label
             >
             <draggable
               v-model="item.verbModifiers"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
+              @update="updateVerbModifiers(index)"
             >
               <template #item="{ element }">
                 <div
@@ -118,14 +123,15 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >กรรม:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >กรรม</label
             >
             <draggable
               v-model="item.objects"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
+              @update="updateObjects(index)"
             >
               <template #item="{ element }">
                 <div
@@ -138,14 +144,15 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ขยายกรรม:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายกรรม</label
             >
             <draggable
               v-model="item.objectModifiers"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
+              @update="updateObjectModifiers(index)"
             >
               <template #item="{ element }">
                 <div
@@ -155,95 +162,80 @@
                 </div>
               </template>
             </draggable>
+          </div>
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ชนิดของประโยค</label
+            >
+            <select
+              v-model="item.sentenceType"
+              class="w-full bg-[#FFF4E3] h-[40px] p-2 text-[16px] lg:text-[18px] cursor-pointer"
+            >
+              <option class="cursor-pointer" value="ประโยคบอกเล่า">ประโยคบอกเล่า</option>
+              <option class="cursor-pointer" value="ประโยคปฏิเสธ">ประโยคปฏิเสธ</option>
+              <option class="cursor-pointer" value="ประโยคคำถาม">ประโยคคำถาม</option>
+              <option class="cursor-pointer" value="ประโยคขอร้อง">ประโยคขอร้อง</option>
+              <option class="cursor-pointer" value="ประโยคคำสั่ง">ประโยคคำสั่ง</option>
+              <option class="cursor-pointer" value="ประโยคแสดงความต้องการ">
+                ประโยคแสดงความต้องการ
+              </option>
+            </select>
           </div>
         </div>
       </div>
     </form>
   </div>
 </template>
-  
-  <script setup>
+    
+    <script setup>
 import { ref } from "vue";
 import draggable from "vuedraggable";
+import { useExerciseStore } from "@/stores/quiz99Store";
+const exerciseStore = useExerciseStore();
+const { exercises, results, checkAnswers } = exerciseStore;
 
-const exercises = ref([
-  {
-    sentence: "น้องร้องไห้เสียงดัง",
-    subjects: [],
-    subjectModifiers: [],
-    verbs: [],
-    verbModifiers: [],
-    objects: [],
-    objectModifiers: [],
-    words: [
-      { text: "น้อง" },
-      { text: "ร้องไห้" },
-      { text: "เสียง" },
-      { text: "ดัง" },
-    ],
-  },
-  {
-    sentence: "มานีกินก๋วยเตี๋ยวไก่อย่างเอร็ดอร่อย",
-    subjects: [],
-    subjectModifiers: [],
-    verbs: [],
-    verbModifiers: [],
-    objects: [],
-    objectModifiers: [],
-    words: [
-      { text: "มานี" },
-      { text: "กิน" },
-      { text: "ก๋วยเตี๋ยว" },
-      { text: "ไก่" },
-      { text: "อย่าง" },
-      { text: "เอร็ดอร่อย" },
-    ],
-  },
-]);
+const showResulst = ref([]);
+const handleCheckAnswers = () => {
+  checkAnswers();
+  console.log(results); // Log the results to check if they are updating
+};
+const updateSubjects = (index) => {
+  exerciseStore.exercises[index].subjects = [
+    ...exerciseStore.exercises[index].subjects,
+  ];
+};
 
-const correctAnswers = [
-  {
-    subjects: [{ text: "น้อง" }],
-    subjectModifiers: [],
-    verbs: [{ text: "ร้องไห้" }],
-    verbModifiers: [],
-    objects: [{ text: "เสียง" }, { text: "ดัง" }],
-    objectModifiers: [],
-  },
-  {
-    subjects: [{ text: "มานี" }],
-    subjectModifiers: [],
-    verbs: [{ text: "กิน" }],
-    verbModifiers: [],
-    objects: [
-      { text: "ก๋วยเตี๋ยว" },
-      { text: "ไก่" },
-      { text: "อย่าง" },
-      { text: "เอร็ดอร่อย" },
-    ],
-    objectModifiers: [],
-  },
-];
-
-const results = ref([]);
-
-const checkAnswers = () => {
-  results.value = exercises.value.map((exercise, index) => {
-    const correct = correctAnswers[index];
-    let result = "ถูกต้อง";
-    for (const key in correct) {
-      if (JSON.stringify(correct[key]) !== JSON.stringify(exercise[key])) {
-        result = "ผิด";
-        break;
-      }
-    }
-    return result;
-  });
+const updateSubjectModifiers = (index) => {
+  exerciseStore.exercises[index].subjectModifiers = [
+    ...exerciseStore.exercises[index].subjectModifiers,
+  ];
+};
+const updateVerbs = (index) => {
+  exerciseStore.exercises[index].verbs = [
+    ...exerciseStore.exercises[index].verbs,
+  ];
+};
+const updateVerbModifiers = (index) => {
+  exerciseStore.exercises[index].verbModifiers = [
+    ...exerciseStore.exercises[index].verbModifiers,
+  ];
+};
+const updateObjects = (index) => {
+  exerciseStore.exercises[index].objects = [
+    ...exerciseStore.exercises[index].objects,
+  ];
+};
+const updateObjectModifiers = (index) => {
+  exerciseStore.exercises[index].objectModifiers = [
+    ...exerciseStore.exercises[index].objectModifiers,
+  ];
 };
 </script>
-  
-  <style scoped>
-  .shadow-custom {
+
+    
+    <style lang="scss"  scoped>
+.shadow-custom {
   box-shadow: 0px 0px 10px 0px #bebebe;
 }
 .shadow-custom:hover {
@@ -255,4 +247,4 @@ const checkAnswers = () => {
     -3px 6px 5px #ffffff56;
 }
 </style>
-  
+    

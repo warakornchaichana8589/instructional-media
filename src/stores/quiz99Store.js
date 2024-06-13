@@ -31,7 +31,7 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
     ]
     }
   ]);
-  const answer99 = [เขาวาดรูป,น้องกระโดดเชือก,แม่รีดผ้า];
+  const answer99 = ['เขาวาดรูป','น้องกระโดดเชือก','แม่รีดผ้า'];
 
   const exercises = ref([
     {
@@ -50,6 +50,7 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
         { text: "ดำ" },
         { text: "ทุกวัน" },
       ],
+      sentenceType: "ประโยคบอกเล่า",
     },
     {
       sentence: "แม่ทำขนมหม้อแกงอร่อยมาก",
@@ -66,7 +67,60 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
         { text: "อร่อย" },
         { text: "มาก" },
       ],
+      sentenceType: "ประโยคบอกเล่า",
+    },
+    {
+      sentence: "น้องร้องไห้เสียงดัง",
+      subjects: [],
+      subjectModifiers: [],
+      verbs: [],
+      verbModifiers: [],
+      objects: [],
+      objectModifiers: [],
+      words: [
+        { text: "น้อง" },
+        { text: "ร้องไห้" },
+        { text: "เสียง" },
+        { text: "ดัง" },
+      ],
+      sentenceType: "ประโยคบอกเล่า",
+    },
+    {
+      sentence: "มานีกินก๋วยเตี๋ยวไก่อย่างเอร็ดอร่อย",
+      subjects: [],
+      subjectModifiers: [],
+      verbs: [],
+      verbModifiers: [],
+      objects: [],
+      objectModifiers: [],
+      words: [
+        { text: "มานี" },
+        { text: "กิน" },
+        { text: "ก๋วยเตี๋ยว" },
+        { text: "ไก่" },
+        { text: "อย่าง" },
+        { text: "เอร็ดอร่อย" },
+      ],
+      sentenceType: "ประโยคบอกเล่า",
+    },
+    {
+      sentence: "อารีซื้อกระโปรงตัวใหม่",
+      subjects: [],
+      subjectModifiers: [],
+      verbs: [],
+      verbModifiers: [],
+      objects: [],
+      objectModifiers: [],
+      words: [
+        { text: "อารี" },
+        { text: "ซื้อ" },
+        { text: "กระโปรง" },
+        { text: "ตัว" },
+        { text: "ใหม่" },
+      ],
+      sentenceType: "ประโยคบอกเล่า",
     }
+
   ]);
 
   const correctAnswers = [
@@ -77,6 +131,7 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       verbModifiers: [{ text: "ทุกวัน" } ],
       objects: [{ text: "กาแฟ" }],
       objectModifiers: [ { text: "ดำ" }],
+      sentenceType: "ประโยคบอกเล่า",
     },
     {
       subjects: [{ text: "แม่" }],
@@ -85,13 +140,41 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       verbModifiers: [],
       objects: [{ text: "ขนมหม้อแกง" }],
       objectModifiers: [{ text: "อร่อย" }, { text: "มาก" }],
+      sentenceType: "ประโยคบอกเล่า",
+    },
+    {
+      subjects: [{ text: "น้อง" }],
+      subjectModifiers: [],
+      verbs: [{ text: "ร้องไห้" }],
+      verbModifiers: [],
+      objects: [{ text: "เสียง" }, { text: "ดัง" }],
+      objectModifiers: [],
+      sentenceType: "ประโยคบอกเล่า",
+    },
+    {
+      subjects: [{ text: "มานี" }],
+      subjectModifiers: [],
+      verbs: [{ text: "กิน" }],
+      verbModifiers: [],
+      objects: [{ text: "ก๋วยเตี๋ยว" },{ text: "ไก่" },{ text: "อย่าง" },{ text: "เอร็ดอร่อย" },
+      ],
+      objectModifiers: [],
+      sentenceType: "ประโยคบอกเล่า",
+    },
+    {
+      subjects: [{ text: "อารี" }],
+      subjectModifiers: [],
+      verbs: [{ text: "ซื้อ" }],
+      verbModifiers: [],
+      objects: [{ text: "กระโปรง" }, { text: "ตัว" }, { text: "ใหม่" }],
+      objectModifiers: [],
+      sentenceType: "ประโยคบอกเล่า",
     }
   ];
 
   const results = ref([]);
   const results9 = ref([]);
   const checkAnswers = () => {
-    console.log('test checkAnswers')
     results.value = exercises.value.map((exercise, index) => {
       const correct = correctAnswers[index];
       let result = "ถูกต้อง";

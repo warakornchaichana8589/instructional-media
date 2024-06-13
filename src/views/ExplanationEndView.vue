@@ -49,7 +49,7 @@ audio.value = new Audio(audioSrcInput);
   };
    
   const swiperPrevSlide = () => {
-    router.push("./QuizDragSlider06");
+    router.push("./ExerciseFormView03");
     audio.value.play();
   };
   

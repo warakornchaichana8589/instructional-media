@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
 import StartView from '../views/StartView.vue'
 import QuestionsView from '../views/QuestionsView.vue'
 import LearningView from '../views/LearningView.vue'
@@ -31,7 +32,8 @@ import ShowScoreEndView from '../views/ShowScoreEndView.vue'
 import ShowAllScore from '../views/ShowAllScore.vue'
 import Endding from '../views/Endding.vue'
 import ExerciseFormView from '../views/ExerciseFormView.vue'
-
+import ExerciseFormView02 from '../views/ExerciseFormView02.vue'
+import ExerciseFormView03 from '../views/ExerciseFormView03.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -39,6 +41,11 @@ const router = createRouter({
       path: '/',
       name: 'StartView',
       component: StartView
+    },
+    {
+      path: '/AboutView',
+      name: 'AboutView',
+      component: AboutView
     },
     
     {
@@ -201,6 +208,18 @@ const router = createRouter({
       path:'/ExerciseFormView',
       name: 'ExerciseFormView',
       component: ExerciseFormView
+    }
+    ,
+    {
+      path:'/ExerciseFormView02',
+      name: 'ExerciseFormView02',
+      component: ExerciseFormView02
+    }
+    ,
+    {
+      path:'/ExerciseFormView03',
+      name: 'ExerciseFormView03',
+      component: ExerciseFormView03
     }
     
     

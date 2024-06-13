@@ -1,7 +1,7 @@
 <template>
     <div>
       <Layout bgImage="bg-l.png" class="fadeIn">
-        <ExerciseForm />
+        <ExerciseForm03 />
   
         <div class="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 z-10">
           <ButtonGo
@@ -27,7 +27,7 @@
   import ButtonGo from "@/components/ButtonGo.vue";
   import { useAudioStore } from "@/stores/useAudio";
   import { ref, watchEffect, onMounted, computed } from "vue";
-  import ExerciseForm from "@/components/ExerciseForm.vue";
+  import ExerciseForm03 from "@/components/ExerciseForm03.vue";
   
   import { useRouter } from "vue-router";
   const router = useRouter();
@@ -40,12 +40,12 @@
   const buttonDisabled = ref(false);
   
   const swiperNextSlide = () => {
-    router.push("./ExerciseFormView02");
+    router.push("./ExplanationEndView");
     audio.value.play();
   };
   
   const swiperPrevSlide = () => {
-    router.back();
+    router.push("./ExerciseFormView02");
     audio.value.play();
   };
   </script>

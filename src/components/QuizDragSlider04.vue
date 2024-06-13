@@ -5,13 +5,13 @@
     >
       ประโยคและส่วนประกอบของประโยค
     </h1>
-   
+
     <form
       @input="checkAnswers"
       class="max-w-[767px] h-full flex flex-col items-center justify-center"
     >
       <div
-        v-for="(item, index) in exercises"
+        v-for="(item, index) in exercises.slice(0, 2)"
         :key="index"
         class="exercise-item mt-[20px]"
       >
@@ -21,7 +21,7 @@
             <label></label>
             <draggable
               v-model="item.words"
-              :group="'shared'+index"
+              :group="'shared' + index"
               class="draggable-list flex gap-2 h-[40px] mb-[10px] rounded-lg min-w-[300px] px-3 bg-[#fff4e3b6]"
               itemKey="text"
             >
@@ -39,13 +39,13 @@
         <div class="dropzones flex gap-2">
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ประธาน:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ประธาน</label
             >
             <draggable
               v-model="item.subjects"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
               @update="updateSubjects(index)"
             >
@@ -60,13 +60,13 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ขยายประธาน:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายประธาน</label
             >
             <draggable
               v-model="item.subjectModifiers"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
               @update="updateSubjectModifiers(index)"
             >
@@ -81,13 +81,13 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >กริยา:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >กริยา</label
             >
             <draggable
               v-model="item.verbs"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
               @update="updateVerbs(index)"
             >
@@ -102,13 +102,13 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ขยายกริยา:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายกริยา</label
             >
             <draggable
               v-model="item.verbModifiers"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
               @update="updateVerbModifiers(index)"
             >
@@ -123,13 +123,13 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >กรรม:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >กรรม</label
             >
             <draggable
               v-model="item.objects"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
               @update="updateObjects(index)"
             >
@@ -144,13 +144,13 @@
           </div>
           <div class="dropzone">
             <label
-              class="w-full bg-[#FFD699] leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
-              >ขยายกรรม:</label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ขยายกรรม</label
             >
             <draggable
               v-model="item.objectModifiers"
-              :group="'shared'+index"
-              class="draggable-list flex h-[30px] bg-[#FFF4E3]"
+              :group="'shared' + index"
+              class="draggable-list flex h-[40px] bg-[#FFF4E3]"
               itemKey="text"
               @update="updateObjectModifiers(index)"
             >
@@ -162,6 +162,25 @@
                 </div>
               </template>
             </draggable>
+          </div>
+          <div class="dropzone">
+            <label
+              class="w-full bg-[#FFD699] mb-2 leading-3 flex justify-center items-center px-3 py-[15px] text-center text-[18px] lg:text-[20px]"
+              >ชนิดของประโยค</label
+            >
+            <select
+              v-model="item.sentenceType"
+              class="w-full bg-[#FFF4E3] h-[40px] p-2 text-[16px] lg:text-[18px] cursor-pointer"
+            >
+              <option class="cursor-pointer" value="ประโยคบอกเล่า">ประโยคบอกเล่า</option>
+              <option class="cursor-pointer" value="ประโยคปฏิเสธ">ประโยคปฏิเสธ</option>
+              <option class="cursor-pointer" value="ประโยคคำถาม">ประโยคคำถาม</option>
+              <option class="cursor-pointer" value="ประโยคขอร้อง">ประโยคขอร้อง</option>
+              <option class="cursor-pointer" value="ประโยคคำสั่ง">ประโยคคำสั่ง</option>
+              <option class="cursor-pointer" value="ประโยคแสดงความต้องการ">
+                ประโยคแสดงความต้องการ
+              </option>
+            </select>
           </div>
         </div>
       </div>
@@ -176,16 +195,13 @@ import { useExerciseStore } from "@/stores/quiz99Store";
 const exerciseStore = useExerciseStore();
 const { exercises, results, checkAnswers } = exerciseStore;
 
-import { useRouter } from "vue-router";
-const router = useRouter();
-
 const showResulst = ref([]);
 const handleCheckAnswers = () => {
   checkAnswers();
   console.log(results); // Log the results to check if they are updating
 };
 const updateSubjects = (index) => {
-    exerciseStore.exercises[index].subjects = [
+  exerciseStore.exercises[index].subjects = [
     ...exerciseStore.exercises[index].subjects,
   ];
 };
