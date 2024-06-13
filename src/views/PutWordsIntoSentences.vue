@@ -40,7 +40,7 @@
   const buttonDisabled = ref(false);
   
   const swiperNextSlide = () => {
-    router.push("./PutWordsIntoSentences");
+    router.push("./ExerciseFormView00");
     audio.value.play();
   };
   

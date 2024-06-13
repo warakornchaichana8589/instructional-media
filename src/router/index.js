@@ -34,6 +34,7 @@ import Endding from '../views/Endding.vue'
 import ExerciseFormView from '../views/ExerciseFormView.vue'
 import ExerciseFormView02 from '../views/ExerciseFormView02.vue'
 import ExerciseFormView03 from '../views/ExerciseFormView03.vue'
+import ExerciseFormView00 from '../views/ExerciseFormView00.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -220,6 +221,12 @@ const router = createRouter({
       path:'/ExerciseFormView03',
       name: 'ExerciseFormView03',
       component: ExerciseFormView03
+    }
+    ,
+    {
+      path:'/ExerciseFormView00',
+      name: 'ExerciseFormView00',
+      component: ExerciseFormView00
     }
     
     

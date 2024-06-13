@@ -41,6 +41,14 @@ export const useListStore03 = defineStore("useListStore03", {
       { name: "นั่ง", id: 4 },
     ],
     answerList5: [],
+    list5: [
+      { name: "ทุกคืน", id: 3 },
+      { name: "สมาธิ", id: 2 },
+      { name: "ปรีชา", id: 1 },
+      { name: "ก่อนนอน", id: 4 },
+      { name: "นั่ง", id: 4 },
+    ],
+    answerList5: [],
   }),
   actions: {
     updateList1(newList) {
