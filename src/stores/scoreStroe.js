@@ -6,13 +6,16 @@ export const useScoreStore = defineStore("useScore", () => {
     const preTest = ref(0)
     const exerciseScores = ref([])
     const totalExerciseScores = ref(0)
-
+    
+    // แบบทดสอบหลังเรียน คะแนน
     function addPostTest (score){
         postTest.value = score
     }
+    // แบบทดสอบก่อนเรียน คะแนน
     function addPreTest (score){
         preTest.value = score
     }
+    // แบบฝึกหัด คะแนน
     function addExerciseScores (score){
         exerciseScores.value.push(score)
     }
@@ -20,7 +23,7 @@ export const useScoreStore = defineStore("useScore", () => {
         totalExerciseScores.value = exerciseScores.value.reduce((a, b) => a + b, 0)
     }
     
-
+    
 
 
 

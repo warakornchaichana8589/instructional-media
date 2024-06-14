@@ -1,0 +1,49 @@
+[33md3fc439[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to d3fc439d1e18d479c09d4737c81159d155cc6b14
+[33m931e638[m HEAD@{1}: reset: moving to 931e638505ce7bfaccc9cc9568492c57231b59eb
+[33m93d026b[m HEAD@{2}: commit: add
+[33m931e638[m HEAD@{3}: reset: moving to 931e638505ce7bfaccc9cc9568492c57231b59eb
+[33m74ddbb5[m HEAD@{4}: reset: moving to 74ddbb54c377b2064d4798d7f0c370a069a7e7b7
+[33mbf94098[m HEAD@{5}: commit: add
+[33m8d2397c[m HEAD@{6}: commit: add
+[33m74ddbb5[m HEAD@{7}: commit: add
+[33m931e638[m HEAD@{8}: commit: add end start quiz
+[33md3fc439[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{9}: commit: add
+[33mfb76e21[m HEAD@{10}: commit: end
+[33m624a989[m HEAD@{11}: commit: add
+[33mf43a637[m HEAD@{12}: commit: edit word
+[33meb29f68[m HEAD@{13}: commit: add end
+[33m4adcf45[m HEAD@{14}: commit: ล่าสุดเหลือในไลน์
+[33mf420f36[m HEAD@{15}: commit: add end
+[33m0c71b91[m HEAD@{16}: commit: add
+[33m015ef89[m HEAD@{17}: commit: new
+[33me3d414a[m HEAD@{18}: commit: ให้นักเรียนแต่งประโยคจากคำที่กำหนด
+[33mfa3fd16[m HEAD@{19}: commit: fix error drag
+[33mf32a40e[m HEAD@{20}: commit: add SentencesFromPictures01-3
+[33m1b81840[m HEAD@{21}: commit: add quiz image 12
+[33m0fa80c0[m[33m ([m[1;31morigin/phet[m[33m)[m HEAD@{22}: commit: edit input sound
+[33mc10bd2c[m HEAD@{23}: commit: add scroe stroe
+[33m22dd623[m HEAD@{24}: commit: add quiz drag
+[33m6ac8578[m HEAD@{25}: pull --ff --recurse-submodules --progress origin: Merge made by the 'ort' strategy.
+[33ma2a66f6[m HEAD@{26}: commit: edit btn
+[33m9bfd173[m HEAD@{27}: commit: add touch
+[33m0e9d79b[m HEAD@{28}: commit: add quiz
+[33mc9ff1bf[m HEAD@{29}: commit: quiz01
+[33m89ed6b2[m HEAD@{30}: commit: add setting show score
+[33m3ae0e80[m HEAD@{31}: commit: add play sound
+[33m518793c[m HEAD@{32}: commit: add page
+[33m4d02bcc[m HEAD@{33}: commit: add steppage
+[33m55bc028[m HEAD@{34}: commit: add image
+[33m71258ba[m HEAD@{35}: commit: value_volume
+[33m0766672[m HEAD@{36}: commit: add show score
+[33mb13d217[m HEAD@{37}: commit: add sound choices
+[33m20a45d6[m HEAD@{38}: commit: add bg-qustion
+[33m6e5f252[m HEAD@{39}: commit: add qustion
+[33me94997d[m HEAD@{40}: commit: add sound
+[33me6986ff[m HEAD@{41}: commit: remove form
+[33meb60a69[m HEAD@{42}: commit: add
+[33m94248f9[m HEAD@{43}: commit: import computed
+[33mabd93e7[m HEAD@{44}: commit: edit bgurl
+[33m9b48aa6[m HEAD@{45}: commit: add image
+[33m3f7ff0d[m HEAD@{46}: commit: add new
+[33mc31f3a1[m HEAD@{47}: commit: one
+[33maddfb2e[m HEAD@{48}: clone: from https://github.com/warakornchaichana8589/instructional-media.git

@@ -128,7 +128,7 @@
   });
   const answerStore = useAnswerStore();
   const updateAnswer = (questionIndex, index, id) => {
-    if (Object.keys(answerStore.answers).length === 10 && swiperInstance.value.isEnd) {
+    if (Object.keys(answerStore.answersEnd).length === 10 && swiperInstance.value.isEnd) {
       buttonDisabled.value = false;
     }
   
@@ -136,7 +136,7 @@
     selectAnswer(id, index + 1);
   };
   const checkBtnGo = () =>{
-    if (Object.keys(answerStore.answers).length === 9 && swiperInstance.value.isEnd) {
+    if (Object.keys(answerStore.answersEnd).length === 9 && swiperInstance.value.isEnd) {
       buttonDisabled.value = false;
     }
   }
@@ -153,7 +153,7 @@
   });
   
   const selectAnswer = (questionId, answer) => {
-    answerStore.addOrUpdateAnswer(questionId, answer);
+    answerStore.addOrUpdateAnswerEnd(questionId, answer);
   };
   
   const onSlideChange = () => {
@@ -173,7 +173,7 @@
   const useCounter = useCounterStore();
   const swiperNextSlide = () => {
     if (slideEnd.value) {
-      useCounter.setState();
+      useCounter.setStateEnd();
       router.push("./ShowScoreEndView");
     } else {
       swiperInstance.value.slideNext();
@@ -203,7 +203,7 @@
   };
   
   watch(
-    [() => answerStore.answers, () => swiperInstance.value && swiperInstance.value.isEnd],
+    [() => answerStore.answersEnd, () => swiperInstance.value && swiperInstance.value.isEnd],
     ([newAnswers, isEnd]) => {
       if ((Object.keys(newAnswers).length === 10 && isEnd) || !isEnd) {
         buttonDisabled.value = false;

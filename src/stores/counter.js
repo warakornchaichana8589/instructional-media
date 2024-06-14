@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
   const statePage = ref('')
+  const statePageEnd = ref('')
   const doubleCount = computed(() => count.value * 2)
   function increment() {
     count.value++
@@ -14,5 +15,11 @@ export const useCounterStore = defineStore('counter', () => {
   function resetState() {
     statePage.value = ''
   }
-  return { count, doubleCount, increment, setState, resetState, statePage }
+  function setStateEnd() {
+    statePageEnd.value = 'ok'
+  }
+  function resetStateEnd() {
+    statePageEnd.value = ''
+  }
+  return { count, doubleCount, increment, setState, resetState, setStateEnd, resetStateEnd, statePage, statePageEnd }
 })

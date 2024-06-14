@@ -19,7 +19,7 @@
             >
           </p>
           <p class="text-[30px] md:text-[50px] lg:text-[80px]">
-            คะแนน : {{ answerStore.score }}/10
+            คะแนน : {{ answerStore.scoreEnd }}/10
           </p>
         </div>
       </div>
@@ -58,14 +58,14 @@ const win = ref(null);
 
 const useCounter = useCounterStore()
 onMounted(() => {
-  const QuizBefore = useCounter.statePage
+  const QuizBefore = useCounter.statePageEnd
   if (QuizBefore === 'ok') {
    console.log('ok')
   }else{
     router.push('/QuestionsEndView');
   }
-  answerStore.checkAnswer();
-  if (answerStore.score >= 8) {
+  answerStore.checkAnswerEnd();
+  if (answerStore.scoreEnd >= 8) {
     win.value = new Audio(winSound);
     win.value.volume = 0.7;
     win.value.play();

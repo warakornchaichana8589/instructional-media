@@ -24,15 +24,15 @@
           <div class="flex flex-col w-full items-center gap-3 lg:gap-6">
             <p class="text-[18px] md:text-[24px] lg:text-[32px] w-full  flex justify-between">
               ทดสอบก่อนเรียน :
-              <span class="ml-auto">{{ answerStore.score }}/10 คะแนน</span>
+              <span class="ml-auto">{{ useScore.preTest }}/10 คะแนน</span>
             </p>
             <p class="text-[18px] md:text-[24px] lg:text-[32px] w-full flex justify-between">
               แบบฝึกหัดการแต่งประโยค :
-              <span class="ml-auto">{{ answerStore.score }}/10 คะแนน</span>
+              <span class="ml-auto">{{ useScore.preTest }}/10 คะแนน</span>
             </p>
             <p class="text-[18px] md:text-[24px] lg:text-[32px] w-full flex justify-between">
               ทดสอบหลังเรียน :
-              <span class="ml-auto">{{ answerStore.score }}/10 คะแนน</span>
+              <span class="ml-auto">{{ useScore.postTest }}/10 คะแนน</span>
             </p>
           </div>
         </div>
@@ -58,32 +58,24 @@
    <script setup>
 import Layout from "@/components/Layout.vue";
 import { useDataStore } from "../stores/dataStore";
-import { useAnswerStore } from "@/stores/answerStore";
-import { useCounterStore } from "@/stores/counter";
+import { useScoreStore } from "@/stores/scoreStroe";
 import ButtonGo from "@/components/ButtonGo.vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
-import winSound from "../assets/sound/tadaa-47995.mp3";
-import { onMounted, ref } from "vue";
+
+import { useAnswerStore } from '@/stores/answerStore'
+const useAnswer = useAnswerStore()
+
+
+
+const useScore = useScoreStore();
+useScore.addPreTest(useAnswer.score);
+useScore.addPostTest(useAnswer.scoreEnd);
 const { inputNameValue } = useDataStore();
-const answerStore = useAnswerStore();
+
 const win = ref(null);
 
-const useCounter = useCounterStore();
-// onMounted(() => {
-//   const QuizBefore = useCounter.statePage
-//   if (QuizBefore === 'ok') {
-//    console.log('ok')
-//   }else{
-//     router.push('/questions');
-//   }
-//   answerStore.checkAnswer();
-//   if (answerStore.score >= 8) {
-//     win.value = new Audio(winSound);
-//     win.value.volume = 0.7;
-//     win.value.play();
-//   }
-// });
 const NextSlide = () => {
   router.push("./Endding");
 };
