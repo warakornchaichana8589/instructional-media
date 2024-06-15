@@ -188,6 +188,33 @@ const valueAnswer = ref({
   valueAnswer11: "",
   valueAnswer12: "",
 });
+
+const QuestionFromImage01Part02 = ref({
+  Quiz01: {
+    word: valueQuiz.value.valueQuiz07,
+    sentence: valueAnswer.value.valueAnswer07,
+  },
+  Quiz02: {
+    word: valueQuiz.value.valueQuiz08,
+    sentence: valueAnswer.value.valueAnswer08,
+  },
+  Quiz03: {
+    word: valueQuiz.value.valueQuiz09,
+    sentence: valueAnswer.value.valueAnswer09,
+  },
+  Quiz04: {
+    word: valueQuiz.value.valueQuiz10,
+    sentence: valueAnswer.value.valueAnswer10,
+  },
+  Quiz05: {
+    word: valueQuiz.value.valueQuiz11,
+    sentence: valueAnswer.value.valueAnswer11,
+  },
+  Quiz06: {
+    word: valueQuiz.value.valueQuiz12,
+    sentence: valueAnswer.value.valueAnswer12,
+  },
+});
 </script>
   
   <style  scoped>

@@ -7,32 +7,56 @@ export const validateSentenceStore = defineStore('validateSentenceStore', {
     result: ''
   }),
   actions: {
-    async checkSentence() {
-      try {
-        const response = await axios.post('https://api.aiforthai.in.th/tpos', 
-          new URLSearchParams({ text: this.sentence }), 
-          {
-            headers: {
-              'Apikey': 'FcKKUQ6ufY1QKywUnYERv7sxg7wT93Q3',
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
+    async TLex(text){
+        // ระบบตัดคําทีเล็กซ์พลัสพลัส
+
+        // ตรวจสอบว่า text ไม่เป็นค่าว่าง
+  
+          try {
+            const response = await axios.post('https://api.aiforthai.in.th/tpos', 
+              new URLSearchParams({ text: text }), 
+              {
+                headers: {
+                  'Apikey': 'FcKKUQ6ufY1QKywUnYERv7sxg7wT93Q3',
+                  'Content-Type': 'application/x-www-form-urlencoded',
+                },
+              }
+            );
+            return response.data
+          } catch (error) {
+            console.error('Error:', error);
+            return Promise.reject(error);
           }
-        );
-
-        // Log the entire response to understand its structure
-        console.log('API Response:', response);
-
-        // Extract tokens correctly from the response
-        const tokens = response.data.tags; // Ensure this path is correct
-
-        // Additional logging to debug token extraction
+        
     
-
-        this.result = this.validateSentence(tokens) ? 'ประโยคถูกต้อง' : 'ประโยคไม่ถูกต้อง';
-      } catch (error) {
-        console.error('Error:', error);
-        this.result = 'Error occurred while checking the sentence';
-      }
+    },
+    async checkSentence(sentence) {
+        try {
+          const response = await axios.post('https://api.aiforthai.in.th/tpos', 
+            new URLSearchParams({ text: sentence }), 
+            {
+              headers: {
+                'Apikey': 'FcKKUQ6ufY1QKywUnYERv7sxg7wT93Q3',
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            }
+          );
+  
+          // Log the entire response to understand its structure
+          console.log('API Response:', response.data);
+  
+          // Extract tokens correctly from the response
+          const tokens = response.data.tags; // Ensure this path is correct
+          // Additional logging to debug token extraction
+          this.result = this.validateSentence(tokens) ? 'ประโยคถูกต้อง' : 'ประโยคไม่ถูกต้อง';
+          return  this.validateSentence(tokens)
+        } catch (error) {
+          console.error('Error:', error);
+          this.result = 'Error occurred while checking the sentence';
+          return this.validateSentence(tokens)
+        }
+      
+    
     },
     validateSentence(tokens) {
       // Define patterns for valid sentences

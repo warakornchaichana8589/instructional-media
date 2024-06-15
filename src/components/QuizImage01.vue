@@ -9,7 +9,9 @@
       ให้นักเรียนเขียนคำจากภาพที่กำหนดให้แล้วนำไปแต่งประโยค
     </h1>
     <div class="w-full h-full flex justify-center items-center">
-      <div class="w-[900px] max-w-[90%] grid grid-cols-3 lg:grid-cols-2 gap-1 lg:gap-3">
+      <div
+        class="w-[900px] max-w-[90%] grid grid-cols-3 lg:grid-cols-2 gap-1 lg:gap-3"
+      >
         <div
           class="w-full px-3 py-1 border-2 grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 items-end gap-2 justify-between"
         >
@@ -18,7 +20,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz01"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz01.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -28,8 +30,8 @@
               <label class="text-nowrap">ข้อ 1. </label
               ><input
                 type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none "
-                v-model="valueAnswer.valueAnswer01"
+                class="imput bg-transparent border-dotted border-b-4 outline-none"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz01.sentence"
               />
             </div>
           </div>
@@ -42,7 +44,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz02"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz02.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -52,8 +54,8 @@
               <label class="text-nowrap">ข้อ 2. </label
               ><input
                 type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none "
-                v-model="valueAnswer.valueAnswer02"
+                class="imput bg-transparent border-dotted border-b-4 outline-none"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz02.sentence"
               />
             </div>
           </div>
@@ -66,7 +68,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz03"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz03.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -76,8 +78,8 @@
               <label class="text-nowrap">ข้อ 3. </label
               ><input
                 type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none "
-                v-model="valueAnswer.valueAnswer03"
+                class="imput bg-transparent border-dotted border-b-4 outline-none"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz03.sentence"
               />
             </div>
           </div>
@@ -90,7 +92,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz04"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz04.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -100,8 +102,8 @@
               <label class="text-nowrap">ข้อ 4. </label
               ><input
                 type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none "
-                v-model="valueAnswer.valueAnswer04"
+                class="imput bg-transparent border-dotted border-b-4 outline-none"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz04.sentence"
               />
             </div>
           </div>
@@ -114,7 +116,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz05"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz05.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -124,8 +126,8 @@
               <label class="text-nowrap">ข้อ 5. </label
               ><input
                 type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none "
-                v-model="valueAnswer.valueAnswer05"
+                class="imput bg-transparent border-dotted border-b-4 outline-none"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz05.sentence"
               />
             </div>
           </div>
@@ -138,7 +140,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz06"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz06.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -148,8 +150,8 @@
               <label class="text-nowrap">ข้อ 6. </label
               ><input
                 type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none "
-                v-model="valueAnswer.valueAnswer06"
+                class="imput bg-transparent border-dotted border-b-4 outline-none"
+                v-model="useCheck.QuestionFromImage01Part01.Quiz06.sentence"
               />
             </div>
           </div>
@@ -170,22 +172,9 @@ import { ref, watch } from "vue";
 import InputTextSound from "./InputTextSound.vue";
 const imageBg = new URL(`../assets/images/bg-l.png`, import.meta.url).href;
 
-const valueQuiz = ref({
-  valueQuiz01: "",
-  valueQuiz02: "",
-  valueQuiz03: "",
-  valueQuiz04: "",
-  valueQuiz05: "",
-  valueQuiz06: "",
-});
-const valueAnswer = ref({
-  valueAnswer01: "",
-  valueAnswer02: "",
-  valueAnswer03: "",
-  valueAnswer04: "",
-  valueAnswer05: "",
-  valueAnswer06: "",
-});
+import { useCheckStore } from "@/stores/checkStore"
+const useCheck = useCheckStore()
+
 </script>
 
 <style  scoped>

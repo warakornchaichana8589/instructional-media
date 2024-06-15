@@ -28,7 +28,8 @@
             </p>
             <p class="text-[18px] md:text-[24px] lg:text-[32px] w-full flex justify-between">
               แบบฝึกหัดการแต่งประโยค :
-              <span class="ml-auto">{{ useScore.preTest }}/10 คะแนน</span>
+              <span class="ml-auto" v-if="totalPagesScores==null">{{ กำลังโหลดคะแนน }}/10 คะแนน</span>
+              <span class="ml-auto" v-else>{{ totalPagesScores }}/10 คะแนน</span>
             </p>
             <p class="text-[18px] md:text-[24px] lg:text-[32px] w-full flex justify-between">
               ทดสอบหลังเรียน :
@@ -57,19 +58,41 @@
    
    <script setup>
 import Layout from "@/components/Layout.vue";
+
 import { useDataStore } from "../stores/dataStore";
 import { useScoreStore } from "@/stores/scoreStroe";
+
+import { useCheckStore } from "@/stores/checkStore";
+const checkStore = useCheckStore()
+
 import ButtonGo from "@/components/ButtonGo.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
 
 import { useAnswerStore } from '@/stores/answerStore'
 const useAnswer = useAnswerStore()
 
-
+const totalPagesScores = ref(null)
 
 const useScore = useScoreStore();
+
+onMounted(async ()=>{
+ const scoreQuizView = await checkStore.checkQuizView();
+
+ const QuestionFromImage01 = await checkStore.sumQuestionFromImage();
+ useScore.updatePagesScores('quiz_view',scoreQuizView)
+ useScore.updatePagesScores('QuestionFromImage01',QuestionFromImage01)
+//  totalPagesScores.value = useScore.sumPagesScores()
+const sum = useScore.sumPagesScores()
+totalPagesScores.value = sum
+})
+
+ 
+
+
+
+
 useScore.addPreTest(useAnswer.score);
 useScore.addPostTest(useAnswer.scoreEnd);
 const { inputNameValue } = useDataStore();
