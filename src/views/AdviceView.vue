@@ -7,7 +7,6 @@
             text="ถัดไป"
             classCustomFont="text-[14px] lg:text-[30px]"
             @click="NextSlide"
-           
           />
         </div>
     </Layout>

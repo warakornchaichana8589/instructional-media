@@ -3,8 +3,11 @@
     <h1>ทดสอบ ตรวจสอบประโยค</h1>
     <input type="text" v-model="input" @input="update" class="input border-1">
     <button @click="check">Send</button>
+    <button @click="atothai"></button>
    <h2>result : {{ validateSentence.result }}</h2>
 input : {{ input }}
+
+<p>{{ arabicToThaiNumber(Number(input)) }}</p>
   </div>
 </template>
 
@@ -21,7 +24,10 @@ const update = () =>{
 const check = () => {
   validateSentence.checkSentence(input.value);
 }
-
+function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
 </script>
 
 <style lang="scss" scoped>

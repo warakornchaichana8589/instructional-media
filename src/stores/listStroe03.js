@@ -11,11 +11,11 @@ export const useListStore03 = defineStore("useListStore03", {
     ],
     answerList1: [],
     list2: [
-      { name: "ช่วยกัน", id: 3 },
-      { name: "บ้าน", id: 2 },
-      { name: "พี่น้อง", id: 4 },
-      { name: "ความสะอาด", id: 5 },
-      { name: "ทำ", id: 1 },
+      { name: "สิงโต", id: 3 },
+      { name: "เห็น", id: 2 },
+      { name: "เด็กๆ", id: 1 },
+      { name: "ที่สวนสัตว์", id: 5 },
+      { name: "ตัวใหญ่", id: 4 },
     ],
     answerList2: [],
     list3: [

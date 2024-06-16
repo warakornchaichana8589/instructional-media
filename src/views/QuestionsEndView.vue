@@ -20,14 +20,14 @@
                   v-if="!question.imageUrl"
                   class="text-[18px] lg:text-[32px] mt-5"
                 >
-                  ข้อ {{ question.id }} <span v-html="question.question"></span>
+                  ข้อ {{ arabicToThaiNumber(question.id) }} <span v-html="question.question"></span>
                 </h3>
                 <div
                   v-if="question.imageUrl"
                   class="flex gap-2 mt-10 justify-between items-center w-full"
                 >
                   <h3 class="text-[18px] lg:text-[32px]">
-                    ข้อ {{ question.id }} <span v-html="question.question"></span>
+                    ข้อ {{  arabicToThaiNumber(question.id) }} <span v-html="question.question"></span>
                   </h3>
                   <img
                     :src="question.imageUrl"
@@ -162,7 +162,7 @@
     audio.value.play();
   };
   const buttonText = computed(() => {
-    return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ย้อยกลับ";
+    return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ย้อนกลับ";
   });
   const buttonTextEnd = computed(() => {
     return slideEnd.value ? "ดูคะแนน" : "ถัดไป";
@@ -213,7 +213,10 @@
     },
     { immediate: true } // เพิ่มออปชัน immediate เพื่อเรียก watcher ทันทีที่คอมโพเนนต์ถูกสร้าง
   );
-  
+  function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
   const modules = [Navigation];
   </script>
     

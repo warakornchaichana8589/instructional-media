@@ -17,7 +17,7 @@
                 ตำแหน่งครูผู้ช่วย<br>
                 กลุ่มสาระการเรียนรู้ภาษาไทย<br>
                 โรงเรียนสวนป่าแม่กะสี อำเภอแม่เปิน จังหวัดนครสวรรค์<br>
-                สำนักงานเขตพื้นที่การศึกษาประถมศึกษานครสวรรค์ เขต๒<br>
+                สำนักงานเขตพื้นที่การศึกษาประถมศึกษานครสวรรค์ เขต ๒<br>
                 FB: <a class=" cursor-pointer hover:text-blue-400" href="www.facebook.com/โรงเรียนสวนป่าแม่กะสี">www.facebook.com/โรงเรียนสวนป่าแม่กะสี SMKS high school</a><br>
                 E-mail: <a class="cursor-pointer hover:text-blue-400" href="mailto:suanpa.smks1539@gmail.com">suanpa.smks1539@gmail.com</a>
             </p>

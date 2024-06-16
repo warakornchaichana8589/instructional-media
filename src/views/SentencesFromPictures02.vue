@@ -7,7 +7,7 @@
 
         <div class="absolute bottom-2 lg:bottom-5 left-2 lg:left-5 z-10">
         <ButtonGo
-          text="ย้อยกลับ"
+          text="ย้อนกลับ"
           classCustomFont="text-[14px] lg:text-[30px]"
           @click="swiperPrevSlide"
         />

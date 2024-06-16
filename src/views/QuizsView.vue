@@ -86,7 +86,7 @@
 
   };
   const buttonText = computed(() => {
-    return slideBiginnig.value ? "หน้าบทเรียน" : "ย้อยกลับ";
+    return slideBiginnig.value ? "หน้าบทเรียน" : "ย้อนกลับ";
   });
   const buttonTextEnd = computed(() => {
     return slideEnd.value ? "แบบฝึกหัดถัดไป" : "ถัดไป";

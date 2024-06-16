@@ -27,7 +27,7 @@
           </div>
           <div class="flex flex-col justify-center items-center col-span-2">
             <div class="flex items-end gap-2">
-              <label class="text-nowrap">ข้อ 1. </label
+              <label class="text-nowrap">ข้อ ๑. </label
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
@@ -51,7 +51,7 @@
           </div>
           <div class="flex flex-col justify-center items-center col-span-2">
             <div class="flex items-end gap-2">
-              <label class="text-nowrap">ข้อ 2. </label
+              <label class="text-nowrap">ข้อ ๒. </label
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
@@ -75,7 +75,7 @@
           </div>
           <div class="flex flex-col justify-center items-center col-span-2">
             <div class="flex items-end gap-2">
-              <label class="text-nowrap">ข้อ 3. </label
+              <label class="text-nowrap">ข้อ ๓. </label
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
@@ -99,7 +99,7 @@
           </div>
           <div class="flex flex-col justify-center items-center col-span-2">
             <div class="flex items-end gap-2">
-              <label class="text-nowrap">ข้อ 4. </label
+              <label class="text-nowrap">ข้อ ๔. </label
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
@@ -108,54 +108,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="w-full px-3 py-1 border-2 grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 items-end gap-2 justify-between"
-        >
-          <div class="flex flex-row lg:flex-col justify-center items-center">
-            <img :src="image62" alt="" class="w-[50px] lg:w-[100px]" />
-            <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
-              <input
-                type="text"
-                v-model="useCheck.QuestionFromImage01Part01.Quiz05.word"
-                class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
-              />
-            </div>
-          </div>
-          <div class="flex flex-col justify-center items-center col-span-2">
-            <div class="flex items-end gap-2">
-              <label class="text-nowrap">ข้อ 5. </label
-              ><input
-                type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none"
-                v-model="useCheck.QuestionFromImage01Part01.Quiz05.sentence"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-full px-3 py-1 border-2 grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 items-end gap-2 justify-between"
-        >
-          <div class="flex flex-row lg:flex-col justify-center items-center">
-            <img :src="image63" alt="" class="w-[50px] lg:w-[100px]" />
-            <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
-              <input
-                type="text"
-                v-model="useCheck.QuestionFromImage01Part01.Quiz06.word"
-                class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
-              />
-            </div>
-          </div>
-          <div class="flex flex-col justify-center items-center col-span-2">
-            <div class="flex items-end gap-2">
-              <label class="text-nowrap">ข้อ 6. </label
-              ><input
-                type="text"
-                class="imput bg-transparent border-dotted border-b-4 outline-none"
-                v-model="useCheck.QuestionFromImage01Part01.Quiz06.sentence"
-              />
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>

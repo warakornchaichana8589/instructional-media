@@ -14,28 +14,31 @@
             class="flex justify-center items-center"
           >
             <div
-              class="flex flex-col justify-center items-center m-auto gap-2 lg:gap-3 aspect-video max-w-[40%] h-full"
+              class="flex flex-col justify-center items-center m-auto gap-1 lg:gap-3 aspect-video max-w-[40%] h-full"
             >
               <h3
                 v-if="!question.imageUrl"
-                class="text-[18px] lg:text-[32px] mt-5"
+                class="text-[18px] lg:text-[24px] xl:text-[28px] mt-10 w-full leading-10"
+              
               >
-                ข้อ {{ question.id }} <span v-html="question.question"></span>
+                ข้อ {{ arabicToThaiNumber(question.id) }} <span v-html="question.question"></span>
               </h3>
               <div
                 v-if="question.imageUrl"
                 class="flex gap-2 mt-10 justify-between items-center w-full"
               >
-                <h3 class="text-[18px] lg:text-[32px]">
-                  ข้อ {{ question.id }} <span v-html="question.question"></span>
+                <h3 
+                class="text-[18px] lg:text-[24px] xl:text-[28px] mt-10 w-full leading-10"
+                >
+                  ข้อ {{ arabicToThaiNumber(question.id) }} <span v-html="question.question"></span>
                 </h3>
                 <img
                   :src="question.imageUrl"
                   alt="Question Image"
-                  class="max-w-[70px] lg:max-w-[180px] rounded-2xl shadow-md"
+                  class="max-w-[50px] lg:max-w-[140px] rounded-2xl shadow-md"
                 />
               </div>
-              <ul class="flex flex-col gap-2 lg:gap-3 justify-start">
+              <ul class="flex flex-col gap-1 lg:gap-2 xl:gap-3 justify-start">
                 <label
                   v-for="(choice, index) in question.choices"
                   :key="index"
@@ -162,7 +165,7 @@ const onSlideChange = () => {
   audio.value.play();
 };
 const buttonText = computed(() => {
-  return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ย้อยกลับ";
+  return slideBiginnig.value ? "กลับหน้าลงทะเบียน" : "ย้อนกลับ";
 });
 const buttonTextEnd = computed(() => {
   return slideEnd.value ? "ดูคะแนน" : "ถัดไป";
@@ -213,6 +216,11 @@ watch(
   },
   { immediate: true } // เพิ่มออปชัน immediate เพื่อเรียก watcher ทันทีที่คอมโพเนนต์ถูกสร้าง
 );
+
+function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
 
 const modules = [Navigation];
 </script>
