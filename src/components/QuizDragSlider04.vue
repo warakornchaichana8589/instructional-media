@@ -194,7 +194,6 @@ import draggable from "vuedraggable";
 import { useExerciseStore } from "@/stores/quiz99Store";
 const exerciseStore = useExerciseStore();
 const { exercises, results, checkAnswers } = exerciseStore;
-
 const showResulst = ref([]);
 const handleCheckAnswers = () => {
   checkAnswers();

@@ -182,57 +182,57 @@ export const useListStore02 = defineStore("useList02", {
       verbList:[
         {
           name: "ตี",
-          id: 5
+          id: 7
         },
         {
           name: "มี",
-          id: 4
+          id: 8
         },
         {
           name: "ใส่",
-          id: 6
+          id: 9
         },
         {
           name: "กิน",
-          id: 2
+          id: 10
         }
         ,
         {
           name: "ปีน",
-          id: 3
+          id: 11
         }
         ,
         {
           name: "สอน",
-          id: 1
+          id: 12
         }
       ],
       objectList:[
         {
           name: "นักเรียน",
-          id: 1
+          id: 13
         },
         {
           name: "กระโปรง",
-          id: 6
+          id: 14
         },
         {
           name: "ปลาทู",
-          id: 2
+          id: 15
         },
         {
           name: "มะละกอ",
-          id: 4
+          id: 16
         }
         ,
         {
           name: "ต้นมะพร้าว",
-          id: 3
+          id: 17
         }
         ,
         {
           name: "งู",
-          id: 5
+          id: 18
         }
       ],
       subjectVerbObjectSentenceNum01:[],

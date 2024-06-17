@@ -63,8 +63,10 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       words: [
         { text: "แม่" },
         { text: "ทำ" },
-        { text: "ขนมหม้อแกง" },
+        { text: "ขนม" },
         { text: "อร่อยมาก" },
+        { text: "หม้อแกง" },
+        
         
       ],
       sentenceType: "ประโยคบอกเล่า",
@@ -80,8 +82,7 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       words: [
         { text: "น้อง" },
         { text: "ร้องไห้" },
-        { text: "เสียง" },
-        { text: "ดัง" },
+        { text: "เสียงดัง" },
       ],
       sentenceType: "ประโยคบอกเล่า",
     },
@@ -96,7 +97,8 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       words: [
         { text: "มานี" },
         { text: "กิน" },
-        { text: "ก๋วยเตี๋ยวไก่" },
+        { text: "ก๋วยเตี๋ยว" },
+        { text: "ไก่" },
         { text: "อย่างเอร็ดอร่อย" },
         
       ],
@@ -114,8 +116,7 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
         { text: "อารี" },
         { text: "ซื้อ" },
         { text: "กระโปรง" },
-        { text: "ตัว" },
-        { text: "ใหม่" },
+        { text: "ตัวใหม่" },
       ],
       sentenceType: "ประโยคบอกเล่า",
     }
@@ -136,27 +137,27 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       subjects: [{ text: "แม่" }],
       subjectModifiers: [],
       verbs: [{ text: "ทำ" }],
-      verbModifiers: [],
-      objects: [{ text: "ขนมหม้อแกง" }],
-      objectModifiers: [{ text: "อร่อยมาก" }],
+      verbModifiers: [{ text: "อร่อยมาก" }],
+      objects: [{ text: "ขนม" }],
+      objectModifiers: [{ text: "หม้อแกง" }],
       sentenceType: "ประโยคบอกเล่า",
     },
     {
       subjects: [{ text: "น้อง" }],
       subjectModifiers: [],
       verbs: [{ text: "ร้องไห้" }],
-      verbModifiers: [],
-      objects: [{ text: "เสียง" } ],
-      objectModifiers: [{ text: "ดัง" }],
+      verbModifiers: [{ text: "เสียงดัง" }],
+      objects: [],
+      objectModifiers: [],
       sentenceType: "ประโยคบอกเล่า",
     },
     {
       subjects: [{ text: "มานี" }],
       subjectModifiers: [],
       verbs: [{ text: "กิน" }],
-      verbModifiers: [],
-      objects: [{ text: "ก๋วยเตี๋ยวไก่" }],
-      objectModifiers: [{ text: "อย่างเอร็ดอร่อย" }],
+      verbModifiers: [{ text: "อย่างเอร็ดอร่อย" }],
+      objects: [{ text: "ก๋วยเตี๋ยว" }],
+      objectModifiers: [{ text: "ไก่" }],
       sentenceType: "ประโยคบอกเล่า",
     },
     {
@@ -164,8 +165,8 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       subjectModifiers: [],
       verbs: [{ text: "ซื้อ" }],
       verbModifiers: [],
-      objects: [{ text: "กระโปรง" }, { text: "ตัว" }, { text: "ใหม่" }],
-      objectModifiers: [],
+      objects: [{ text: "กระโปรง" }],
+      objectModifiers: [{ text: "ตัวใหม่" }],
       sentenceType: "ประโยคบอกเล่า",
     }
   ];

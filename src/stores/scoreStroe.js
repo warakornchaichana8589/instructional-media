@@ -17,7 +17,7 @@ export const useScoreStore = defineStore("useScore", () => {
             QuestionFromImage02:0, //max score 9 url QuestionFromImage02 ok 04=useQuizValue 05-06 showscore
             QuizDragSlider:0, //max score 15 url QuizDragSlider ok QuizDragSlider02 QuizDragSlider03
            
-            QuizDragSlider04:0, //max score 5 url QuizDragSlider04-6 ok 
+            QuizDragSlider04:0, //max score 5 url QuizDragSlider04-6 ok checkAnswersPlus()
            
             PutWordsIntoSentences:0, //max score 6 url PutWordsIntoSentences
             ExerciseFormView00:0, //max score 3 url ExerciseFormView00

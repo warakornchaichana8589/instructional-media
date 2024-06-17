@@ -2,12 +2,14 @@ import { defineStore } from 'pinia'
 import { useQuizValueStore } from './quizValueStroe'
 import { validateSentenceStore } from './validateSentence'
 import { useListStore } from './listStore'
+import { useListStore02 } from './listStroe02'
 export const useCheckStore = defineStore({
     id: 'useCheck',
     state: () => ({
     useQuizValue: useQuizValueStore(),
     validate: validateSentenceStore(),
     useList: useListStore(),
+    useList02: useListStore02(),
     // score QuestionFromImage01
     scorePart01: 0, 
     scorePart02: 0,
@@ -16,6 +18,7 @@ export const useCheckStore = defineStore({
     scoreSentencesImg06:0,
     scoreQuestionFromImageAndWord: 0,
     scoreQuestionFromImageAndWord02: 0,
+    scorePutWordsIntoSentences:0,
    
      // score QuestionFromImage01
     QuestionFromImage01Part01: {
@@ -212,6 +215,7 @@ export const useCheckStore = defineStore({
             return true;
           },
           checkAnswersPlus(exercises, correctAnswers) {
+            // for QuizDragSlider04-6
             let score = 0;
           
             // Helper function to compare two arrays of objects
@@ -244,6 +248,19 @@ export const useCheckStore = defineStore({
             }
           
             return score;
+          },
+          checkPutWordsIntoSentences(){
+
+              const parents = [
+               [3,11,17],
+               [1,12,13],
+               [2,10,15],
+               [5,8,16],
+               [4,7,18],
+               [6,9,14]
+              ];
+             
+              
           },
 
     }

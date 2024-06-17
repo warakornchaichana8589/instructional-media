@@ -5,6 +5,7 @@
     >
       ให้นักเรียนเลือกคำ ประธาน กริยา กรรม ที่กำหนดให้มาเขียนแต่งประโยคสมบูรณ์
     </h1>
+   
     <div
       class="p-10 pt-2 lg:pt-10 lg:p-10 flex flex-wrap justify-between items-center w-full max-w-[900px] my-auto"
     >
@@ -14,14 +15,13 @@
       >
         <div class="subjectVerbObjectSentence w-full border border-slate-400 py-5 px-3 rounded-2xl">
           <div class="flex items-center">
-            1.
+            ๑.
             <draggable
               class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
               :list="listStore2.subjectVerbObjectSentenceNum01"
               group="people"
-              @change="log"
               itemKey="name"
-              @update="updateAnswerList1"
+             
             >
               <template #item="{ element }">
                 <div
@@ -33,14 +33,13 @@
             </draggable>
           </div>
           <div class="flex items-center">
-            2.
+            ๒.
             <draggable
               class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
               :list="listStore2.subjectVerbObjectSentenceNum02"
               group="people"
-              @change="log"
               itemKey="name"
-              @update="updateAnswerList1"
+            
             >
               <template #item="{ element }">
                 <div
@@ -52,14 +51,12 @@
             </draggable>
           </div>
           <div class="flex items-center">
-            3.
+            ๓.
             <draggable
               class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
               :list="listStore2.subjectVerbObjectSentenceNum03"
               group="people"
-              @change="log"
               itemKey="name"
-              @update="updateAnswerList1"
             >
               <template #item="{ element }">
                 <div
@@ -71,14 +68,12 @@
             </draggable>
           </div>
           <div class="flex items-center">
-            4.
+            ๔.
             <draggable
               class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
               :list="listStore2.subjectVerbObjectSentenceNum04"
               group="people"
-              @change="log"
               itemKey="name"
-              @update="updateAnswerList1"
             >
               <template #item="{ element }">
                 <div
@@ -90,14 +85,12 @@
             </draggable>
           </div>
           <div class="flex items-center">
-            5.
+            ๕.
             <draggable
               class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
               :list="listStore2.subjectVerbObjectSentenceNum05"
               group="people"
-              @change="log"
               itemKey="name"
-              @update="updateAnswerList1"
             >
               <template #item="{ element }">
                 <div
@@ -109,14 +102,12 @@
             </draggable>
           </div>
           <div class="flex items-center">
-            6.
+            ๖.
             <draggable
               class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
               :list="listStore2.subjectVerbObjectSentenceNum06"
               group="people"
-              @change="log"
               itemKey="name"
-              @update="updateAnswerList1"
             >
               <template #item="{ element }">
                 <div
@@ -144,9 +135,7 @@
                 class="flex justify-start gap-2 min-w-[100px] h-full max-w-full p-1 items-center flex-wrap leading-3"
                 :list="listStore2.subjectList"
                 group="people"
-                @change="log"
                 itemKey="name"
-                @update="updateList1"
               >
                 <template #item="{ element }">
                   <div
@@ -172,9 +161,8 @@
                 class="flex justify-start gap-2 min-w-[100px] h-full max-w-full p-1 items-center flex-wrap leading-3"
                 :list="listStore2.verbList"
                 group="people"
-                @change="log"
                 itemKey="name"
-                @update="updateList1"
+             
               >
                 <template #item="{ element }">
                   <div
@@ -200,9 +188,8 @@
                 class="flex justify-start gap-2 min-w-[100px] h-full max-w-full p-1 items-center flex-wrap leading-3"
                 :list="listStore2.objectList"
                 group="people"
-                @change="log"
                 itemKey="name"
-                @update="updateList1"
+              
               >
                 <template #item="{ element }">
                   <div
@@ -230,91 +217,9 @@ import imageSubject from "@/assets/images/119.png";
 import imageVerb from "@/assets/images/118.png";
 import imageObject from "@/assets/images/117.png";
 
-const updateList1 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateList1([...listStore2.list1]);
-  } else {
-    listStore2.updateList1([...to]);
-  }
-};
 
-const updateAnswerList1 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateAnswerList1([...listStore2.answerList1]);
-  } else {
-    listStore2.updateAnswerList1([...to]);
-  }
-};
-const updateList2 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateList2([...listStore2.list2]);
-  } else {
-    listStore2.updateList2([...to]);
-  }
-};
 
-const updateAnswerList2 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateAnswerList2([...listStore2.answerList2]);
-  } else {
-    listStore2.updateAnswerList2([...to]);
-  }
-};
-const updateList3 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateList3([...listStore2.list3]);
-  } else {
-    listStore2.updateList3([...to]);
-  }
-};
 
-const updateAnswerList3 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateAnswerList3([...listStore2.answerList3]);
-  } else {
-    listStore2.updateAnswerList3([...to]);
-  }
-};
-const updateList4 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateList4([...listStore2.list4]);
-  } else {
-    listStore2.updateList4([...to]);
-  }
-};
-
-const updateAnswerList4 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateAnswerList4([...listStore2.answerList4]);
-  } else {
-    listStore2.updateAnswerList4([...to]);
-  }
-};
-const updateList5 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateList5([...listStore2.list5]);
-  } else {
-    listStore2.updateList5([...to]);
-  }
-};
-
-const updateAnswerList5 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore2.updateAnswerList5([...listStore2.answerList5]);
-  } else {
-    listStore2.updateAnswerList5([...to]);
-  }
-};
 </script>
       
       <style lang="scss"  scoped>
