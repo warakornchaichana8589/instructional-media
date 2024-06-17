@@ -15,7 +15,7 @@
           <div
             class="w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] flex items-center justify-center bg-[#FBFCD2] rounded-full text-[16px] md:text-[24px] lg:text-[32px] text-center font-semibold"
           >
-            {{ item.id }} .
+            {{ arabicToThaiNumber(item.id) }} .
           </div>
           <div>
             <img :src="item.imageName1" alt="" class="w-[50px] lg:w-[100px]" />
@@ -32,7 +32,7 @@
             <input
               type="text"
               class="bg-transparent border-dotted border-b-4 border-black outline-none px-2"
-              @input="logValues($event.target.value, key)"
+              v-model="useCheck.QuestionFromImageAndWord['Quiz' + ('0' + item.id).slice(-2)].sentence"
             />
           </div>
         </div>
@@ -50,13 +50,8 @@ import image81 from "@/assets/images/81.png";
 import image82 from "@/assets/images/83.png";
 import image83 from "@/assets/images/82.png";
 import { ref, reactive } from "vue";
-const sententValues = ref({
-  sententValue01: "",
-  sententValue02: "",
-  sententValue03: "",
-});
-
-
+import { useCheckStore } from '@/stores/checkStore'
+const useCheck = useCheckStore()
 const quizSentents = [
   {
     imageName1: image78,
@@ -78,12 +73,10 @@ const quizSentents = [
   },
 ];
 
-const logValues = (event,key) => {
-  if(key === 0){sententValues.value.sententValue01 = event}
-  if(key === 1){sententValues.value.sententValue02 = event}
-  if(key === 2){sententValues.value.sententValue03 = event}
-};
-
+function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
 </script>
 
 <style scoped>

@@ -12,9 +12,9 @@
         <div class="flex flex-col justify-center items-center">
           <div class="flex justify-center lg:justify-start items-center w-full">
             <div
-              class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
+              class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] min-w-[40px] flex justify-center items-center leading-none text-black"
             >
-              1
+              ๑
             </div>
             <img :src="image97" alt="" class="max-w-[70px] lg:max-w-[120px]" />
             <div class="flex gap-3">
@@ -23,9 +23,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeWho01"
-                    typeInput="text"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz01.word1"
                   />
                 </div>
               </div>
@@ -34,9 +35,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeWhat01"
-                    typeInput="text"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz01.word2"
                   />
                 </div>
               </div>
@@ -45,10 +47,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeSentence01"
-                    typeInput="text"
-                    customClass="w-full"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz01.sentence"
                   />
                 </div>
               </div>
@@ -58,9 +60,9 @@
         <div class="flex flex-col justify-center items-center">
           <div class="flex justify-center lg:justify-start items-center w-full">
             <div
-              class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
+              class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] min-w-[40px] flex justify-center items-center leading-none text-black"
             >
-              2
+              ๒
             </div>
             <img :src="image98" alt="" class="max-w-[70px] lg:max-w-[120px]" />
             <div class="flex gap-3">
@@ -69,10 +71,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeWho02"
-                    typeInput="text"
-                    customClass="w-full"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz02.word1"
                   />
                 </div>
               </div>
@@ -81,10 +83,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeWhat02"
-                    typeInput="text"
-                    customClass="w-full"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz02.word2"
                   />
                 </div>
               </div>
@@ -93,9 +95,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeSentence02"
-                    typeInput="text"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz02.sentence"
                   />
                 </div>
               </div>
@@ -105,9 +108,9 @@
         <div class="flex flex-col justify-center items-center">
           <div class="flex justify-center lg:justify-start items-center w-full">
             <div
-              class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
+              class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] min-w-[40px] flex justify-center items-center leading-none text-black"
             >
-              3
+              ๓
             </div>
             <img :src="image99" alt="" class="max-w-[70px] lg:max-w-[120px]" />
             <div class="flex gap-3">
@@ -116,9 +119,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeWho03"
-                    typeInput="text"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz03.word1"
                   />
                 </div>
               </div>
@@ -127,9 +131,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeWhat03"
-                    typeInput="text"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz03.word2"
                   />
                 </div>
               </div>
@@ -138,9 +143,10 @@
                 <div
                   class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[200px] lg:max-w-[250px]"
                 >
-                  <InputTextSound
-                    @updateName="handleInputChangeSentence03"
-                    typeInput="text"
+                  <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1"
+                    v-model="useCheck.SentencesImg05.Quiz03.sentence"
                   />
                 </div>
               </div>
@@ -157,41 +163,13 @@ import image97 from "../assets/images/97.png";
 import image98 from "../assets/images/98.png";
 import image99 from "../assets/images/99.png";
 
-import InputTextSound from "./InputTextSound.vue";
 
-import { useQuizValueStore } from "@/stores/quizValueStroe";
-const useQuizValue = useQuizValueStore();
+import { useCheckStore } from "@/stores/checkStore";
+const useCheck = useCheckStore();
 import { ref } from "vue";
-// valueString
-const handleInputChange1 = (value) => {
-  let newValue = {
-    id: 1,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
-const handleInputChange2 = (value) => {
-  let newValue = {
-    id: 2,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
 
-const handleInputChange3 = (value) => {
-  let newValue = {
-    id: 3,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
-const handleInputChange4 = (value) => {
-  let newValue = {
-    id: 4,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
+
+
 </script>
     
     <style lang="scss" scoped>

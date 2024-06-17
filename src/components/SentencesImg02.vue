@@ -15,7 +15,7 @@
           <div
             class="w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] flex items-center justify-center bg-[#FBFCD2] rounded-full text-[16px] md:text-[24px] lg:text-[32px] text-center font-semibold"
           >
-            {{ key+1 }} .
+            {{ arabicToThaiNumber(key+1) }} .
           </div>
           <div>
             <img :src="item" alt="" class="w-[50px] lg:w-[100px]" />
@@ -25,7 +25,7 @@
             <input
               type="text"
               class="bg-transparent border-dotted border-b-4 border-black outline-none px-2"
-              @input="logValues($event.target.value, key)"
+              v-model="useCheck.QuestionFromImageAndWord02['Quiz' + ('0' + (key+1)).slice(-2)].sentence"
             />
           </div>
         </div>
@@ -41,21 +41,15 @@ import image85 from "@/assets/images/85.png";
 import image86 from "@/assets/images/86.png";
 
 import { ref, reactive } from "vue";
+import { useCheckStore } from '@/stores/checkStore'
+const useCheck = useCheckStore()
 
 const images = [image84,image85,image86]
  
-const sententValues = ref({
-  sententValue01: "",
-  sententValue02: "",
-  sententValue03: "",
-});
-
-const logValues = (event,key) => {
-  if(key === 0){sententValues.value.sententValue01 = event}
-  if(key === 1){sententValues.value.sententValue02 = event}
-  if(key === 2){sententValues.value.sententValue03 = event}
-};
-
+function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
 </script>
 
 <style scoped>

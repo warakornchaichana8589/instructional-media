@@ -31,6 +31,10 @@ export const validateSentenceStore = defineStore('validateSentenceStore', {
     
     },
     async checkSentence(sentence) {
+      if (!sentence) {
+        this.result = 'ประโยคว่างเปล่า';
+        return false;
+      }
         try {
           const response = await axios.post('https://api.aiforthai.in.th/tpos', 
             new URLSearchParams({ text: sentence }), 

@@ -70,6 +70,11 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
 
+import { useListStore02 } from "@/stores/listStroe02"
+const useList02 = useListStore02();
+
+import { useExerciseStore } from "@/stores/quiz99Store"
+const useExercise = useExerciseStore();
 import { useAnswerStore } from '@/stores/answerStore'
 const useAnswer = useAnswerStore()
 
@@ -79,10 +84,56 @@ const useScore = useScoreStore();
 
 onMounted(async ()=>{
  const scoreQuizView = await checkStore.checkQuizView();
-
  const QuestionFromImage01 = await checkStore.sumQuestionFromImage();
- useScore.updatePagesScores('quiz_view',scoreQuizView)
- useScore.updatePagesScores('QuestionFromImage01',QuestionFromImage01)
+ const sumQuizDrag = checkStore.sumQuizDrag();
+ const checkSentencesFromPictures01 = await checkStore.checkSentencesFromPictures01()
+ const checkSentencesFromPictures02 = await checkStore.checkSentencesFromPictures02()
+
+//  QuestionFromImage02
+ const checkSentencesImg05 = await checkStore.checkSentencesImg05()
+ const checkSentencesImg06 = await checkStore.checkSentencesImg06()
+const scoreQuestionFromImage02 = checkSentencesImg05 + checkSentencesImg06;
+const lists = [
+  useList02.answerList1,
+  useList02.answerList2,
+  useList02.answerList3,
+  useList02.answerList4,
+  useList02.answerList5,
+  useList02.answerList6,
+  useList02.answerList7,
+  useList02.answerList8,
+  useList02.answerList9,
+  useList02.answerList10,
+  useList02.answerList11,
+  useList02.answerList12,
+  useList02.answerList13,
+  useList02.answerList14,
+  useList02.answerList15,
+]
+function checkAllLists(lists) {
+  let scoreQuizDrag = 0;
+  for (const list of lists) {
+    if (checkStore.isSortedAscending(list)) {
+      scoreQuizDrag++;
+    }
+  }
+  return scoreQuizDrag;
+}
+const scoreQuizDrag = checkAllLists(lists);
+
+
+const scoreQuizDragSlider04_06 = checkStore.checkAnswersPlus(useExercise.exercises.value, useExercise.correctAnswers);
+
+ useScore.updatePagesScores('quiz_view',scoreQuizView);
+ useScore.updatePagesScores('QuestionFromImage01',QuestionFromImage01);
+ useScore.updatePagesScores('quiz_drag',sumQuizDrag);
+ useScore.updatePagesScores('SentencesFromPictures01',checkSentencesFromPictures01);
+ useScore.updatePagesScores('SentencesFromPictures02',checkSentencesFromPictures02);
+ useScore.updatePagesScores('QuestionFromImage02', scoreQuestionFromImage02);
+ useScore.updatePagesScores('QuizDragSlider', scoreQuizDrag);
+ useScore.updatePagesScores('QuizDragSlider04', scoreQuizDragSlider04_06); //QuizDragSlider04-6
+ 
+ 
 //  totalPagesScores.value = useScore.sumPagesScores()
 const sum = useScore.sumPagesScores()
 totalPagesScores.value = sum

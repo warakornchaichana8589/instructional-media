@@ -20,7 +20,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz07"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz01.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -31,7 +31,7 @@
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
-                v-model="valueAnswer.valueAnswer07"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz01.sentence"
               />
             </div>
           </div>
@@ -44,7 +44,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz08"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz02.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -55,7 +55,7 @@
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
-                v-model="valueAnswer.valueAnswer08"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz02.sentence"
               />
             </div>
           </div>
@@ -68,7 +68,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz09"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz03.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -79,7 +79,7 @@
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
-                v-model="valueAnswer.valueAnswer09"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz03.sentence"
               />
             </div>
           </div>
@@ -92,7 +92,7 @@
             <div class="bg-[#FBFCD2] py-2 px-5 rounded-full">
               <input
                 type="text"
-                v-model="valueQuiz.valueQuiz010"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz04.word"
                 class="bg-transparent border-black border-dotted border-b-2 outline-none w-[50px] lg:w-[70px] text-center"
               />
             </div>
@@ -103,7 +103,7 @@
               ><input
                 type="text"
                 class="imput bg-transparent border-dotted border-b-4 outline-none"
-                v-model="valueAnswer.valueAnswer010"
+                v-model="useCheck.QuestionFromImage01Part02.Quiz04.sentence"
               />
             </div>
           </div>
@@ -125,51 +125,9 @@ import image69 from "../assets/images/69.png";
 import { ref, watch } from "vue";
 import InputTextSound from "./InputTextSound.vue";
 const imageBg = new URL(`../assets/images/bg-l.png`, import.meta.url).href;
-
-const valueQuiz = ref({
-  valueQuiz07: "",
-  valueQuiz08: "",
-  valueQuiz09: "",
-  valueQuiz10: "",
-  valueQuiz11: "",
-  valueQuiz12: "",
-});
-const valueAnswer = ref({
-  valueAnswer07: "",
-  valueAnswer08: "",
-  valueAnswer09: "",
-  valueAnswer10: "",
-  valueAnswer11: "",
-  valueAnswer12: "",
-});
-
-const QuestionFromImage01Part02 = ref({
-  Quiz01: {
-    word: valueQuiz.value.valueQuiz07,
-    sentence: valueAnswer.value.valueAnswer07,
-  },
-  Quiz02: {
-    word: valueQuiz.value.valueQuiz08,
-    sentence: valueAnswer.value.valueAnswer08,
-  },
-  Quiz03: {
-    word: valueQuiz.value.valueQuiz09,
-    sentence: valueAnswer.value.valueAnswer09,
-  },
-  Quiz04: {
-    word: valueQuiz.value.valueQuiz10,
-    sentence: valueAnswer.value.valueAnswer10,
-  },
-  Quiz05: {
-    word: valueQuiz.value.valueQuiz11,
-    sentence: valueAnswer.value.valueAnswer11,
-  },
-  Quiz06: {
-    word: valueQuiz.value.valueQuiz12,
-    sentence: valueAnswer.value.valueAnswer12,
-  },
-});
+import { useCheckStore } from "@/stores/checkStore"
+const useCheck = useCheckStore()
 </script>
   
-  <style  scoped>
+<style  scoped>
 </style>

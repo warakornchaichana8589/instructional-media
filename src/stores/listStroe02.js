@@ -5,7 +5,7 @@ export const useListStore02 = defineStore("useList02", {
     list1: [
       { name: "ต้นไม้", id: 3 },
       { name: "พ่อ", id: 1 },
-      { name: "ปลูก", id: 1 },
+      { name: "ปลูก", id: 2 },
     ],
     answerList1: [],
     list2: [

@@ -64,8 +64,8 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
         { text: "แม่" },
         { text: "ทำ" },
         { text: "ขนมหม้อแกง" },
-        { text: "อร่อย" },
-        { text: "มาก" },
+        { text: "อร่อยมาก" },
+        
       ],
       sentenceType: "ประโยคบอกเล่า",
     },
@@ -96,10 +96,9 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       words: [
         { text: "มานี" },
         { text: "กิน" },
-        { text: "ก๋วยเตี๋ยว" },
-        { text: "ไก่" },
-        { text: "อย่าง" },
-        { text: "เอร็ดอร่อย" },
+        { text: "ก๋วยเตี๋ยวไก่" },
+        { text: "อย่างเอร็ดอร่อย" },
+        
       ],
       sentenceType: "ประโยคบอกเล่า",
     },
@@ -139,7 +138,7 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       verbs: [{ text: "ทำ" }],
       verbModifiers: [],
       objects: [{ text: "ขนมหม้อแกง" }],
-      objectModifiers: [{ text: "อร่อย" }, { text: "มาก" }],
+      objectModifiers: [{ text: "อร่อยมาก" }],
       sentenceType: "ประโยคบอกเล่า",
     },
     {
@@ -147,8 +146,8 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       subjectModifiers: [],
       verbs: [{ text: "ร้องไห้" }],
       verbModifiers: [],
-      objects: [{ text: "เสียง" }, { text: "ดัง" }],
-      objectModifiers: [],
+      objects: [{ text: "เสียง" } ],
+      objectModifiers: [{ text: "ดัง" }],
       sentenceType: "ประโยคบอกเล่า",
     },
     {
@@ -156,9 +155,8 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
       subjectModifiers: [],
       verbs: [{ text: "กิน" }],
       verbModifiers: [],
-      objects: [{ text: "ก๋วยเตี๋ยว" },{ text: "ไก่" },{ text: "อย่าง" },{ text: "เอร็ดอร่อย" },
-      ],
-      objectModifiers: [],
+      objects: [{ text: "ก๋วยเตี๋ยวไก่" }],
+      objectModifiers: [{ text: "อย่างเอร็ดอร่อย" }],
       sentenceType: "ประโยคบอกเล่า",
     },
     {
@@ -197,5 +195,7 @@ export const useExerciseStore = defineStore('exerciseStore', () => {
     console.log(results99);
     results9.value = results99
   };
+
+  
   return { exercises, correctAnswers, results, checkAnswers, quiz99, answer99, results9, checkAnswers99};
 });

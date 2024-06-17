@@ -200,37 +200,7 @@ const handleCheckAnswers = () => {
   checkAnswers();
   console.log(results); // Log the results to check if they are updating
 };
-const updateSubjects = (index) => {
-  exerciseStore.exercises[index].subjects = [
-    ...exerciseStore.exercises[index].subjects,
-  ];
-};
 
-const updateSubjectModifiers = (index) => {
-  exerciseStore.exercises[index].subjectModifiers = [
-    ...exerciseStore.exercises[index].subjectModifiers,
-  ];
-};
-const updateVerbs = (index) => {
-  exerciseStore.exercises[index].verbs = [
-    ...exerciseStore.exercises[index].verbs,
-  ];
-};
-const updateVerbModifiers = (index) => {
-  exerciseStore.exercises[index].verbModifiers = [
-    ...exerciseStore.exercises[index].verbModifiers,
-  ];
-};
-const updateObjects = (index) => {
-  exerciseStore.exercises[index].objects = [
-    ...exerciseStore.exercises[index].objects,
-  ];
-};
-const updateObjectModifiers = (index) => {
-  exerciseStore.exercises[index].objectModifiers = [
-    ...exerciseStore.exercises[index].objectModifiers,
-  ];
-};
 </script>
 
     

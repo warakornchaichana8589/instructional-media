@@ -22,7 +22,7 @@
               <div
                 class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
               >
-                1
+                ๑
               </div>
               <div
                 class="rounded-full px-4 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[350px] w-full"
@@ -41,7 +41,7 @@
               <div
                 class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
               >
-                2
+                ๒
               </div>
               <div
                 class="rounded-full px-4 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[350px]  w-full"
@@ -61,7 +61,7 @@
               <div
                 class="rounded-full mr-10 bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
               >
-                3
+                ๓
               </div>
               <div
                 class="rounded-full px-4 pb-1 bg-[#FBFCD2] overflow-hidden max-w-[350px] w-full"
@@ -90,14 +90,14 @@ import { ref } from "vue";
 // valueString
 const handleInputChange1 = (value) => {
   let newValue = {
-    id: 1,
+    id: 41,
     value: value,
   };
   useQuizValue.setQuizValue(newValue);
 };
 const handleInputChange2 = (value) => {
   let newValue = {
-    id: 2,
+    id: 42,
     value: value,
   };
   useQuizValue.setQuizValue(newValue);
@@ -105,14 +105,7 @@ const handleInputChange2 = (value) => {
 
 const handleInputChange3 = (value) => {
   let newValue = {
-    id: 3,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
-const handleInputChange4 = (value) => {
-  let newValue = {
-    id: 4,
+    id: 43,
     value: value,
   };
   useQuizValue.setQuizValue(newValue);

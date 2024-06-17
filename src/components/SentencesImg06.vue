@@ -14,7 +14,7 @@
             <div
               class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
             >
-              1
+              ๑
             </div>
             <div class="flex relative pr-[25px] lg:pr-[0px]">
               <img
@@ -32,10 +32,11 @@
             <div
               class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden w-full max-w-[300px] lg:max-w-[400px]"
             >
-              <InputTextSound
-                @updateName="fromWordsValue01"
-                typeInput="text"
-              />
+            <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1 w-full"
+                    v-model="useCheck.SentencesImg06.Quiz01.sentence"
+                  />
             </div>
           </div>
         </div>
@@ -44,7 +45,7 @@
             <div
               class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
             >
-              2
+              ๒
             </div>
             <div class="flex relative pr-[25px] lg:pr-[0px]">
               <img
@@ -62,10 +63,11 @@
             <div
               class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden w-full max-w-[300px] lg:max-w-[400px]"
             >
-              <InputTextSound
-                @updateName="fromWordsValue02"
-                typeInput="text"
-              />
+            <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1 w-full"
+                    v-model="useCheck.SentencesImg06.Quiz02.sentence"
+                  />
             </div>
           </div>
         </div>
@@ -74,7 +76,7 @@
             <div
               class="rounded-full bg-gray-200 text-[20px] lg:text-[28px] w-[40px] h-[40px] flex justify-center items-center leading-none text-black"
             >
-              3
+              ๓
             </div>
             <div class="flex relative pr-[25px] lg:pr-[0px]">
               <img
@@ -91,10 +93,11 @@
             <div
               class="rounded-full px-3 pt-1 pb-1 bg-[#FBFCD2] overflow-hidden w-full max-w-[300px] lg:max-w-[400px]"
             >
-              <InputTextSound
-                @updateName="fromWordsValue03"
-                typeInput="text"
-              />
+            <input
+                    type="text"
+                    class="bg-transparent border-dotted border-b-4 border-[#797977] outline-none py-1 w-full"
+                    v-model="useCheck.SentencesImg06.Quiz03.sentence"
+                  />
             </div>
           </div>
         </div>
@@ -108,41 +111,12 @@ import image82 from "../assets/images/82.png";
 import image100 from "../assets/images/100.png";
 import image101 from "../assets/images/101.png";
 
-import InputTextSound from "./InputTextSound.vue";
+import { useCheckStore } from "@/stores/checkStore";
+const useCheck = useCheckStore();
 
-import { useQuizValueStore } from "@/stores/quizValueStroe";
-const useQuizValue = useQuizValueStore();
 import { ref } from "vue";
 // valueString
-const fromWordsValue01 = (value) => {
-  let newValue = {
-    id: 1,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
-const fromWordsValue02 = (value) => {
-  let newValue = {
-    id: 2,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
 
-const fromWordsValue03 = (value) => {
-  let newValue = {
-    id: 3,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
-const handleInputChange4 = (value) => {
-  let newValue = {
-    id: 4,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
 </script>
     
     <style lang="scss" scoped>

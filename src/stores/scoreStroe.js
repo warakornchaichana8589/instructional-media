@@ -8,21 +8,17 @@ export const useScoreStore = defineStore("useScore", () => {
     const totalExerciseScores = ref(0)
     const pagesScores = ref(
         { 
-            quiz_view:0, //max score 8 url quiz-view
-            QuestionFromImage01:0, //max score 12 url QuestionFromImage01
-            quiz_drag:0, //max score 3 url quiz-drag
-            quiz_drag02:0, //max score 3 url quiz-drag02
-            quiz_drag03:0, //max score 3 url quiz-drag03
-            SentencesFromPictures01:0, //max score 3 url SentencesFromPictures01
-            SentencesFromPictures02:0, //max score 3 url SentencesFromPictures02
-            FillInTheBlanksView02:0, //max score 3 url FillInTheBlanksView02
-            QuestionFromImage02:0, //max score 9 url QuestionFromImage02
-            QuizDragSlider:0, //max score 5 url QuizDragSlider
-            QuizDragSlider02:0, //max score 5 url QuizDragSlider02
-            QuizDragSlider03:0, //max score 5 url QuizDragSlider03
-            QuizDragSlider04:0, //max score 2 url QuizDragSlider04
-            QuizDragSlider05:0, //max score 2 url QuizDragSlider05
-            QuizDragSlider06:0, //max score 1 url QuizDragSlider06
+            quiz_view:0, //max score 8 url quiz-view ok
+            QuestionFromImage01:0, //max score 8 url QuestionFromImage01 ok
+            quiz_drag:0, //max score 9 url quiz-drag quiz-drag02 quiz-drag03 ok
+            SentencesFromPictures01:0, //max score 3 url SentencesFromPictures01 ok
+            SentencesFromPictures02:0, //max score 3 url SentencesFromPictures02 ok
+            FillInTheBlanksView02:0, //max score 3 url FillInTheBlanksView02 ok useQuizValue
+            QuestionFromImage02:0, //max score 9 url QuestionFromImage02 ok 04=useQuizValue 05-06 showscore
+            QuizDragSlider:0, //max score 15 url QuizDragSlider ok QuizDragSlider02 QuizDragSlider03
+           
+            QuizDragSlider04:0, //max score 5 url QuizDragSlider04-6 ok 
+           
             PutWordsIntoSentences:0, //max score 6 url PutWordsIntoSentences
             ExerciseFormView00:0, //max score 3 url ExerciseFormView00
             ExerciseFormView:0, //max score 2 url ExerciseFormView
