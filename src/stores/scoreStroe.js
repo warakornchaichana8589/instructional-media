@@ -26,7 +26,12 @@ export const useScoreStore = defineStore("useScore", () => {
             ExerciseFormView:0, //max score 5 url ExerciseFormView 2-3 ok
         } 
     )
-    
+    function resetScores() {
+        for (let key in pagesScores.value) {
+            pagesScores.value[key] = 0;
+        }
+        console.log("reset scores");
+    }
 
     const useQuizValue = useQuizValueStore()
     // แบบทดสอบหลังเรียน คะแนน
@@ -77,5 +82,6 @@ export const useScoreStore = defineStore("useScore", () => {
         sumPagesScores,
         updatePagesScores,
         sumToggle,
+        resetScores,
       };
 })

@@ -17,6 +17,7 @@
           <RouterLink to="/advice" class=" relative z-10">
   
             <button type="button"
+            @click="scoreStore.resetScores"
             class="cursor-pointer flex justify-center items-center w-auto bg-[#F7BB66] custom-radius font-[500] text-center text-[20px] lg:text-[32px] shadow-lg hover:shadow-xl disabled:shadow-none"
             :class="inputStore.inputNameValue === '' ? 'px-5 py-2 lg:px-8 lg:py-2' : 'px-8 py-2 lg:px-7 lg:py-2'"
             :disabled="inputStore.inputNameValue === ''"
@@ -46,7 +47,8 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const inputStore = useDataStore();
 
-
+import { useScoreStore } from "@/stores/scoreStroe";
+const scoreStore = useScoreStore();
 const goBack = ()=>{
   if (window.history.length > 1) {
     router.back();
