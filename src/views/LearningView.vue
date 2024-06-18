@@ -46,7 +46,7 @@ import { useAudioStore } from "@/stores/useAudio";
 import { ref, watchEffect, onMounted, computed } from "vue";
 
 import image17 from '@/assets/images/17.png'
-import image18 from '@/assets/images/18.png'
+import image18 from '@/assets/images/content.png'
 import image19 from '@/assets/images/19.png'
 
 
