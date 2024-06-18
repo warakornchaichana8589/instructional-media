@@ -15,7 +15,7 @@
         <div class="flex flex-col justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 1 :
+              ข้อที่ ๑ :
             </h3>
             <img :src="qu01" alt="" class="w-full rounded-xl" />
           </div>
@@ -24,9 +24,9 @@
             class="flex gap-2 min-w-[100px] h-full max-w-full p-1 items-center"
             :list="listStore3.list1"
             group="people"
-            @change="log"
+           
             itemKey="name"
-            @update="updateList1"
+          
           >
             <template #item="{ element }">
               <div
@@ -44,9 +44,9 @@
             class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
             :list="listStore3.answerList1"
             group="people"
-            @change="log"
+          
             itemKey="name"
-            @update="updateAnswerList1"
+          
           >
             <template #item="{ element }">
               <div
@@ -66,7 +66,7 @@
         <div class="flex flex-col justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex  justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 2 :
+              ข้อที่ ๒ :
             </h3>
             <img :src="qu02" alt="" class="w-full rounded-xl" />
           </div>
@@ -74,9 +74,9 @@
             class="flex gap-2 min-w-[100px] h-full max-w-full p-1 items-center"
             :list="listStore3.list2"
             group="people2"
-            @change="log"
+          
             itemKey="name"
-            @update="updateList2"
+       
           >
             <template #item="{ element }">
               <div
@@ -94,9 +94,9 @@
             class="list-group flex border-b-4 border-dotted w-full min-h-[30px] lg:min-h-[40px] max-w-full px-3 pt-1 hover:gap-2 items-center"
             :list="listStore3.answerList2"
             group="people2"
-            @change="log"
+          
             itemKey="name"
-            @update="updateAnswerList2"
+        
           >
             <template #item="{ element }">
               <div
@@ -109,6 +109,7 @@
         </div>
       </div>
       <!-- ข้อ2 -->
+      
     </div>
   </div>
 </template>
@@ -121,40 +122,7 @@ const listStore3 = useListStore03();
 import qu01 from "@/assets/images/qu01.png";
 import qu02 from "@/assets/images/qu02.png";
 
-const updateList1 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore3.updateList1([...listStore3.list1]);
-  } else {
-    listStore3.updateList1([...to]);
-  }
-};
 
-const updateAnswerList1 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore3.updateAnswerList1([...listStore3.answerList1]);
-  } else {
-    listStore3.updateAnswerList1([...to]);
-  }
-};
-const updateList2 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore3.updateList2([...listStore3.list2]);
-  } else {
-    listStore3.updateList2([...to]);
-  }
-};
-
-const updateAnswerList2 = (event) => {
-  const { to, from, newIndex, oldIndex } = event;
-  if (from === to) {
-    listStore3.updateAnswerList2([...listStore3.answerList2]);
-  } else {
-    listStore3.updateAnswerList2([...to]);
-  }
-};
 </script>
     
     <style lang="scss"  scoped>

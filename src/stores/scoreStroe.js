@@ -2,6 +2,8 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import { useQuizValueStore } from './quizValueStroe'
 export const useScoreStore = defineStore("useScore", () => {
+    const allScore = ref(null);
+    const sumToggle = ref(true);
     const postTest = ref(0)
     const preTest = ref(0)
     const exerciseScores = ref([])
@@ -19,13 +21,12 @@ export const useScoreStore = defineStore("useScore", () => {
            
             QuizDragSlider04:0, //max score 5 url QuizDragSlider04-6 ok checkAnswersPlus()
            
-            PutWordsIntoSentences:0, //max score 6 url PutWordsIntoSentences
-            ExerciseFormView00:0, //max score 3 url ExerciseFormView00
-            ExerciseFormView:0, //max score 2 url ExerciseFormView
-            ExerciseFormView02:0, //max score 2 url ExerciseFormView02
-            ExerciseFormView03:0, //max score 1 url ExerciseFormView03
+            PutWordsIntoSentences:0, //max score 6 url PutWordsIntoSentences ok
+            ExerciseFormView00:0, //max score 3 url ExerciseFormView00 ok
+            ExerciseFormView:0, //max score 5 url ExerciseFormView 2-3 ok
         } 
     )
+    
 
     const useQuizValue = useQuizValueStore()
     // แบบทดสอบหลังเรียน คะแนน
@@ -74,6 +75,7 @@ export const useScoreStore = defineStore("useScore", () => {
         getTotalExerciseScores,
         pagesScores,
         sumPagesScores,
-        updatePagesScores
+        updatePagesScores,
+        sumToggle,
       };
 })

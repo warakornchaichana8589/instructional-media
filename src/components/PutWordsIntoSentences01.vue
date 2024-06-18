@@ -5,7 +5,7 @@
     >
       ให้นักเรียนเลือกคำ ประธาน กริยา กรรม ที่กำหนดให้มาเขียนแต่งประโยคสมบูรณ์
     </h1>
-   
+
     <div
       class="p-10 pt-2 lg:pt-10 lg:p-10 flex flex-wrap justify-between items-center w-full max-w-[900px] my-auto"
     >
@@ -13,7 +13,9 @@
       <div
         class="flex mt-2 lg:mt-1 gap-2 lg:gap-4 w-full justify-center items-center mx-auto"
       >
-        <div class="subjectVerbObjectSentence w-full border border-slate-400 py-5 px-3 rounded-2xl">
+        <div
+          class="subjectVerbObjectSentence w-full border border-slate-400 py-5 px-3 rounded-2xl"
+        >
           <div class="flex items-center">
             ๑.
             <draggable
@@ -21,7 +23,6 @@
               :list="listStore2.subjectVerbObjectSentenceNum01"
               group="people"
               itemKey="name"
-             
             >
               <template #item="{ element }">
                 <div
@@ -39,7 +40,6 @@
               :list="listStore2.subjectVerbObjectSentenceNum02"
               group="people"
               itemKey="name"
-            
             >
               <template #item="{ element }">
                 <div
@@ -121,7 +121,9 @@
         </div>
 
         <div class="word w-full flex flex-col gap-2">
-          <div class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl">
+          <div
+            class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl"
+          >
             <div class="relative flex flex-col justify-center items-center">
               <img :src="imageSubject" alt="" class="w-[80px] lg:w-[100px]" />
               <div
@@ -147,7 +149,9 @@
               </draggable>
             </div>
           </div>
-          <div class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl">
+          <div
+            class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl"
+          >
             <div class="relative flex flex-col justify-center items-center">
               <img :src="imageVerb" alt="" class="w-[80px] lg:w-[100px]" />
               <div
@@ -162,7 +166,6 @@
                 :list="listStore2.verbList"
                 group="people"
                 itemKey="name"
-             
               >
                 <template #item="{ element }">
                   <div
@@ -174,7 +177,9 @@
               </draggable>
             </div>
           </div>
-          <div class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl">
+          <div
+            class="border border-slate-400 flex justify-start w-full p-1 lg:p-2 rounded-2xl"
+          >
             <div class="relative flex flex-col justify-center items-center">
               <img :src="imageObject" alt="" class="w-[80px] lg:w-[100px]" />
               <div
@@ -189,7 +194,6 @@
                 :list="listStore2.objectList"
                 group="people"
                 itemKey="name"
-              
               >
                 <template #item="{ element }">
                   <div
@@ -204,11 +208,12 @@
         </div>
       </div>
       <!-- ข้อ1 -->
+   
     </div>
   </div>
 </template>
-      
-      <script setup>
+
+<script setup>
 import { ref } from "vue";
 import draggable from "vuedraggable";
 import { useListStore02 } from "@/stores/listStroe02";
@@ -216,13 +221,9 @@ const listStore2 = useListStore02();
 import imageSubject from "@/assets/images/119.png";
 import imageVerb from "@/assets/images/118.png";
 import imageObject from "@/assets/images/117.png";
-
-
-
-
 </script>
-      
-      <style lang="scss"  scoped>
+
+<style lang="scss" scoped>
 .shadow-custom {
   box-shadow: 0px 0px 10px 0px #bebebe;
 }
@@ -235,4 +236,3 @@ import imageObject from "@/assets/images/117.png";
     -3px 6px 5px #ffffff56;
 }
 </style>
-      

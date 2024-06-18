@@ -14,7 +14,7 @@
             <div class="flex flex-col justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex  justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 3 :
+              ข้อที่ ๓ :
             </h3>
             <img :src="qu03" alt="" class="w-full rounded-xl" />
           </div>
@@ -63,7 +63,7 @@
             <div class="flex flex-col justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex  justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 4 :
+              ข้อที่ ๔ :
             </h3>
             <img :src="qu04" alt="" class="w-full rounded-xl" />
           </div>

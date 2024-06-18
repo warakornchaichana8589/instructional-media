@@ -15,7 +15,7 @@
         <div class="flex justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 1 :
+              ข้อที่ ๑ :
             </h3>
           </div>
           <draggable
@@ -64,7 +64,7 @@
         <div class="flex justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 2 :
+              ข้อที่ ๒ :
             </h3>
             
           </div>
@@ -113,7 +113,7 @@
         <div class="flex justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 3 :
+              ข้อที่ ๓ :
             </h3>
             
           </div>
@@ -155,6 +155,7 @@
         </div>
       </div>
       <!-- ข้อ3 -->
+      
     </div>
   </div>
 </template>

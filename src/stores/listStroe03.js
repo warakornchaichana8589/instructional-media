@@ -3,11 +3,11 @@ import { defineStore } from "pinia";
 export const useListStore03 = defineStore("useListStore03", {
   state: () => ({
     list1: [
-      { name: "ออมเงิน", id: 3 },
-      { name: "ออมสิน", id: 1 },
-      { name: "ใส่กระปุก", id: 1 },
+      { name: "ออมเงิน", id: 2 },
+      { name: "ออมสิน", id: 4 },
+      { name: "ใส่กระปุก", id: 3 },
       { name: "ก้อย", id: 1 },
-      { name: "ทุกวัน", id: 1 },
+      { name: "ทุกวัน", id: 5 },
     ],
     answerList1: [],
     list2: [
@@ -19,36 +19,29 @@ export const useListStore03 = defineStore("useListStore03", {
     ],
     answerList2: [],
     list3: [
-      { name: "กำลัง", id: 3 },
-      { name: "ปลูกผัก", id: 2 },
-      { name: "หนูนิด", id: 4 },
-      { name: "ช่วยแม่", id: 1 },
+      { name: "กำลัง", id: 2 },
+      { name: "ปลูกผัก", id: 4 },
+      { name: "หนูนิด", id: 1 },
+      { name: "ช่วยแม่", id: 3 },
     ],
     answerList3: [],
     list4: [
-      { name: "ที่ใต้", id: 1 },
-      { name: "กำลัง", id: 3 },
-      { name: "ประชุม", id: 4 },
-      { name: "ร่มไม้", id: 2 },
-      { name: "นักเรียน", id: 2 },
+      { name: "ที่ใต้", id: 4 },
+      { name: "กำลัง", id: 2 },
+      { name: "ประชุม", id: 3 },
+      { name: "ร่มไม้", id: 5 },
+      { name: "นักเรียน", id: 1 },
     ],
     answerList4: [],
     list5: [
-      { name: "ทุกคืน", id: 3 },
-      { name: "สมาธิ", id: 2 },
+      { name: "ทุกคืน", id: 5 },
+      { name: "สมาธิ", id: 3 },
       { name: "ปรีชา", id: 1 },
       { name: "ก่อนนอน", id: 4 },
-      { name: "นั่ง", id: 4 },
+      { name: "นั่ง", id: 2 },
     ],
     answerList5: [],
-    list5: [
-      { name: "ทุกคืน", id: 3 },
-      { name: "สมาธิ", id: 2 },
-      { name: "ปรีชา", id: 1 },
-      { name: "ก่อนนอน", id: 4 },
-      { name: "นั่ง", id: 4 },
-    ],
-    answerList5: [],
+    
   }),
   actions: {
     updateList1(newList) {

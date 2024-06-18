@@ -12,7 +12,7 @@
       <!-- ข้อ1 -->
       <div class="flex flex-col">
         <div class="flex">
-          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 7 :</h3>
+          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ ๗ :</h3>
           <span
             v-for="(item, index) in listStore.answerList7"
             :key="index"
@@ -64,7 +64,7 @@
       <!-- ข้อ2 -->
       <div class="flex flex-col">
         <div class="flex">
-          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 8 :</h3>
+          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ ๘ :</h3>
           <span
             v-for="(item, index) in listStore.answerList8"
             :key="index"
@@ -117,7 +117,7 @@
       <!-- ข้อ3 -->
       <div class="flex flex-col">
         <div class="flex">
-          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ 9 :</h3>
+          <h3 class="text-[18px] lg:text-[30px]">ข้อที่ ๙ :</h3>
           <span
             v-for="(item, index) in listStore.answerList9"
             :key="index"

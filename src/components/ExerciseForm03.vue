@@ -13,7 +13,7 @@
         <div class="flex flex-col justify-center items-center gap-2 w-full">
           <div class="max-w-[200px] flex  justify-center items-center gap-2">
             <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-              ข้อที่ 5 :
+              ข้อที่ ๕ :
             </h3>
             <img :src="qu05" alt="" class="w-full rounded-xl" />
           </div>

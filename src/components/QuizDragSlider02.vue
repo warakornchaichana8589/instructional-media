@@ -12,7 +12,7 @@
       <div class="flex mt-1 gap-0 lg:gap-2 w-[48%] flex-col justify-center items-center mx-auto">
         <div class="flex justify-center items-center gap-2 w-full">
           <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-            ข้อที่ 6 :
+            ข้อที่ ๖ :
           </h3>
           <draggable
             class="flex gap-2 min-w-[100px] h-full max-w-full p-1 items-center"
@@ -57,7 +57,7 @@
       <div class="flex mt-1  gap-0 lg:gap-2 w-[48%] flex-col justify-center items-center mx-auto">
         <div class="flex justify-center items-center gap-2 w-full">
           <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-            ข้อที่ 7 :
+            ข้อที่ ๗ :
           </h3>
           <draggable
             class="flex gap-2 min-w-[100px] h-full max-w-full p-1 items-center"
@@ -102,7 +102,7 @@
       <div class="flex mt-1  gap-0 lg:gap-2 w-[48%] flex-col justify-center items-center mx-auto">
         <div class="flex justify-center items-center gap-2 w-full">
           <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-            ข้อที่ 8 :
+            ข้อที่ ๘ :
           </h3>
           <draggable
             class="flex gap-2 min-w-[100px] h-full max-w-full p-1 items-center"
@@ -148,7 +148,7 @@
       <div class="flex mt-1  gap-0 lg:gap-2 w-[48%] flex-col justify-center items-center mx-auto">
         <div class="flex justify-center items-center gap-2 w-full">
           <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-            ข้อที่ 9 :
+            ข้อที่ ๙ :
           </h3>
           <draggable
             class="flex gap-2 min-w-[100px] h-full max-w-full p-1 items-center"
@@ -193,7 +193,7 @@
       <div class="flex mt-1  gap-0 lg:gap-2 w-[48%] flex-col justify-center items-center mx-auto">
         <div class="flex justify-center items-center gap-2 w-full">
           <h3 class="text-[18px] lg:text-[30px] text-nowrap text-center">
-            ข้อที่ 10 :
+            ข้อที่ ๑๐ :
           </h3>
           <draggable
             class="flex gap-2 min-w-[100px] h-full max-w-full p-1 items-center"

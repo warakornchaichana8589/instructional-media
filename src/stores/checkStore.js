@@ -203,12 +203,11 @@ export const useCheckStore = defineStore({
             return this.scoreSentencesImg06
           },
           isSortedAscending(list) {
-            // ดึง id จาก list แล้วเก็บใน array
-            const ids = list.map(item => item.id);
-            
-            // ตรวจสอบว่า id เรียงจากน้อยไปหามากหรือไม่
-            for (let i = 0; i < ids.length - 1; i++) {
-              if (ids[i] > ids[i + 1]) {
+            if (list.length === 0) {
+              return false; // คืนค่า false ถ้าลิสต์ว่าง
+            }
+            for (let i = 0; i < list.length - 1; i++) {
+              if (list[i].id >= list[i + 1].id) {
                 return false;
               }
             }
@@ -249,8 +248,7 @@ export const useCheckStore = defineStore({
           
             return score;
           },
-          checkPutWordsIntoSentences(){
-
+          checkPutWordsIntoSentences(subjectVerbObjectSentenceNum){
               const parents = [
                [3,11,17],
                [1,12,13],
@@ -259,9 +257,51 @@ export const useCheckStore = defineStore({
                [4,7,18],
                [6,9,14]
               ];
-             
+
+              if (subjectVerbObjectSentenceNum.length === 0) {
+                return false;
+              }
+            
+              // ดึงเฉพาะ id ออกมาเป็นอาร์เรย์
+              const ids = subjectVerbObjectSentenceNum.map(item => item.id);
+            
+              // ตรวจสอบว่า id ใดๆ ใน ids อยู่ใน parents หรือไม่
+              for (const id of ids) {
+                for (const parentGroup of parents) {
+                  if (parentGroup.includes(id)) {
+                    return true;
+                  }
+                }
+              }
+            
+              return false;
               
           },
+          checkQuizExerciseFormView00(quiz99, answer99) {
+            let score = 0;
+            // วนลูปผ่าน quiz99
+            for (const item of quiz99) {
+              const { quiz, words } = item;
+              // ตรวจสอบว่า quiz เป็นอาร์เรย์ว่างหรือไม่
+              if (quiz.length === 0) {
+             
+                continue;
+              }
+          
+              // รวมค่าของ text ใน words เข้าด้วยกันเป็นสตริง
+              const combinedText = quiz.map(word => word.text).join('');
+             
+              // ตรวจสอบว่าสตริงที่ได้ตรงกับคำตอบใด ๆ ใน answer99 หรือไม่
+              if (answer99.includes(combinedText)) {
+                score++;
+              
+              }
+            }
+          
+            // คืนค่าคะแนน
+            return score;
+          },
+          
 
     }
 })

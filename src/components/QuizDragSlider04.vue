@@ -16,7 +16,7 @@
         class="exercise-item mt-[20px]"
       >
         <div class="flex gap-2 items-center">
-          <p class="text-[22px]">ข้อที่ {{ index + 1 }}.</p>
+          <p class="text-[22px]">ข้อที่ {{ arabicToThaiNumber(index + 1) }}.</p>
           <div class="source-words">
             <label></label>
             <draggable
@@ -199,7 +199,10 @@ const handleCheckAnswers = () => {
   checkAnswers();
   console.log(results); // Log the results to check if they are updating
 };
-
+function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
 </script>
 
     
