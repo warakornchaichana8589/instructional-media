@@ -63,7 +63,7 @@ function checkResetScore(){
     inputStore.currentNameValue = inputStore.inputNameValue
   }
   inputStore.currentNameValue = inputStore.inputNameValue
-  console.log("name"+inputStore.currentNameValue)
+  console.log("name :"+inputStore.currentNameValue)
 }
 </script>
 
