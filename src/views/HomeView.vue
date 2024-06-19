@@ -60,10 +60,10 @@ const goBack = ()=>{
 function checkResetScore(){
   if(inputStore.inputNameValue !== inputStore.currentNameValue){
     scoreStore.resetScores()
-    inputStore.inputNameValue = inputStore.currentNameValue
+    inputStore.currentNameValue = inputStore.inputNameValue
   }
-  inputStore.inputNameValue = inputStore.currentNameValue
-  console.log(inputStore.currentNameValue)
+  inputStore.currentNameValue = inputStore.inputNameValue
+  console.log("name"+inputStore.currentNameValue)
 }
 </script>
 
