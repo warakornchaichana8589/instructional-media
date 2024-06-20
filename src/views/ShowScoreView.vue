@@ -19,7 +19,7 @@
             >
           </p>
           <p class="text-[30px] md:text-[50px] lg:text-[80px]">
-            คะแนน : {{ answerStore.score }}/10
+            คะแนน : {{ arabicToThaiNumber(answerStore.score) }}/๑๐
           </p>
         </div>
       </div>
@@ -78,6 +78,11 @@ const NextSlide = () => {
 const PrevSlide = () => {
   router.back();
 };
+
+function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
 </script>
    
    <style scoped>

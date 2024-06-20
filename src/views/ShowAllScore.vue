@@ -28,21 +28,21 @@
               class="text-[18px] md:text-[24px] lg:text-[32px] w-full flex justify-between"
             >
               ทดสอบก่อนเรียน :
-              <span class="ml-auto">{{ useScore.preTest }}/10 คะแนน</span>
+              <span class="ml-auto">{{ arabicToThaiNumber(useScore.preTest) }}/๑๐ คะแนน</span>
             </p>
             <p
               class="text-[18px] md:text-[24px] lg:text-[32px] w-full flex justify-between"
             >
               แบบฝึกหัดการแต่งประโยค :
             
-              <span class="ml-auto" v-if="useScore.allScore === null ">กำลังโหลดคะแนน/77 คะแนน</span>
-              <span class="ml-auto" v-else>{{ useScore.allScore }}/77 คะแนน</span>
+              <span class="ml-auto" v-if="useScore.allScore === null ">กำลังโหลดคะแนน/๗๗ คะแนน</span>
+              <span class="ml-auto" v-else>{{ arabicToThaiNumber(useScore.allScore) }}/๗๗ คะแนน</span>
             </p>
             <p
               class="text-[18px] md:text-[24px] lg:text-[32px] w-full flex justify-between"
             >
               ทดสอบหลังเรียน :
-              <span class="ml-auto">{{ useScore.postTest }}/10 คะแนน</span>
+              <span class="ml-auto">{{ arabicToThaiNumber(useScore.postTest) }}/๑๐ คะแนน</span>
             </p>
           </div>
         </div>
@@ -234,6 +234,11 @@ const NextSlide = () => {
 const PrevSlide = () => {
   router.push("./ShowScoreEndView");
 };
+
+function arabicToThaiNumber(num) {
+      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+      return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
+    }
 </script>
 
 <style scoped></style>
