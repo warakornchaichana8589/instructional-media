@@ -218,6 +218,9 @@ watch(
 );
 
 function arabicToThaiNumber(num) {
+  if(num === undefined){
+        return 0;
+      }
       const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
       return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
     }

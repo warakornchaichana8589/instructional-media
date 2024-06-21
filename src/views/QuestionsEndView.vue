@@ -214,6 +214,9 @@
     { immediate: true } // เพิ่มออปชัน immediate เพื่อเรียก watcher ทันทีที่คอมโพเนนต์ถูกสร้าง
   );
   function arabicToThaiNumber(num) {
+    if(num === undefined){
+        return 0;
+      }
       const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
       return num.toString().split('').map(digit => thaiNumbers[digit]).join('');
     }
