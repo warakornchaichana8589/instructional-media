@@ -14,7 +14,7 @@
             class="flex justify-center items-center"
           >
             <div
-              class="flex flex-col justify-center items-center m-auto gap-1 lg:gap-3 aspect-video max-w-[40%] h-full"
+              class="flex flex-col justify-center items-center m-auto gap-1 lg:gap-3 aspect-video w-full max-w-[40%] h-full"
             >
               <h3
                 v-if="!question.imageUrl"

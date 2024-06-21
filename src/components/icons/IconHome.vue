@@ -4,7 +4,7 @@
   >
     <div
       @click="goHome"
-      class="lg:w-[40px] w-[25px] button relative z-10 cursor-pointer flex justify-center items-center"
+      class="lg:w-[40px] w-[25px] lg:h-[40px] h-[25px] button relative z-10 cursor-pointer flex justify-center items-center"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="home">
         <path
