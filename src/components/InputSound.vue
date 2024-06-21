@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md mx-auto">
+  <div class="max-w-md mx-auto w-full">
     <div class="relative w-full">
       <input
         v-model="inputValue"

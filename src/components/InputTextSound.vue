@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-xl px-2 pt-3 hover:bg-[rgba(206,215,232,0.5)]">
+  <div class="rounded-xl px-2 pt-3 hover:bg-[rgba(206,215,232,0.5)] w-full">
     <input
       :type="props.typeInput"
       v-model="inputValue"

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-start items-center flex-col h-full">
+  <div class="flex justify-start items-center flex-col h-full w-full">
     <h1
       class="px-4 py-2 lg:px10 lg:py-3 bg-[#FFF5DC] rounded-full mt-4 lg:mt-10 text-[14px] md:text-[18px] lg:text-[30px]"
     >
@@ -8,7 +8,7 @@
 
     <form
       @input="checkAnswers"
-      class="max-w-[767px] h-full flex flex-col items-center justify-center"
+      class="max-w-[767px] h-full flex flex-col items-center justify-center w-full"
     >
       <div
         v-for="(item, index) in exercises.slice(0, 2)"

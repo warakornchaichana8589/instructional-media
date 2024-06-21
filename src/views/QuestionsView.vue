@@ -4,7 +4,7 @@
       <div class="flex relative h-full w-full justify-center items-center">
         <swiper
           :modules="modules"
-          class="mySwiper h-full"
+          class="mySwiper h-full w-full"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
         >
