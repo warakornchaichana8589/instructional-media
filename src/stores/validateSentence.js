@@ -53,6 +53,10 @@ export const validateSentenceStore = defineStore('validateSentenceStore', {
           const tokens = response.data.tags; // Ensure this path is correct
           // Additional logging to debug token extraction
           this.result = this.validateSentence(tokens) ? 'ประโยคถูกต้อง' : 'ประโยคไม่ถูกต้อง';
+          //log results
+          let status = this.validateSentence(tokens)
+
+          console.log (sentence+' = '+this.result)
           return  this.validateSentence(tokens)
         } catch (error) {
           console.error('Error:', error);
@@ -82,7 +86,8 @@ export const validateSentenceStore = defineStore('validateSentenceStore', {
         ['ADV', 'NR', 'VV', 'ADV', 'NR'],
         ['ADV', 'NN', 'VV', 'ADV', 'NN'],
         ['PPER', 'VV', 'NN'],
-        ['PPER', 'VV', 'NR']
+        ['PPER', 'VV', 'NR'],
+        ['NN', 'JJV', 'VV', 'NN'],
       ];
 
       for (let pattern of patterns) {

@@ -30,6 +30,7 @@ export const useScoreStore = defineStore("useScore", () => {
         for (let key in pagesScores.value) {
             pagesScores.value[key] = 0;
         }
+        sumToggle.value = true;
         console.log("reset scores");
     }
 
