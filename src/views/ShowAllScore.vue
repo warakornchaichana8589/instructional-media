@@ -156,8 +156,11 @@ onMounted(async () => {
         useList02.subjectVerbObjectSentenceNum05,
         useList02.subjectVerbObjectSentenceNum06,
       ];
+      console.log('sentences[0] :'+sentences[0])
       for (const sentence of sentences) {
-        if (checkStore.checkPutWordsIntoSentences(sentence)) {
+        console.log('ถูกไหม: '+checkStore.checkPutWordsIntoSentences(sentence))
+        const isAnswer = checkStore.checkPutWordsIntoSentences(sentence)
+        if (isAnswer) {
           score++;
         }
       }
@@ -193,7 +196,7 @@ onMounted(async () => {
       return scoreQuizDrag;
     }
     const scoreExerciseFormView = checkAllLists(sentencesExerciseFormView);
-
+    useScore.updatePagesScores("PutWordsIntoSentences", scorePutWordsIntoSentences);
     useScore.updatePagesScores("quiz_view", scoreQuizView);
     useScore.updatePagesScores("QuestionFromImage01", QuestionFromImage01);
     useScore.updatePagesScores("quiz_drag", sumQuizDrag);

@@ -257,18 +257,21 @@ export const useCheckStore = defineStore({
                [4,7,18],
                [6,9,14]
               ];
-
+              console.log('Length of subjectVerbObjectSentenceNum:', subjectVerbObjectSentenceNum.length);
+              console.log('subjectVerbObjectSentenceNum '+subjectVerbObjectSentenceNum)
               if (subjectVerbObjectSentenceNum.length === 0) {
+                console.log("subjectVerbObjectSentenceNum === 0")
                 return false;
               }
-            
+              console.log("this checkPutWordsIntoSentences Work:")
               // ดึงเฉพาะ id ออกมาเป็นอาร์เรย์
               const ids = subjectVerbObjectSentenceNum.map(item => item.id);
-            
+              console.log("array : ids"+ids)
               // ตรวจสอบว่า id ใดๆ ใน ids อยู่ใน parents หรือไม่
               for (const id of ids) {
                 for (const parentGroup of parents) {
                   if (parentGroup.includes(id)) {
+                    console.log("array : ids true"+ids)
                     return true;
                   }
                 }

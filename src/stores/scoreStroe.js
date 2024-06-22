@@ -10,17 +10,14 @@ export const useScoreStore = defineStore("useScore", () => {
     const totalExerciseScores = ref(0)
     const pagesScores = ref(
         { 
-            quiz_view:0, //max score 8 url quiz-view ok
+            quiz_view:0, //max score 8+3=11 url quiz-view ok FillInTheBlanksView02 
             QuestionFromImage01:0, //max score 8 url QuestionFromImage01 ok
             quiz_drag:0, //max score 9 url quiz-drag quiz-drag02 quiz-drag03 ok
             SentencesFromPictures01:0, //max score 3 url SentencesFromPictures01 ok
             SentencesFromPictures02:0, //max score 3 url SentencesFromPictures02 ok
-            FillInTheBlanksView02:0, //max score 3 url FillInTheBlanksView02 ok useQuizValue
             QuestionFromImage02:0, //max score 9 url QuestionFromImage02 ok 04=useQuizValue 05-06 showscore
             QuizDragSlider:0, //max score 15 url QuizDragSlider ok QuizDragSlider02 QuizDragSlider03
-           
-            QuizDragSlider04:0, //max score 5 url QuizDragSlider04-6 ok checkAnswersPlus()
-           
+            QuizDragSlider04:0, //max score 5 url QuizDragSlider04-6 ok checkAnswersPlus() 
             PutWordsIntoSentences:0, //max score 6 url PutWordsIntoSentences ok
             ExerciseFormView00:0, //max score 3 url ExerciseFormView00 ok
             ExerciseFormView:0, //max score 5 url ExerciseFormView 2-3 ok

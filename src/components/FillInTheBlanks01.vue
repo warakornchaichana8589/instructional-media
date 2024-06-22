@@ -105,13 +105,7 @@ const handleInputChange3 = (value) => {
   };
   useQuizValue.setQuizValue(newValue);
 };
-const handleInputChange4 = (value) => {
-  let newValue = {
-    id: 4,
-    value: value,
-  };
-  useQuizValue.setQuizValue(newValue);
-};
+
 </script>
   
   <style lang="scss" scoped>
